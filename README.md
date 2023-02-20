@@ -8,3 +8,5 @@
   </picture>
 </p>
 
+# Many thanks 
+Created on the basis of the tabler-icons (https://github.com/tabler/tabler-icons)
