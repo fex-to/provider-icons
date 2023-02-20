@@ -172,13 +172,13 @@ export const createScreenshot = async (filePath) => {
 }
 
 export const generateIconsPreview = async function(files, destFile, {
-  columnsCount = 19,
-  paddingOuter = 7,
+  columnsCount = 18,
+  paddingOuter = 8,
   color = '#354052',
   background = '#ffffff'
 } = {}) {
 
-  const padding = 4,
+  const padding = 8,
       iconSize = 48
 
   const iconsCount = files.length,
@@ -243,7 +243,6 @@ export const printChangelog = function(newIcons, modifiedIcons, renamedIcons, pr
       console.log(str)
     }
 
-    console.log('printChangelog')
   }
 
   if (modifiedIcons.length > 0) {

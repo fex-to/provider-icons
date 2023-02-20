@@ -1,5 +1,7 @@
-import { generateIconsPreview, getArgvs, getPackageJson, HOME_DIR } from './helpers.mjs'
-import * as fs from 'fs'
+import glob from 'glob'
+import { join, basename } from 'path'
+import { readFileSync, writeFileSync } from 'fs'
+import { generateIconsPreview, getArgvs, getPackageJson, ICONS_DIR, ICONS_SRC_DIR } from './helpers.mjs'
 
 const argv = getArgvs(),
     p = getPackageJson()
@@ -7,21 +9,25 @@ const argv = getArgvs(),
 const version = argv['new-version'] || `${p.version}`
 
 if (version) {
-  const icons = JSON.parse(fs.readFileSync(`${HOME_DIR}/tags.json`))
+  glob(join(ICONS_SRC_DIR, '*.svg'), {}, function(er, files) {
+    const newIcons = []
+    files.forEach(function(file, i) {
+      let svgFile = readFileSync(file),
+          svgFileContent = svgFile.toString()
+      let value = svgFileContent.match(/version: \"([0-9.]+)\"/i)
 
-  const newIcons = Object
-      .entries(icons)
-      .filter(([name, value]) => {
-        return `${value.version}.0` === version
-      })
-      .map(([name, value]) => {
-        return `./icons/${name}.svg`
-      })
-
-  if (newIcons.length > 0) {
-    generateIconsPreview(newIcons, `.github/sources-icons-${version}.svg`, {
-      columnsCount: 6,
-      paddingOuter: 24
+      if (`${value[1]}` === version) {
+        newIcons.push(`${ICONS_DIR}/${basename(file)}`)
+      }
     })
-  }
+    if (newIcons.length > 0) {
+        generateIconsPreview(newIcons, `.github/sources-icons-${version}.svg`)
+        generateIconsPreview(newIcons, `.github/sources-icons-${version}-dark.svg`, {
+        color: '#ffffff',
+        background: '#354052'
+      })
+    }
+    console.log(newIcons)
+  })
 }
+
