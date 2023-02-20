@@ -1,6 +1,6 @@
 {
   "name": "@cr.today/sources-icons-react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A set of sources icons-react.",
   "author": "dejurin",
   "license": "MIT",
@@ -24,7 +24,7 @@
   "unpkg": "dist/umd/sources-icons-react.min.js",
   "typings": "dist/sources-icons-react.d.ts",
   "dependencies": {
-    "@cr.today/sources-icons": "0.0.4",
+    "@cr.today/sources-icons": "0.0.5",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
