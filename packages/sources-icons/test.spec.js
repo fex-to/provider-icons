@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 
 describe('SVGIcon', () => {
   let container
@@ -15,11 +15,11 @@ describe('SVGIcon', () => {
   })
   
   test('renders the correct class and XML namespace', () => {
-    container.innerHTML = fs.readFileSync(path.join('./icons', 'IconUaNbu.svg'), 'utf-8')
+    container.innerHTML = readFileSync(join('./icons', 'ua-nbu.svg'), 'utf-8')
     const svg = container.querySelector('svg')
 
     expect(svg.getAttribute('xmlns')).toBe('http://www.w3.org/2000/svg')
-    expect(svg.classList.contains('icon')).toBe(true)
-    expect(svg.classList.contains('icon-sources')).toBe(true)
+    expect(svg.getAttribute('fill')).toBe('currentColor')
+    expect(svg.getAttribute('width')).toBe('48')
   })
 })

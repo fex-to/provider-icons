@@ -46,5 +46,6 @@
     "transform": {
       "^.+\\.js$": "babel-jest"
     }
-  }
+  },
+  "packageManager": "pnpm@7.17.0"
 }

@@ -6,8 +6,8 @@
     "clean": "turbo run clean",
     "optimize": "node ./.build/optimize.mjs",
     "readme": "node ./.build/update-readme.mjs",
-    "build:clean": "rm -rf ./icons/*.svg && rm -rf ./src/_icons/*.svg",
     "import": "pnpm run build:clean && node ./.build/import.mjs && pnpm run optimize",
+    "build:clean": "rm -rf ./icons/*.svg && rm -rf ./src/_icons/*.svg",
     "build:icons": "pnpm --filter @cr.today/sources-icons build",
     "build:react": "pnpm --filter @cr.today/sources-icons-react build",
     "preview-icons": "rm -rf ./.github && mkdir ./.github && node ./.build/preview-icons.mjs"
