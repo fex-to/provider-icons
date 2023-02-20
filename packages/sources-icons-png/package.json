@@ -1,25 +1,25 @@
 {
-    "name": "@cr.today/sources-icons-png",
-    "version": "0.0.1",
-    "description": "A set of sources icons-png.",
-    "author": "dejurin",
-    "license": "MIT",
-    "homepage": "https://cr.today",
-    "scripts": {
-      "build": "pnpm run clean && pnpm run copy:license && pnpm run build:icons",
-      "build:icons": "node build.mjs",
-      "clean": "rm -rf icons && mkdir icons",
-      "copy:license": "cp ../../LICENSE ./LICENSE"
-    },
-    "files": [
-      "icons/*.png"
-    ],
-    "exports": {
-      "./*": [
-        "./icons/*"
-      ]
-    },
-    "dependencies": {
-      "@cr.today/sources-icons": "0.0.1"
-    }
+  "name": "@cr.today/sources-icons-png",
+  "version": "0.0.1",
+  "description": "A set of sources icons-png.",
+  "author": "dejurin",
+  "license": "MIT",
+  "homepage": "https://cr.today",
+  "scripts": {
+    "build": "pnpm run clean && pnpm run copy:license && pnpm run build:icons",
+    "build:icons": "node build.mjs",
+    "clean": "rm -rf icons && mkdir icons",
+    "copy:license": "cp ../../LICENSE ./LICENSE"
+  },
+  "files": [
+    "icons/*.png"
+  ],
+  "exports": {
+    "./*": [
+      "./icons/*"
+    ]
+  },
+  "dependencies": {
+    "@cr.today/sources-icons": "0.0.1"
   }
+}

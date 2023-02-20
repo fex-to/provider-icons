@@ -5,14 +5,18 @@
     "test": "turbo run test",
     "clean": "turbo run clean",
     "optimize": "node ./.build/optimize.mjs",
-    "readme": "node ./.build/update-readme.mjs",
+    "update:readme": "node ./.build/update-readme.mjs",
     "import": "pnpm run build:clean && node ./.build/import.mjs && pnpm run optimize",
+    "build": "pnpm run optimize && pnpm run build:icons && pnpm run build:packages && pnpm run preview && pnpm run zip && pnpm run update:readme",
+    "build:packages": "pnpm run build:react && pnpm run build:png",
     "build:clean": "rm -rf ./icons/*.svg && rm -rf ./src/_icons/*.svg",
     "build:icons": "pnpm --filter @cr.today/sources-icons build",
     "build:react": "pnpm --filter @cr.today/sources-icons-react build",
     "build:png": "pnpm --filter @cr.today/sources-icons-png build",
+    "preview": "pnpm run preview-icons",
     "preview-icons": "rm -rf ./.github && mkdir ./.github && node ./.build/preview-icons.mjs",
-    "zip": "node ./.build/zip-files.mjs"
+    "zip": "node ./.build/zip-files.mjs",
+    "release": "release-it --verbose"
   },
   "keywords": [],
   "author": "",
@@ -57,6 +61,27 @@
     "svgo": "^3.0.2",
     "svgpath": "^2.6.0",
     "svgson": "^5.2.1"
+  },
+  "release-it": {
+    "plugins": {
+      "@release-it-plugins/workspaces": true
+    },
+    "npm": false,
+    "hooks": {
+      "after:bump": "pnpm run build --latest-version ${latestVersion} --new-version ${version} --verbose",
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}.",
+      "before:git:init": "pnpm install"
+    },
+    "git": {
+      "addUntrackedFiles": true,
+      "tagName": "v${version}",
+      "_requireBranch": "master",
+      "requireCommits": true,
+      "requireCleanWorkingDir": false
+    },
+    "github": {
+      "release": true
+    }
   },
   "packageManager": "pnpm@7.17.0"
 }

@@ -92,6 +92,12 @@ importers:
       jest: 29.4.3
       jest-environment-jsdom: 29.4.3
 
+  packages/sources-icons-png:
+    specifiers:
+      '@cr.today/sources-icons': 0.0.1
+    dependencies:
+      '@cr.today/sources-icons': link:../sources-icons
+
   packages/sources-icons-react:
     specifiers:
       '@babel/preset-env': 7.11.5
