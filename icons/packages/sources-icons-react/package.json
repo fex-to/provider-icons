@@ -1,0 +1,45 @@
+{
+  "name": "@cr.today/sources-icons-react",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "build": "pnpm run clean && pnpm run copy:license && pnpm run build:icons && pnpm run build:bundles",
+    "build:icons": "node build.mjs",
+    "build:bundles": "rollup -c ./rollup.config.mjs",
+    "copy:license": "cp ../../LICENSE ./LICENSE",
+    "clean": "rm -rf dist && rm -rf ./src/icons/*.js",
+    "test": "pnpm run clean && pnpm run build:icons && jest --env=jsdom"
+  },
+  "main": "dist/cjs/sources-icons-react.js",
+  "main:umd": "dist/umd/sources-icons-react.js",
+  "module": "dist/esm/sources-icons-react.js",
+  "unpkg": "dist/umd/sources-icons-react.min.js",
+  "typings": "dist/sources-icons-react.d.ts",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "prop-types": "^15.7.2",
+    "rollup": "^3.17.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "7.11.5",
+    "@babel/preset-react": "7.10.4",
+    "@testing-library/react": "^11.2.6",
+    "babel-jest": "^29.4.1",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-test-renderer": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "^16.5.1 || ^17.0.0 || ^18.0.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  }
+}

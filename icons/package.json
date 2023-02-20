@@ -1,0 +1,34 @@
+{
+  "name": "@cr.today/sources-icons",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "optimize": "node ./.build/optimize.mjs",
+    "build:clean": "rm -rf ./icons && mkdir ./icons && rm -rf ./src/_icons && mkdir ./src/_icons",
+    "import": "pnpm run build:clean && node ./.build/import.mjs && pnpm run optimize",
+    "build:icons": "pnpm --filter @cr.today/sources-icons build",
+    "build:react": "pnpm --filter @cr.today/sources-icons-react build",
+    "preview-icons": "rm -rf ./.github && mkdir ./.github && node ./.build/preview-icons.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@atomico/rollup-plugin-sizes": "^1.1.4",
+    "cheerio": "1.0.0-rc.12",
+    "esbuild": "^0.17.8",
+    "fs-extra": "^11.1.0",
+    "glob": "^8.1.0",
+    "html-minifier": "^4.0.0",
+    "minimist": "^1.2.8",
+    "parse-svg-path": "^0.1.2",
+    "prettier": "^2.8.4",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-license": "^3.0.1",
+    "rollup-plugin-visualizer": "^5.9.0",
+    "svgo": "^3.0.2",
+    "svgpath": "^2.6.0",
+    "svgson": "^5.2.1"
+  }
+}
