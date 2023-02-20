@@ -10,7 +10,9 @@
     "build:clean": "rm -rf ./icons/*.svg && rm -rf ./src/_icons/*.svg",
     "build:icons": "pnpm --filter @cr.today/sources-icons build",
     "build:react": "pnpm --filter @cr.today/sources-icons-react build",
-    "preview-icons": "rm -rf ./.github && mkdir ./.github && node ./.build/preview-icons.mjs"
+    "build:png": "pnpm --filter @cr.today/sources-icons-png build",
+    "preview-icons": "rm -rf ./.github && mkdir ./.github && node ./.build/preview-icons.mjs",
+    "zip": "node ./.build/zip-files.mjs"
   },
   "keywords": [],
   "author": "",
