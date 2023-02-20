@@ -1,13 +1,14 @@
 import fs from 'fs'
 import glob from 'glob'
 import { resolve, basename } from 'path'
-import { HOME_DIR, ICONS_SRC_DIR, optimizeSVG } from './helpers.mjs'
+import { HOME_DIR, optimizeSVG } from './helpers.mjs'
+
 
 const files = glob.sync(resolve(HOME_DIR, './new/*.svg'))
 
-files.forEach(function(file, i) {
+files.forEach(function (file, i) {
   let fileData = fs.readFileSync(file).toString(),
-      filename = basename(file, '.svg')
+    filename = basename(file, '.svg')
 
   console.log(filename)
 
@@ -22,37 +23,31 @@ files.forEach(function(file, i) {
   }
 
   fileData = fileData.replace(/---/g, '')
-      .replace(/fill="none"/g, '')
-      .replace(/fill="(.*?)"/gi, '')
-      .replace(/fill-rule="evenodd"/g, '')
-      .replace(/stroke-linecap="round"/g, '')
-      .replace(/stroke-linejoin="round"/g, '')
-      .replace(/viewBox="0 0 48 48"/g, '')
-      .replace(/stroke="#000000"/g, '')
-      .replace(/stroke="#000"/g, '')
-      .replace(/stroke-width="2"/g, '')
-      .replace(/width="48"/g, '')
-      .replace(/width="48px"/g, '')
-      .replace(/height="48"/g, '')
-      .replace(/height="48px"/g, '')
-      .replace(/clip-rule="evenodd"/g, '')
-      .replace(/xmlns="http:\/\/www.w3.org\/2000\/svg"/g, '')
-      .replace(/<path d="M0 0h48v48H0z"*\/>/g, '')
-      .replace(/<path d="M0 0h128v128H0z"*\/>/g, '')
-      .replace(/<path stroke="red" stroke-width=".1" d="[^"]+"\s?\/>/g, '')
-      .replace(/<path[^>]*stroke="red"[^>]*\/>/gs, '')
-      .replace(/<defs*>.*?<\/defs>/gs, '')
-      .replace(/<circle[^>]*stroke="red"[^>]*\/>/gs, '')
-      .replace(/<g[^>]*stroke="red"[^>]*>.*?<\/g>/gs, '')
-      .replace(/<svg\s+>/gs, '<svg>')
+    .replace(/fill="none"/g, '')
+    .replace(/fill="(.*?)"/gi, '')
+    .replace(/fill-rule="evenodd"/g, '')
+    .replace(/stroke-linecap="round"/g, '')
+    .replace(/stroke-linejoin="round"/g, '')
+    .replace(/viewBox="0 0 48 48"/g, '')
+    .replace(/stroke="#000000"/g, '')
+    .replace(/stroke="#000"/g, '')
+    .replace(/stroke-width="2"/g, '')
+    .replace(/width="48"/g, '')
+    .replace(/width="48px"/g, '')
+    .replace(/height="48"/g, '')
+    .replace(/height="48px"/g, '')
+    .replace(/clip-rule="evenodd"/g, '')
+    .replace(/xmlns="http:\/\/www.w3.org\/2000\/svg"/g, '')
+    .replace(/<path d="M0 0h48v48H0z"*\/>/g, '')
+    .replace(/<path d="M0 0h128v128H0z"*\/>/g, '')
+    .replace(/<path stroke="red" stroke-width=".1" d="[^"]+"\s?\/>/g, '')
+    .replace(/<path[^>]*stroke="red"[^>]*\/>/gs, '')
+    .replace(/<defs*>.*?<\/defs>/gs, '')
+    .replace(/<circle[^>]*stroke="red"[^>]*\/>/gs, '')
+    .replace(/<g[^>]*stroke="red"[^>]*>.*?<\/g>/gs, '')
+    .replace(/<svg\s+>/gs, '<svg>')
 
   fileData = optimizeSVG(fileData)
-  
-  /*
-  if (filename.match(/\-filled$/)) {
-    fileData = fileData
-        .replace(/\/>/g, ' stroke-width="0" fill="currentColor" />')
-  }
 
   fileData = fileData.replace(/<svg>/g, '---\n---\n<svg>')
 
@@ -63,11 +58,7 @@ files.forEach(function(file, i) {
     if (m) {
       fileData = fileData.replace('---\n---', m[0])
     }
-  } else if (filename.match(/\-filled$/)) {
-    fileData = fileData
-        .replace(/---\n---/g, '---\ncategory: Filled\n---')
   }
-  */
 
-  fs.writeFileSync(`${ICONS_SRC_DIR}/${filename}.svg`, fileData)
+  fs.writeFileSync(`./src/_icons/${filename}.svg`, fileData)
 })

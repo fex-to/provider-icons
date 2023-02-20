@@ -1,29 +1,33 @@
 {
   "name": "@cr.today/sources-icons",
   "version": "0.0.4",
+  "author": "dejurin",
+  "license": "MIT",
+  "description": "A set of sources icons.",
+  "publishConfig": {
+    "access": "restricted"
+  },
   "scripts": {
     "test": "turbo run test",
     "clean": "turbo run clean",
     "optimize": "node ./.build/optimize.mjs",
+    "update": "pnpm run update:icons-version",
+    "update:icons-version": "node ./.build/update-icons-version.mjs",
     "update:readme": "node ./.build/update-readme.mjs",
     "import": "pnpm run build:clean && node ./.build/import.mjs && pnpm run optimize",
-    "build": "pnpm run optimize && pnpm run build:icons && pnpm run build:packages && pnpm run preview && pnpm run zip && pnpm run update:readme",
+    "changelog": "node ./.build/changelog.mjs",
+    "build": "pnpm run optimize && pnpm run update && pnpm run build:svgs && pnpm run build:icons && pnpm run build:packages && pnpm run preview && pnpm run zip && pnpm run update:readme",
     "build:packages": "pnpm run build:react && pnpm run build:png",
-    "build:clean": "rm -rf ./icons/*.svg && rm -rf ./src/_icons/*.svg",
+    "build:clean": "rm -rf ./icons/*.svg",
     "build:icons": "pnpm --filter @cr.today/sources-icons build",
     "build:react": "pnpm --filter @cr.today/sources-icons-react build",
     "build:png": "pnpm --filter @cr.today/sources-icons-png build",
+    "build:svgs": "pnpm run build:copy && node ./.build/build-svgs.mjs",
+    "build:copy": "rm -rf ./icons && mkdir ./icons && cp ./src/_icons/* ./icons/",
     "preview": "pnpm run preview-icons",
     "preview-icons": "rm -rf ./.github && mkdir ./.github && node ./.build/preview-icons.mjs",
     "zip": "node ./.build/zip-files.mjs",
-    "release": "release-it --verbose"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "A set of sources icons.",
-  "publishConfig": {
-    "access": "restricted"
+    "release": "git pull && release-it --verbose"
   },
   "dependencies": {
     "@atomico/rollup-plugin-sizes": "^1.1.4",
@@ -77,6 +81,7 @@
     },
     "git": {
       "addUntrackedFiles": true,
+      "changelog": "pnpm run changelog --silent --latest-version ${latestTag}",
       "tagName": "v${version}",
       "_requireBranch": "master",
       "requireCommits": true,

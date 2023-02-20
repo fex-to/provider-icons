@@ -111,8 +111,6 @@ export const toPascalCase = (string) => {
   return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
 }
 
-
-
 export const addFloats = function(n1, n2) {
   return Math.round((parseFloat(n1) + parseFloat(n2)) * 1000) / 1000
 }
@@ -245,7 +243,7 @@ export const printChangelog = function(newIcons, modifiedIcons, renamedIcons, pr
       console.log(str)
     }
 
-    console.log('')
+    console.log('printChangelog')
   }
 
   if (modifiedIcons.length > 0) {
@@ -295,7 +293,7 @@ export const getCompileOptions = () => {
         }
         compileOptions.includeIcons = tempOptions.includeIcons
       }
-      /*
+
       if (typeof tempOptions.includeCategories !== 'undefined') {
         if (typeof tempOptions.includeCategories === 'string') {
           tempOptions.includeCategories = tempOptions.includeCategories.split(' ')
@@ -313,7 +311,6 @@ export const getCompileOptions = () => {
           }
         })
       }
-      */
 
       if (typeof tempOptions.excludeIcons !== 'undefined') {
         if (!Array.isArray(tempOptions.excludeIcons)) {
