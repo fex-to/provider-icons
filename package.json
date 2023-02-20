@@ -5,7 +5,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "optimize": "node ./.build/optimize.mjs",
     "readme": "node ./.build/update-readme.mjs",
-    "build:clean": "rm -rf ./icons && mkdir ./icons && rm -rf ./src/_icons && mkdir ./src/_icons",
+    "build:clean": "rm -rf ./icons/*.svg && rm -rf ./src/_icons/*.svg",
     "import": "pnpm run build:clean && node ./.build/import.mjs && pnpm run optimize",
     "build:icons": "pnpm --filter @cr.today/sources-icons build",
     "build:react": "pnpm --filter @cr.today/sources-icons-react build",
