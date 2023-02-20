@@ -21,7 +21,7 @@ import { SVGAttributes } from 'react'
 declare module '@cr.today/sources-icons-react'
 
 // Create interface extending SVGProps
-export interface SourcesIconsProps extends Partial<Omit<React.SVGProps<SVGSVGElement>, 'stroke'>> {
+export interface SourcesIconsProps extends Partial<React.SVGProps<SVGSVGElement>> {
     size?: string | number
 }
 

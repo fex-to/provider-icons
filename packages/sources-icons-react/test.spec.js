@@ -10,13 +10,12 @@ describe("React Icon component", () => {
   })
 
   test("should update svg attributes when there are props passed to the component", () => {
-    const { container } = render(<IconUaNbu size={48} color={"red"} strokeWidth={4}/>)
+    const { container } = render(<IconUaNbu size={48} color={"red"}/>)
 
     const svg = container.getElementsByTagName("svg")[0]
 
     expect(svg.getAttribute("width")).toBe("48")
-    expect(svg.getAttribute("stroke")).toBe("red")
-    expect(svg.getAttribute("stroke-width")).toBe("4")
+    expect(svg.getAttribute("fill")).toBe("red")
   })
 
   // Jest creates separate file to store snapshots
