@@ -15,7 +15,6 @@ const buildSprite = () => {
   let svg = `<svg xmlns="http://www.w3.org/2000/svg"><defs>${svgContent}</defs></svg>`
 
   fs.writeFileSync('sources-sprite.svg', svg)
-  /* fs.writeFileSync('sources-sprite-nostroke.svg', svg.replace(/stroke-width="2"\s/g, '')) */
 }
 
 const buildNodes = () => {
