@@ -35,3 +35,4 @@ packages/sources-icons*/icons/*
 .sass-cache
 
 .bundle
+.bundle/*
