@@ -5,6 +5,11 @@
   "author": "dejurin",
   "license": "MIT",
   "homepage": "https://cr.today",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cr-today/sources-icons.git",
+    "directory": "packages/sources-icons-png"
+  },
   "scripts": {
     "build": "pnpm run clean && pnpm run copy:license && pnpm run build:icons",
     "build:icons": "node build.mjs",

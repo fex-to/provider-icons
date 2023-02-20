@@ -5,6 +5,11 @@
   "author": "dejurin",
   "license": "MIT",
   "homepage": "https://cr.today",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cr-today/sources-icons.git",
+    "directory": "packages/sources-icons"
+  },
   "main": "dist/cjs/sources-icons.js",
   "main:umd": "dist/umd/sources-icons.js",
   "exports": {
