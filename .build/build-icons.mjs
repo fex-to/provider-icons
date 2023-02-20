@@ -89,7 +89,7 @@ export const buildIcons = ({
     }))
   })
 
-  fs.writeFileSync(path.resolve(DIST_DIR, `./src/sources-icons.js`), index.join('\n'), 'utf-8')
+  fs.writeFileSync(path.resolve(DIST_DIR, `./src/icons.js`), index.join('\n'), 'utf-8')
 
   fs.ensureDirSync(path.resolve(DIST_DIR, `./dist/`))
   fs.writeFileSync(path.resolve(DIST_DIR, `./dist/${name}.d.ts`), typeDefinitionsTemplate() + '\n' + typings.join('\n'), 'utf-8')
