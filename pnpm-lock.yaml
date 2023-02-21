@@ -129,7 +129,7 @@ importers:
 
   test/test-react:
     specifiers:
-      '@cr.today/sources-icons-react': 0.0.5
+      '@cr.today/sources-icons-react': 0.1.0
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.9
       '@vitejs/plugin-react': ^3.0.0
@@ -138,7 +138,7 @@ importers:
       typescript: ^4.9.3
       vite: ^4.0.0
     dependencies:
-      '@cr.today/sources-icons-react': 0.0.5_react@18.2.0
+      '@cr.today/sources-icons-react': link:../../packages/sources-icons-react
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     devDependencies:
@@ -2246,20 +2246,6 @@ packages:
   /@bcoe/v8-coverage/0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
-
-  /@cr.today/sources-icons-react/0.0.5_react@18.2.0:
-    resolution: {integrity: sha512-wygYdylvbA9B5kZpDmkFpBigZ3L16yyMbiNsZ9kxj6zMUcxcQW7uFtOUI1rko6UTgNb8LPXlpVYw7/hQuV8urw==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@cr.today/sources-icons': 0.0.5
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
-  /@cr.today/sources-icons/0.0.5:
-    resolution: {integrity: sha512-uhB93zDfE3zlF425vt27T/7gq4UlQHABHFVpmIIFSUUE/f17yY28d7FU6fQBnFko9IyXda6qW9TLJWWciRN3/A==}
-    dev: false
 
   /@esbuild/android-arm/0.16.17:
     resolution: {integrity: sha512-N9x1CMXVhtWEAMS7pNNONyA14f71VPQN9Cnavj1XQh6T7bskqiLLrSca4O0Vr8Wdcga943eThxnVp3JLnBMYtw==}
