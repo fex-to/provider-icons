@@ -96,7 +96,7 @@ importers:
 
   packages/sources-icons-png:
     specifiers:
-      '@cr.today/sources-icons': 0.2.1
+      '@cr.today/sources-icons': 0.3.0
     dependencies:
       '@cr.today/sources-icons': link:../sources-icons
 
@@ -104,7 +104,7 @@ importers:
     specifiers:
       '@babel/preset-env': 7.11.5
       '@babel/preset-react': 7.10.4
-      '@cr.today/sources-icons': 0.2.1
+      '@cr.today/sources-icons': 0.3.0
       '@testing-library/react': ^11.2.6
       babel-jest: ^29.4.1
       jest: ^29.4.1
@@ -129,7 +129,7 @@ importers:
 
   test/test-react:
     specifiers:
-      '@cr.today/sources-icons-react': 0.2.1
+      '@cr.today/sources-icons-react': 0.3.0
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.9
       '@vitejs/plugin-react': ^3.0.0
