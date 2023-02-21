@@ -27,7 +27,6 @@ if (version) {
         background: '#354052'
       })
     }
-    console.log(newIcons)
   })
 }
 
