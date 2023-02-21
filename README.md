@@ -9,7 +9,7 @@
 </p>
 
 ## Icons
-A set of <!--icons-count-->205<!--/icons-count--> sources icons.
+A set of <!--icons-count-->204<!--/icons-count--> sources icons.
 
 ## Table of icons
 <!--icons-table-->
