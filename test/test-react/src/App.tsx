@@ -1,18 +1,49 @@
-import { useState } from 'react'
 import './App.css'
-import { IconHeart, IconHeartFilled, IconMoodSmile } from '@tabler/icons-react'
+import { useState } from 'react'
+import { IconUaNbu } from '@cr.today/sources-icons-react'
 
 function App() {
   const [active, setActive] = useState(false)
-
   return (
     <div className="App">
-      <a onClick={() => setActive(!active)}>
-        {active ? <IconHeartFilled size={48} /> : <IconHeart size={48} />}
-      </a>
-      <IconMoodSmile size={48} stroke={1} />
-      <IconMoodSmile size={48} stroke={1.5} />
-      <IconMoodSmile size={48} stroke={2} />
+      <div>
+        {[24,32,48,64,96,128,256,512].map((i) => <div><IconUaNbu size={i} /><>{i}px</><hr /></div>)}
+      </div>
+      <div>
+        <a href="#"><IconUaNbu size={48} /></a>
+        <a><IconUaNbu size={48} /></a>
+        <a href="#"><IconUaNbu size={48} /></a>
+      </div>
+      <div style={{color:'#000000'}}>
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+      </div>
+      <div style={{color:'#44ee11'}}>
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+      </div>
+      <div style={{color:'#44ee'}}>
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+      </div>
+      <div style={{color:'#44eeff'}}>
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+      </div>
+      <div style={{color:'#fff'}}>
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+      </div>
+      <div style={{color:'#ff0000'}}>
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+        <IconUaNbu size={48} />
+      </div>
     </div>
   )
 }
