@@ -1,9 +1,9 @@
 import { readFileSync, writeFileSync } from 'fs'
 import glob from 'glob'
 import { resolve, basename } from 'path'
-import { HOME_DIR } from './helpers.mjs'
+import { HOME_DIR, ICONS_SRC_DIR } from './helpers.mjs'
 
-let files = glob.sync(resolve(HOME_DIR, 'icons/*.svg'))
+let files = glob.sync(resolve(ICONS_SRC_DIR, '*.svg'))
 let count = files.length
 
 console.log('count', count);
@@ -18,7 +18,6 @@ readmes.forEach(readme => {
   tableData += "\n"
 
   fileData = fileData.replace(/<!--icons-count-->(.*?)<!--\/icons-count-->/, `<!--icons-count-->${count}<!--/icons-count-->`)
-  fileData = fileData.replace(/<!--icons-table-->(.*?)<!--\/icons-table-->/, `<!--icons-table-->${tableData}<!--/icons-table-->`)
 
   writeFileSync(readme, fileData)
 })
