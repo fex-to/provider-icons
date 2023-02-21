@@ -1,6 +1,6 @@
 {
   "name": "@cr.today/sources-icons-png",
-  "version": "0.5.2",
+  "version": "1.0.0",
   "description": "A set of sources icons-png.",
   "author": "dejurin",
   "license": "MIT",
@@ -25,6 +25,6 @@
     ]
   },
   "dependencies": {
-    "@cr.today/sources-icons": "0.5.2"
+    "@cr.today/sources-icons": "1.0.0"
   }
 }
