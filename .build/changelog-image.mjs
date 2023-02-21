@@ -15,8 +15,8 @@ if (version) {
       let svgFile = readFileSync(file),
           svgFileContent = svgFile.toString()
       let value = svgFileContent.match(/version: \"([0-9.]+)\"/i)
-
-      if (`${value[1]}` === version) {
+      console.log(version)
+      if (`${value[1]}.0` === version) {
         newIcons.push(`${ICONS_DIR}/${basename(file)}`)
       }
     })
