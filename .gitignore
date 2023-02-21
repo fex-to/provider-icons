@@ -16,6 +16,8 @@ sources-icons/dist/
 compile-options.json
 new/
 new/*
+_new/
+_new/*
 yarn.lock
 dist/
 _import.csv
