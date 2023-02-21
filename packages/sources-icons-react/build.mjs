@@ -23,6 +23,7 @@ declare module '@cr.today/sources-icons-react'
 // Create interface extending SVGProps
 export interface SourcesIconsProps extends Partial<React.SVGProps<SVGSVGElement>> {
     size?: string | number
+    color?: string
 }
 
 export declare const createReactComponent: (iconName: string, iconNamePascal: string, iconNode: any[]) => (props: SourcesIconsProps) => JSX.Element;

@@ -46,8 +46,6 @@ const indexTypeTemplate = ({
   namePascal
 }) => `export declare const ${namePascal}: string;`
 
-
-
 buildSprite()
 buildNodes()
 buildIcons({
