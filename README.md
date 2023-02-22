@@ -8,6 +8,12 @@
   </picture>
 </p>
 
+
+## Icons
+
+A set of <!--icons-count-->204<!--/icons-count--> sources icons.
+
+
 ## Install
 
 ```
@@ -21,11 +27,6 @@ npm i @cr.today/icons-react
 ```
 npm i @cr.today/icons-png
 ```
-
-
-## Icons
-
-A set of <!--icons-count-->204<!--/icons-count--> sources icons.
 
 
 # Many thanks

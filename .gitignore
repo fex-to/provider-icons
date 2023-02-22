@@ -36,3 +36,4 @@ packages/icons*/icons/*
 
 .bundle
 .bundle/*
+pnpm-lock.yaml
