@@ -1,7 +1,7 @@
 {
   "name": "test-react",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@cr.today/icons-react": "1.0.4",
+    "@cr.today/icons-react": "1.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
