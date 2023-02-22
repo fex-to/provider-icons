@@ -30,4 +30,9 @@ A set of <!--icons-count-->204<!--/icons-count--> sources icons.
 
 # Many thanks
 
-Created on the basis of the tabler-icons (https://github.com/tabler/tabler-icons)
+Some of the source code was borrowed from the another repository,
+I reserve the right to point to the source:
+
+- **Author**: Paweł Kuna
+- **Repository**: https://github.com/tabler/tabler-icons
+- **License**: https://github.com/tabler/tabler-icons/blob/master/LICENSE
