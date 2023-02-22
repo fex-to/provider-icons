@@ -19,7 +19,7 @@
   },
   "module": "dist/esm/sources-icons.js",
   "unpkg": "dist/umd/sources-icons.min.js",
-  "typings": "dist/sources-icons.d.ts",
+  "typings": "dist/icons.d.ts",
   "sideEffects": false,
   "files": [
     "dist/*",
