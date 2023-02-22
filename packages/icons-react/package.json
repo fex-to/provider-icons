@@ -24,7 +24,7 @@
   "unpkg": "dist/umd/sources-icons-react.min.js",
   "typings": "dist/icons-react.d.ts",
   "dependencies": {
-    "@cr.today/sources-icons": "1.0.3",
+    "@cr.today/icons": "1.0.5",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
