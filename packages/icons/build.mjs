@@ -48,7 +48,7 @@ const indexTypeTemplate = ({
 buildSprite()
 buildNodes()
 buildIcons({
-  name: 'icons',
+  name: 'sources-icons',
   componentTemplate,
   indexItemTemplate,
   typeDefinitionsTemplate,

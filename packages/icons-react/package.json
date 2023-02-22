@@ -22,7 +22,11 @@
   "main:umd": "dist/umd/sources-icons-react.js",
   "module": "dist/esm/sources-icons-react.js",
   "unpkg": "dist/umd/sources-icons-react.min.js",
-  "typings": "dist/icons-react.d.ts",
+  "typings": "dist/sources-icons-react.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@cr.today/icons": "1.0.6",
     "prop-types": "^15.7.2"
@@ -46,6 +50,5 @@
     "transform": {
       "^.+\\.js$": "babel-jest"
     }
-  },
-  "packageManager": "pnpm@7.17.0"
+  }
 }

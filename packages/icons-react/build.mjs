@@ -38,7 +38,7 @@ const indexTypeTemplate = ({
 
 
 buildIcons({
-  name: 'icons-react',
+  name: 'sources-icons-react',
   componentTemplate,
   indexItemTemplate,
   typeDefinitionsTemplate,

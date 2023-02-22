@@ -19,7 +19,7 @@
   },
   "module": "dist/esm/sources-icons.js",
   "unpkg": "dist/umd/sources-icons.min.js",
-  "typings": "dist/icons.d.ts",
+  "typings": "dist/sources-icons.d.ts",
   "sideEffects": false,
   "files": [
     "dist/*",
@@ -53,6 +53,5 @@
     "transform": {
       "^.+\\.js$": "babel-jest"
     }
-  },
-  "packageManager": "pnpm@7.17.0"
+  }
 }
