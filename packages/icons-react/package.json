@@ -22,7 +22,7 @@
   "main:umd": "dist/umd/sources-icons-react.js",
   "module": "dist/esm/sources-icons-react.js",
   "unpkg": "dist/umd/sources-icons-react.min.js",
-  "typings": "dist/sources-icons-react.d.ts",
+  "typings": "dist/icons-react.d.ts",
   "dependencies": {
     "@cr.today/sources-icons": "1.0.3",
     "prop-types": "^15.7.2"
