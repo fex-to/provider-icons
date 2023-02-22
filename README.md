@@ -29,7 +29,7 @@ npm i @cr.today/icons-png
 ```
 
 
-# Many thanks
+## Many thanks
 
 Some of the source code was borrowed from the another repository,
 I reserve the right to point to the source:
