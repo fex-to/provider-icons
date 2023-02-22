@@ -1,7 +1,6 @@
 import fs from 'fs'
-import { createDirectory, readSvgs } from '../../.build/helpers.mjs'
+import { readSvgs } from '../../.build/helpers.mjs'
 import { buildIcons } from '../../.build/build-icons.mjs'
-import { stringify } from 'svgson'
 
 const svgFiles = readSvgs()
 
