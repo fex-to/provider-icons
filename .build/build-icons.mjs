@@ -33,6 +33,8 @@ export const buildIcons = ({
 }) => {
   const DIST_DIR = path.resolve(PACKAGES_DIR, name),
       svgFiles = readSvgs()
+  
+      console.log(PACKAGES_DIR, name, 'PACKAGES_DIR')
 
   let index = []
   let typings = []
@@ -74,6 +76,7 @@ export const buildIcons = ({
       trailingComma: 'all',
       parser: 'babel'
     }) : component
+
 
     let filePath = path.resolve(DIST_DIR, 'src/icons', `${svgFile.namePascal}.${extension}`)
     fs.writeFileSync(filePath, output, 'utf-8')
