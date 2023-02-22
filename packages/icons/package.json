@@ -8,7 +8,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cr-today/sources-icons.git",
-    "directory": "packages/sources-icons"
+    "directory": "packages/icons"
   },
   "main": "dist/cjs/sources-icons.js",
   "main:umd": "dist/umd/sources-icons.js",

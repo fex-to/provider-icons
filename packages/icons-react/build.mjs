@@ -18,7 +18,7 @@ const indexItemTemplate = ({
 const typeDefinitionsTemplate = () => `/// <reference types="react" />
 import { SVGAttributes } from 'react'
 
-declare module '@cr.today/sources-icons-react'
+declare module '@cr.today/icons-react'
 
 // Create interface extending SVGProps
 export interface SourcesIconsProps extends Partial<React.SVGProps<SVGSVGElement>> {
@@ -38,7 +38,7 @@ const indexTypeTemplate = ({
 
 
 buildIcons({
-  name: 'sources-icons-react',
+  name: 'icons-react',
   componentTemplate,
   indexItemTemplate,
   typeDefinitionsTemplate,

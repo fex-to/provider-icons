@@ -12,7 +12,7 @@ src/_icons/test.svg
 src/test.svg
 src/test*.svg
 .jekyll-metadata
-sources-icons/dist/
+icons/dist/
 compile-options.json
 new/
 new/*
@@ -26,12 +26,12 @@ _import.tsv
 .yarn
 .yarnrc.yml
 
-packages/sources-icons*/icons/*
-packages/sources-icons*/src/icons/*
-packages/sources-icons*/src/icons.js
-packages/sources-icons*/LICENSE
-packages/sources-icons*/stats/*
-packages/sources-icons*/icons/*
+packages/icons*/icons/*
+packages/icons*/src/icons/*
+packages/icons*/src/icons.js
+packages/icons*/LICENSE
+packages/icons*/stats/*
+packages/icons*/icons/*
 
 .turbo
 .sass-cache

@@ -11,15 +11,15 @@
 ## Install
 
 ```
-npm i @cr.today/sources-icons
+npm i @cr.today/icons
 ```
 
 ```
-npm i @cr.today/sources-icons-react
+npm i @cr.today/icons-react
 ```
 
 ```
-npm i @cr.today/sources-icons-png
+npm i @cr.today/icons-png
 ```
 
 

@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import { IconUaNbu } from '@cr.today/sources-icons-react'
+import { IconUaNbu } from '@cr.today/icons-react'
 
 function App() {
   const [active, setActive] = useState(false)
