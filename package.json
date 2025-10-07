@@ -94,6 +94,7 @@
   },
   "packageManager": "pnpm@10.18.1",
   "devDependencies": {
-    "@release-it-plugins/workspaces": "^5.0.3"
+    "@release-it-plugins/workspaces": "^5.0.3",
+    "turbo": "^2.5.8"
   }
 }

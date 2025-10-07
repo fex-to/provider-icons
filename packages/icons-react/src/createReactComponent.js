@@ -12,7 +12,7 @@ export default (iconName, iconNamePascal, iconNode) => {
                 ...defaultAttributes,
                 width: size,
                 height: size,
-                color: color,
+                fill: color,
                 className: `sources-icon sources-icon-${iconName}`,
                 ...rest,
               },
