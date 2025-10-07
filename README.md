@@ -10,7 +10,7 @@
 
 ## Icons
 
-A set of <-icons-count-->205<-/icons-count--> sources icons.
+A set of <!--icons-count-->204<!--/icons-count--> sources icons.
 
 ## Installation
 
@@ -79,7 +79,7 @@ node_modules/@cr.today/icons-png/icons/
 
 ## Available Icons
 
-All <-icons-count-->205<-/icons-count--> icons are available in three formats:
+All <!--icons-count-->204<!--/icons-count--> icons are available in three formats:
 
 - **SVG** (JavaScript/Node.js) - `@cr.today/icons`
 - **React Components** - `@cr.today/icons-react`

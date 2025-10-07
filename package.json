@@ -1,6 +1,6 @@
 {
   "name": "@cr.today/sources-icons",
-  "version": "1.2.2",
+  "version": "1.2.5",
   "author": "dejurin",
   "license": "MIT",
   "description": "A set of sources icons.",
@@ -12,6 +12,8 @@
     "test/*"
   ],
   "scripts": {
+    "rename": "node ./utils/rename-icon.mjs",
+    "delete": "node ./utils/delete-icon.mjs",
     "test": "turbo run test",
     "clean": "turbo run clean",
     "build": "npm run optimize && npm run update && npm run build:svgs && npm run build:icons && npm run build:packages && npm run preview && npm run changelog-image && npm run zip && npm run update:readme",
