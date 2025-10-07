@@ -30,7 +30,7 @@ packages/icons*/src/icons.js
 packages/icons*/LICENSE
 packages/icons*/stats/*
 packages/icons*/icons/*
-
+.env
 .turbo
 .sass-cache
 
