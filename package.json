@@ -1,6 +1,6 @@
 {
   "name": "@fex.to/sources-icons",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "author": "dejurin",
   "license": "MIT",
   "description": "Financial provider icons: banks, exchanges, central banks. Available in SVG, React components, and PNG",

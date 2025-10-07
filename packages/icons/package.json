@@ -1,16 +1,16 @@
 {
   "name": "@fex.to/provider-icons",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "A set of sources icons.",
   "author": "dejurin",
   "license": "MIT",
-  "homepage": "https://cr.today",
+  "homepage": "https://fex.to",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cr-today/sources-icons.git",
+    "url": "git+https://github.com/fex-to/provider-icons.git",
     "directory": "packages/icons"
   },
   "main": "dist/cjs/sources-icons.js",

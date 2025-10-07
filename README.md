@@ -22,10 +22,10 @@ Since these packages are not published to npm registry, install them directly fr
 
 ```bash
 # Install with specific version tag
-npm install github:cr-today/sources-icons#v1.2.3
+npm install github:fex-to/provider-icons#v3.0.2
 
 # Or install the latest from main branch
-npm install github:cr-today/sources-icons#main
+npm install github:fex-to/provider-icons#main
 ```
 
 #### Using package.json
@@ -35,9 +35,9 @@ Add to your `package.json`:
 ```json
 {
   "dependencies": {
-    "@fex.to/provider-icons": "github:cr-today/sources-icons#v1.2.3",
-    "@fex.to/provider-icons-react": "github:cr-today/sources-icons#v1.2.3",
-    "@fex.to/provider-icons-png": "github:cr-today/sources-icons#v1.2.3"
+    "@fex.to/provider-icons": "github:fex-to/provider-icons#v3.0.2",
+    "@fex.to/provider-icons-react": "github:fex-to/provider-icons#v3.0.2",
+    "@fex.to/provider-icons-png": "github:fex-to/provider-icons#v3.0.2"
   }
 }
 ```
