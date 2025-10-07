@@ -21,20 +21,20 @@ import { SVGAttributes } from 'react'
 declare module '@fex.to/provider-icons-react'
 
 // Create interface extending SVGProps
-export interface SourcesIconsProps extends Partial<React.SVGProps<SVGSVGElement>> {
+export interface ProviderIconsProps extends Partial<React.SVGProps<SVGSVGElement>> {
     size?: string | number
     color?: string
 }
 
-export declare const createReactComponent: (iconName: string, iconNamePascal: string, iconNode: any[]) => (props: SourcesIconsProps) => JSX.Element;
+export declare const createReactComponent: (iconName: string, iconNamePascal: string, iconNode: any[]) => (props: ProviderIconsProps) => JSX.Element;
 
-export type Icon = React.FC<SourcesIconsProps>;
+export type Icon = React.FC<ProviderIconsProps>;
 
 // Generated icons`
 
 const indexTypeTemplate = ({
   namePascal
-}) => `export declare const ${namePascal}: (props: SourcesIconsProps) => JSX.Element;`
+}) => `export declare const ${namePascal}: (props: ProviderIconsProps) => JSX.Element;`
 
 
 await buildIcons({

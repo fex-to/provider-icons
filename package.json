@@ -84,7 +84,7 @@
         "workspaces": [
           "packages/*"
         ],
-        "publish": false,
+        "publish": true,
         "additionalManifests": {
           "versionUpdates": [
             "package.json",

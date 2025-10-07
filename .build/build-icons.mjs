@@ -99,7 +99,7 @@ export const buildIcons = async ({
   fs.writeFileSync(path.resolve(DIST_DIR, `./src/icons.js`), index.join('\n'), 'utf-8')
 
   fs.ensureDirSync(path.resolve(DIST_DIR, `./dist/`))
-  fs.writeFileSync(path.resolve(DIST_DIR, `./dist/sources-${name}.d.ts`), typeDefinitionsTemplate() + '\n' + typings.join('\n'), 'utf-8')
+  fs.writeFileSync(path.resolve(DIST_DIR, `./dist/provider-${name}.d.ts`), typeDefinitionsTemplate() + '\n' + typings.join('\n'), 'utf-8')
 }
 
 export const getRollupPlugins = (pkg, minify) => {
