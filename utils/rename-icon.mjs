@@ -65,10 +65,6 @@ function updateJsonConfig(oldName, newName) {
     logError(`File not found: ${PROVIDER_NODES_PATH}`);
     return false;
   }
-  if (!fileExists(jsonPath)) {
-    logError(`File not found: ${jsonPath}`);
-    return false;
-  }
   
   try {
     const jsonData = readJsonFile(PROVIDER_NODES_PATH);

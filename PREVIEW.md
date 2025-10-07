@@ -210,7 +210,7 @@ Total: **201 icons**
 | <img src=".preview/icons/uamono.png" width="96" height="96" alt="uamono" /> | `uamono` | `<IconUamono />` |
 | <img src=".preview/icons/uanb.png" width="96" height="96" alt="uanb" /> | `uanb` | `<IconUanb />` |
 | <img src=".preview/icons/uaoschadbank.png" width="96" height="96" alt="uaoschadbank" /> | `uaoschadbank` | `<IconUaoschadbank />` |
-| <img src=".preview/icons/uaprivatbank.png" width="96" height="96" alt="uaprivatbank" /> | `uaprivatbank` | `<IconUaprivatbank />` |
+| <img src=".preview/icons/uapb.png" width="96" height="96" alt="uapb" /> | `uapb` | `<IconUapb />` |
 | <img src=".preview/icons/usasexchange.png" width="96" height="96" alt="usasexchange" /> | `usasexchange` | `<IconUsasexchange />` |
 | <img src=".preview/icons/usfederalreserve.png" width="96" height="96" alt="usfederalreserve" /> | `usfederalreserve` | `<IconUsfederalreserve />` |
 | <img src=".preview/icons/uzcb.png" width="96" height="96" alt="uzcb" /> | `uzcb` | `<IconUzcb />` |
