@@ -20,7 +20,7 @@ import esbuild from 'rollup-plugin-esbuild'
  * @param extension
  * @param pretty
  */
-export const buildIcons = ({
+export const buildIcons = async ({
   name,
   componentTemplate,
   indexItemTemplate,
@@ -36,10 +36,14 @@ export const buildIcons = ({
   
       console.log(PACKAGES_DIR, name, 'PACKAGES_DIR')
 
+  // Ensure the src/icons directory exists
+  fs.ensureDirSync(path.resolve(DIST_DIR, 'src/icons'))
+
   let index = []
   let typings = []
 
-  svgFiles.forEach((svgFile, i) => {
+  for (const svgFile of svgFiles) {
+    const i = svgFiles.indexOf(svgFile)
     const children = svgFile.obj.children
         .map(({
           name,
@@ -71,7 +75,7 @@ export const buildIcons = ({
       svg: svgFile
     })
 
-    const output = pretty ? prettier.format(component, {
+    const output = pretty ? await prettier.format(component, {
       singleQuote: true,
       trailingComma: 'all',
       parser: 'babel'
@@ -90,7 +94,7 @@ export const buildIcons = ({
       name: svgFile.name,
       namePascal: svgFile.namePascal
     }))
-  })
+  }
 
   fs.writeFileSync(path.resolve(DIST_DIR, `./src/icons.js`), index.join('\n'), 'utf-8')
 

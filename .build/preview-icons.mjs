@@ -1,4 +1,4 @@
-import glob from 'glob'
+import { glob, globSync } from 'glob'
 import { generateIconsPreview } from './helpers.mjs'
 
 glob('icons/*.svg', {}, async function(er, files) {

@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync } from 'fs'
-import glob from 'glob'
+import { glob, globSync } from 'glob'
 import { resolve, basename } from 'path'
 import { HOME_DIR, ICONS_SRC_DIR } from './helpers.mjs'
 

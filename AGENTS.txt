@@ -1,0 +1,440 @@
+Дерево файлов для ./:
+
+📂 .build
+    📄 build-icons.mjs
+        → import fs from 'fs-extra'
+        → import path from 'path'
+        → import { PACKAGES_DIR, readSvgs } from './helpers.mjs'
+        → import { stringify } from 'svgson'
+        → import prettier from 'prettier'
+        → 
+        → import bundleSize from '@at
+    📄 build-svgs.mjs
+        → import { glob, globSync } from 'glob'
+        → import { readFileSync, writeFileSync } from 'fs'
+        → import { join, basename } from 'path'
+        → import { optimizePath, ICONS_SRC_DIR, ICONS_DIR } from './helpers.mjs'
+        → impo
+    📄 changelog-commit.mjs
+        → import cp from 'child_process'
+        → import { printChangelog } from './helpers.mjs'
+        → 
+        → cp.exec('git status', function(err, ret) {
+        →   let newIcons = [], modifiedIcons = [], renamedIcons = []
+        → 
+        →   ret.replace(/new
+    📄 changelog-image.mjs
+        → import { glob, globSync } from 'glob'
+        → import { join, basename } from 'path'
+        → import { readFileSync, writeFileSync } from 'fs'
+        → import { generateIconsPreview, getArgvs, getPackageJson, ICONS_DIR, ICONS_S
+    📄 changelog.mjs
+        → import cp from 'child_process'
+        → import { getArgvs, getPackageJson, printChangelog } from './helpers.mjs'
+        → 
+        → const p = getPackageJson(),
+        →     argv = getArgvs(),
+        →     version = argv['latest-version'] || `${p
+    📄 helpers.mjs
+        → import fs from 'fs'
+        → import path, { resolve, basename } from 'path'
+        → import { fileURLToPath } from 'url'
+        → import svgParse from 'parse-svg-path'
+        → import svgpath from 'svgpath'
+        → import * as cheerio from 'che
+    📄 import.mjs
+        → import fs from 'fs'
+        → import { glob, globSync } from 'glob'
+        → import { resolve, basename } from 'path'
+        → import { HOME_DIR, optimizeSVG } from './helpers.mjs'
+        → 
+        → 
+        → const files = globSync(resolve(HOME_DIR, './n
+    📄 optimize.mjs
+        → import { glob, globSync } from 'glob'
+        → import { readFileSync, writeFileSync } from 'fs'
+        → import { join, basename } from 'path'
+        → import { optimizePath, ICONS_SRC_DIR } from './helpers.mjs'
+        → 
+        → 
+        → glob(join(ICO
+    📄 preview-icons.mjs
+        → import { glob, globSync } from 'glob'
+        → import { generateIconsPreview } from './helpers.mjs'
+        → 
+        → glob('icons/*.svg', {}, async function(er, files) {
+        →   await generateIconsPreview(files, '.github/icons.svg')
+    📄 update-icons-version.mjs
+        → import cp from 'child_process'
+        → import fs from 'fs'
+        → import path from 'path'
+        → import { getArgvs, getPackageJson, ICONS_SRC_DIR } from './helpers.mjs'
+        → 
+        → const p = getPackageJson()
+        → 
+        → const argv = getArgvs(),
+    📄 update-readme.mjs
+        → import { readFileSync, writeFileSync } from 'fs'
+        → import { glob, globSync } from 'glob'
+        → import { resolve, basename } from 'path'
+        → import { HOME_DIR, ICONS_SRC_DIR } from './helpers.mjs'
+        → 
+        → let files = glo
+    📄 zip-files.mjs
+        → import Zip from 'adm-zip'
+        → import { getPackageJson, HOME_DIR } from './helpers.mjs'
+        → import { resolve } from 'path'
+        → 
+        → const p = getPackageJson()
+        → const zip = new Zip()
+        → 
+        → zip.addLocalFolder(resolve(HOME_DIR
+📂 .github
+📄 .gitignore
+    → .idea
+    → _site
+    → node_modules
+    → .jekyll-cache/
+    → package-lock.json
+    → Gemfile.lock
+    → packages-zip/*
+    → .DS_Store
+    → icons-outlined/
+    → github
+    → src/_icons/test.svg
+    → src/test.svg
+    → src/test*.svg
+    → .jekyll-metadata
+    → icons/dist/
+    → compi
+📄 .npmignore
+    → .DS_Store
+📄 AGENTS.txt
+📄 LICENSE
+    → MIT License
+    → 
+    → Copyright (c) 2022-2023 Yurii Derevych
+    → 
+    → Permission is hereby granted, free of charge, to any person obtaining a copy
+    → of this software and associated documentation files (the "Software"), 
+📄 README.md
+    → # Sources Icons
+    → 
+    → <p align="center">
+    →   <picture>
+    →     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/cr-today/sources-icons/blob/main/.github/icons-dark@2x.png?raw=true">
+    →     <s
+📂 _draft
+📄 babel.config.js
+    → module.exports = {
+    →   presets: ['@babel/env'],
+    →   env: {
+    →     test: {
+    →       presets: ['@babel/env'],
+    →       plugins: ['@babel/plugin-transform-runtime']
+    →     },
+    →     dev: {
+    →       plugins: [
+    →         [
+    →       
+📂 icons
+📄 package.json
+    → {
+    →   "name": "@cr.today/sources-icons",
+    →   "version": "1.2.0",
+    →   "author": "dejurin",
+    →   "license": "MIT",
+    →   "description": "A set of sources icons.",
+    →   "publishConfig": {
+    →     "access": "restricted"
+    →   },
+📂 packages
+    📂 icons
+        📄 .babelrc
+            → {
+            →     "presets": ["@babel/preset-env"]
+            → }
+        📄 LICENSE
+            → MIT License
+            → 
+            → Copyright (c) 2022-2023 Yurii Derevych
+            → 
+            → Permission is hereby granted, free of charge, to any person obtaining a copy
+            → of this software and associated documentation files (the "Software"), 
+        📄 README.md
+            → # Source Icons
+        📄 build.mjs
+            → import fs from 'fs'
+            → import { readSvgs } from '../../.build/helpers.mjs'
+            → import { buildIcons } from '../../.build/build-icons.mjs'
+            → 
+            → const svgFiles = readSvgs()
+            → 
+            → const buildSprite = () => {
+            →   let svgCon
+        📂 icons
+        📄 package.json
+            → {
+            →   "name": "@cr.today/icons",
+            →   "version": "1.2.0",
+            →   "description": "A set of sources icons.",
+            →   "author": "dejurin",
+            →   "license": "MIT",
+            →   "homepage": "https://cr.today",
+            →   "repository": {
+            →     "typ
+        📄 rollup.config.mjs
+            → import fs from 'fs'
+            → import { getRollupPlugins } from '../../.build/build-icons.mjs'
+            → 
+            → const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'))
+            → 
+            → const packageName = '@cr.today/sources-icons';
+            → co
+        📄 sources-nodes.json
+            → {
+            →   "ae-cbae": [
+            →     [
+            →       "path",
+            →       {
+            →         "d": "M24.2 46.5c.042 -.026 .441 -.345 .519 -.416l.073 -.07l.424 -.012c4.105 -.133 8.308 -1.298 12.216 -3.385a31.4 31.4 0 0 0 1.127 -.63l.08 -.05v-
+        📂 src
+            📄 sources-icons.js
+                → export * from './icons';
+        📄 test.spec.js
+            → import { readFileSync } from 'fs'
+            → import { join } from 'path'
+            → 
+            → describe('SVGIcon', () => {
+            →   let container
+            → 
+            →   beforeEach(() => {
+            →     container = document.createElement('div')
+            →     document.body.appendC
+    📂 icons-png
+        📄 README.md
+            → # Source Icons PNG
+        📄 build.mjs
+            → import { exec } from 'child_process'
+            → import { asyncForEach, readSvgs } from '../../.build/helpers.mjs'
+            → 
+            → let svgFiles = readSvgs()
+            → 
+            → await asyncForEach(svgFiles, async function(file, i) {
+            →   const distPa
+        📄 package.json
+            → {
+            →   "name": "@cr.today/icons-png",
+            →   "version": "1.2.0",
+            →   "description": "A set of sources icons-png.",
+            →   "author": "dejurin",
+            →   "license": "MIT",
+            →   "homepage": "https://cr.today",
+            →   "repository": {
+    📂 icons-react
+        📄 .babelrc
+            → {
+            →     "presets": ["@babel/preset-env", "@babel/preset-react"]
+            → }
+        📄 README.md
+            → # Source Icons React
+        📄 build.mjs
+            → #!/usr/bin/env node
+            → 
+            → import { buildIcons } from '../../.build/build-icons.mjs'
+            → 
+            → const componentTemplate = ({
+            →   name,
+            →   namePascal,
+            →   children
+            → }) => `\
+            → import createReactComponent from '../createReactC
+        📄 package.json
+            → {
+            →   "name": "@cr.today/icons-react",
+            →   "version": "1.2.0",
+            →   "description": "A set of sources icons-react.",
+            →   "author": "dejurin",
+            →   "license": "MIT",
+            →   "homepage": "https://cr.today",
+            →   "repository"
+        📄 rollup.config.mjs
+            → import fs from 'fs'
+            → import { getRollupPlugins } from '../../.build/build-icons.mjs'
+            → 
+            → const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'))
+            → 
+            → const packageName = '@cr.today/icons-react';
+            → cons
+        📂 src
+            📄 createReactComponent.js
+                → import { forwardRef, createElement } from 'react';
+                → import PropTypes from 'prop-types';
+                → import defaultAttributes from './defaultAttributes';
+                → 
+                → export default (iconName, iconNamePascal, iconNode) => {
+                →   
+            📄 defaultAttributes.js
+                → export default {
+                →     xmlns: 'http://www.w3.org/2000/svg',
+                →     width: 48,
+                →     height: 48,
+                →     viewBox: '0 0 48 48',
+                →     fill: 'currentColor',
+                →   };
+            📄 sources-icons-react.js
+                → export * from './icons';
+                → export { default as createReactComponent } from './createReactComponent';
+        📄 test.spec.js
+            → import { render } from '@testing-library/react'
+            → import { IconUaNbu } from './src/icons.js'
+            → import React from 'react'
+            → import renderer from 'react-test-renderer'
+            → 
+            → describe('React Icon component', () => 
+📄 pnpm-lock.yaml
+    → lockfileVersion: '9.0'
+    → 
+    → settings:
+    →   autoInstallPeers: true
+    →   excludeLinksFromLockfile: false
+    → 
+    → importers:
+    → 
+    →   .:
+    →     dependencies:
+    →       '@atomico/rollup-plugin-sizes':
+    →         specifier: ^1.1.4
+    →        
+📄 pnpm-workspace.yaml
+    → packages:
+    →   - packages/*
+    →   - test/*
+    → 
+    → onlyBuiltDependencies:
+    →   - core-js-pure
+📂 src
+    📂 _icons
+📂 test
+    📄 .gitkeep
+    📂 test-react
+        📄 .gitignore
+            → # Logs
+            → logs
+            → *.log
+            → npm-debug.log*
+            → yarn-debug.log*
+            → yarn-error.log*
+            → pnpm-debug.log*
+            → lerna-debug.log*
+            → 
+            → node_modules
+            → dist
+            → dist-ssr
+            → *.local
+            → 
+            → # Editor directories and files
+            → .vscode/*
+            → !.vscode/extensions.json
+        📄 index.html
+            → <!DOCTYPE html>
+            → <html lang="en">
+            →   <head>
+            →     <meta charset="UTF-8" />
+            →     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+            →     <meta name="viewport" content="width=device-width, initial-scal
+        📄 package.json
+            → {
+            →   "name": "test-react",
+            →   "private": true,
+            →   "version": "1.2.0",
+            →   "type": "module",
+            →   "scripts": {
+            →     "dev": "vite",
+            →     "build": "tsc && vite build",
+            →     "preview": "vite preview",
+            →     "clean": "
+        📂 src
+            📄 App.css
+                → #root {
+                →   max-width: 1280px;
+                →   margin: 0 auto;
+                →   padding: 2rem;
+                →   text-align: center;
+                → }
+                → 
+            📄 App.tsx
+                → import './App.css'
+                → import { useState } from 'react'
+                → import { IconUaNbu } from '@cr.today/icons-react'
+                → 
+                → function App() {
+                →   const [active, setActive] = useState(false)
+                →   return (
+                →     <div className="App
+            📄 index.css
+                → :root {
+                →   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+                →   font-size: 16px;
+                →   line-height: 24px;
+                →   font-weight: 400;
+                → 
+                →   color-scheme: light dark;
+                →   color: rgba(255, 255, 255, 0.87);
+                →   backg
+            📄 main.tsx
+                → import React from 'react'
+                → import ReactDOM from 'react-dom/client'
+                → import App from './App'
+                → import './index.css'
+                → 
+                → ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+                →   <React.Str
+            📄 vite-env.d.ts
+                → /// <reference types="vite/client" />
+        📄 tsconfig.json
+            → {
+            →   "compilerOptions": {
+            →     "target": "ESNext",
+            →     "useDefineForClassFields": true,
+            →     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+            →     "allowJs": false,
+            →     "skipLibCheck": true,
+            →     "esModuleInterop
+        📄 tsconfig.node.json
+            → {
+            →   "compilerOptions": {
+            →     "composite": true,
+            →     "module": "ESNext",
+            →     "moduleResolution": "Node",
+            →     "allowSyntheticDefaultImports": true
+            →   },
+            →   "include": ["vite.config.ts"]
+            → }
+        📄 vite.config.ts
+            → import { defineConfig } from 'vite'
+            → import react from '@vitejs/plugin-react'
+            → 
+            → // https://vitejs.dev/config/
+            → export default defineConfig({
+            →   plugins: [react()],
+            → })
+📄 tree.py
+    → #!/usr/bin/env python3
+    → import os
+    → import argparse
+    → 
+    → def print_tree(root, ignore_names, ignore_exts, out_file, indent=""):
+    →     for item in sorted(os.listdir(root)):
+    →         if item in ignore_names:
+    →      
+📄 turbo.json
+    → {
+    →     "$schema": "https://turbo.build/schema.json",
+    →         "pipeline": {
+    →         "build": {
+    →             "outputs": [
+    →                 "dist/**"
+    →             ],
+    →                 "dependsOn": ["^build"]
+    →  

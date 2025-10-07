@@ -10,7 +10,12 @@ await asyncForEach(svgFiles, async function(file, i) {
 
   await new Promise((resolve, reject) => {
     exec(`rsvg-convert -h 480 ${file.path} > ${distPath}`, (error, stdout, stderr) => {
-      error ? reject() : resolve()
+      if (error) {
+        console.error(`\nError converting ${file.name}:`, error.message)
+        reject(error)
+      } else {
+        resolve()
+      }
     })
   })
 })

@@ -3,7 +3,7 @@ import path, { resolve, basename } from 'path'
 import { fileURLToPath } from 'url'
 import svgParse from 'parse-svg-path'
 import svgpath from 'svgpath'
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio'
 import { minify } from 'html-minifier';
 import { parseSync } from 'svgson'
 import { optimize } from 'svgo'
@@ -52,7 +52,9 @@ export const readSvgs = () => {
   return svgFiles.map(svgFile => {
     const name = basename(svgFile, '.svg'),
         namePascal = toPascalCase(`icon ${name}`),
-        contents = readSvg(svgFile, ICONS_DIR).trim(),
+        rawContents = readSvg(svgFile, ICONS_DIR).trim(),
+        // Remove YAML front matter if present (---\nversion: "x.x.x"\n---)
+        contents = rawContents.replace(/^---\n[\s\S]*?\n---\n/, '').trim(),
         path = resolve(ICONS_DIR, svgFile),
         obj = parseSync(contents.replace('<path stroke="none" d="M0 0h48v48H0z" fill="none"/>', ''));
 

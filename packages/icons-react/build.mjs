@@ -37,7 +37,7 @@ const indexTypeTemplate = ({
 }) => `export declare const ${namePascal}: (props: SourcesIconsProps) => JSX.Element;`
 
 
-buildIcons({
+await buildIcons({
   name: 'icons-react',
   componentTemplate,
   indexItemTemplate,

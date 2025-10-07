@@ -1,4 +1,4 @@
-import glob from 'glob'
+import { glob, globSync } from 'glob'
 import { join, basename } from 'path'
 import { readFileSync, writeFileSync } from 'fs'
 import { generateIconsPreview, getArgvs, getPackageJson, ICONS_DIR, ICONS_SRC_DIR } from './helpers.mjs'

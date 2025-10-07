@@ -1,10 +1,10 @@
 import fs from 'fs'
-import glob from 'glob'
+import { glob, globSync } from 'glob'
 import { resolve, basename } from 'path'
 import { HOME_DIR, optimizeSVG } from './helpers.mjs'
 
 
-const files = glob.sync(resolve(HOME_DIR, './new/*.svg'))
+const files = globSync(resolve(HOME_DIR, './new/*.svg'))
 
 files.forEach(function (file, i) {
   let fileData = fs.readFileSync(file).toString(),
