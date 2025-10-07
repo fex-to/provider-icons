@@ -65,9 +65,9 @@ async function generatePreview() {
       return {
         name,
         fileName: file,
-        componentName: name.split('-').map(part => 
+        componentName: 'Icon' + name.split('-').map(part => 
           part.charAt(0).toUpperCase() + part.slice(1)
-        ).join('') + 'Icon'
+        ).join('') 
       };
     })
     .sort((a, b) => a.name.localeCompare(b.name));
