@@ -75,9 +75,6 @@
     "svgson": "^5.3.1"
   },
   "release-it": {
-    "plugins": {
-      "@release-it-plugins/workspaces": true
-    },
     "npm": false,
     "hooks": {
       "after:bump": "npm run build --latest-version ${latestVersion} --new-version ${version} --verbose",
