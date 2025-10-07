@@ -93,7 +93,8 @@
       "requireCleanWorkingDir": false
     },
     "github": {
-      "release": true
+      "release": true,
+      "releaseNotes": "cat RELEASE_NOTES.md"
     }
   },
   "packageManager": "npm@11.6.0",
