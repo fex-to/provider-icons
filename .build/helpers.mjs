@@ -54,9 +54,18 @@ export const readSvgs = () => {
         namePascal = toPascalCase(`icon ${name}`),
         rawContents = readSvg(svgFile, ICONS_DIR).trim(),
         // Remove YAML front matter if present (---\nversion: "x.x.x"\n---)
-        contents = rawContents.replace(/^---\n[\s\S]*?\n---\n/, '').trim(),
-        path = resolve(ICONS_DIR, svgFile),
-        obj = parseSync(contents.replace('<path stroke="none" d="M0 0h48v48H0z" fill="none"/>', ''));
+        // Match only if there's content or empty lines between the --- markers
+        contents = rawContents.replace(/^---\n(?:.*\n)?---\n/, '').trim(),
+        path = resolve(ICONS_DIR, svgFile);
+    
+    let obj;
+    try {
+      obj = parseSync(contents.replace('<path stroke="none" d="M0 0h48v48H0z" fill="none"/>', ''));
+    } catch (error) {
+      console.error(`Error parsing ${svgFile}:`);
+      console.error(`Contents: ${contents.substring(0, 100)}...`);
+      throw error;
+    }
 
     return {
       name,
