@@ -6,24 +6,79 @@ import { glob } from 'glob';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
-const ICONS_DIR = path.join(ROOT_DIR, 'src/_icons');
+const ICONS_PNG_DIR = path.join(ROOT_DIR, 'packages/icons-png/icons');
+const PREVIEW_DIR = path.join(ROOT_DIR, '.preview');
+const PREVIEW_ICONS_DIR = path.join(PREVIEW_DIR, 'icons');
 const PREVIEW_FILE = path.join(ROOT_DIR, 'PREVIEW.md');
-const PNG_BASE_URL = 'https://raw.githubusercontent.com/fex-to/provider-icons/main/packages/icons-png/icons';
+const PNG_RELATIVE_PATH = '.preview/icons';
 
-// Get all icon files
-const iconFiles = glob.sync(path.join(ICONS_DIR, '*.svg'));
+async function generatePreview() {
+  console.log('Generating preview from packages/icons-png...\n');
 
-// Sort icons alphabetically
-const icons = iconFiles
-  .map(file => path.basename(file, '.svg'))
-  .sort((a, b) => a.localeCompare(b));
+  // Собираем все PNG иконки из packages/icons-png/icons/
+  const iconFiles = glob.sync('*.png', { cwd: ICONS_PNG_DIR });
+  
+  if (iconFiles.length === 0) {
+    console.error('❌ No PNG icons found in packages/icons-png/icons/');
+    console.error('   Run "npm run build" first to generate PNG icons!');
+    process.exit(1);
+  }
 
-console.log(`Found ${icons.length} icons`);
+  console.log(`Found ${iconFiles.length} PNG icons in packages/icons-png/icons/\n`);
 
-// Generate markdown content
-let markdown = `# Icons Preview
+  // Копируем PNG в .preview/icons/ для локального просмотра
+  if (!fs.existsSync(PREVIEW_ICONS_DIR)) {
+    fs.mkdirSync(PREVIEW_ICONS_DIR, { recursive: true });
+    console.log('Created .preview/icons/ directory');
+  }
 
-This page shows all ${icons.length} available icons with their IDs and React components for easy copying.
+  console.log('Copying PNG icons to .preview/icons/...');
+  let copiedCount = 0;
+  let skippedCount = 0;
+  
+  for (const file of iconFiles) {
+    const sourcePath = path.join(ICONS_PNG_DIR, file);
+    const targetPath = path.join(PREVIEW_ICONS_DIR, file);
+    
+    // Копируем только если файл не существует или отличается
+    if (!fs.existsSync(targetPath) || 
+        fs.readFileSync(sourcePath).toString() !== fs.readFileSync(targetPath).toString()) {
+      fs.copyFileSync(sourcePath, targetPath);
+      copiedCount++;
+    } else {
+      skippedCount++;
+    }
+  }
+  
+  if (copiedCount > 0) {
+    console.log(`✓ Copied ${copiedCount} PNG icons`);
+  }
+  if (skippedCount > 0) {
+    console.log(`✓ Skipped ${skippedCount} unchanged PNG icons`);
+  }
+  console.log();
+
+  // Создаём список иконок с их именами
+  const icons = iconFiles
+    .map(file => {
+      const name = path.basename(file, '.png');
+      return {
+        name,
+        fileName: file,
+        componentName: name.split('-').map(part => 
+          part.charAt(0).toUpperCase() + part.slice(1)
+        ).join('') + 'Icon'
+      };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  // Генерируем markdown контент
+  let markdown = `# Icons Preview
+
+This page shows all **${icons.length}** available icons with their IDs and React components for easy copying.
+
+> **📦 Source:** Icons are built from \`packages/icons-png/icons/\`  
+> **🔄 Update:** Run \`npm run build\` to rebuild icons
 
 ## Quick Navigation
 
@@ -40,17 +95,16 @@ Total: **${icons.length} icons**
 | Preview | ID | React Component |
 |---------|----|-----------------|\n`;
 
-// Add each icon to the table
-icons.forEach((iconName) => {
-  const iconId = iconName;
-  const pngUrl = `${PNG_BASE_URL}/${iconName}.png`;
-  const reactComponent = `Icon${toPascalCase(iconName)}`;
-  
-  markdown += `| ![${iconId}](${pngUrl}) | \`${iconId}\` | \`<${reactComponent} />\` |\n`;
-});
+  // Добавляем каждую иконку в таблицу
+  icons.forEach(({ name, componentName }) => {
+    // Используем относительный путь к PNG для GitHub
+    const pngPath = `${PNG_RELATIVE_PATH}/${name}.png`;
+    
+    markdown += `| <img src="${pngPath}" width="24" height="24" alt="${name}" /> | \`${name}\` | \`<${componentName} />\` |\n`;
+  });
 
-// Add usage examples
-markdown += `\n---
+  // Добавляем примеры использования
+  markdown += `\n---
 
 ## Usage Examples
 
@@ -134,19 +188,18 @@ npm install github:fex-to/provider-icons#main
 
 ---
 
-*Generated automatically. Do not edit manually.*
+*Generated automatically from \`packages/icons-png/icons/\`. Do not edit manually.*
 `;
 
-// Write the file
-fs.writeFileSync(PREVIEW_FILE, markdown, 'utf8');
+  // Записываем файл
+  fs.writeFileSync(PREVIEW_FILE, markdown, 'utf8');
 
-console.log(`✓ Preview page generated: ${PREVIEW_FILE}`);
-console.log(`✓ Total icons: ${icons.length}`);
-
-// Helper function to convert to PascalCase
-function toPascalCase(string) {
-  return string
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join('');
+  console.log(`✓ Preview page generated: PREVIEW.md`);
+  console.log(`✓ Total icons: ${icons.length}\n`);
 }
+
+// Запускаем генерацию
+generatePreview().catch(error => {
+  console.error('Error generating preview:', error);
+  process.exit(1);
+});
