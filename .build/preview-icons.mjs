@@ -38,5 +38,5 @@ const sortedFiles = files.map(file => {
 await generateIconsPreview(sortedFiles, '.github/icons.svg')
 await generateIconsPreview(sortedFiles, '.github/icons-dark.svg', {
   color: '#ffffff',
-  background: '#354052'
+  background: '#0c1117'
 })
