@@ -214,7 +214,7 @@ export const generateIconsPreview = async function(files, destFile, {
         .replace(/\n\s+/g, '')
 
     svgContentSymbols += `\t${svgFileContent}\n`
-    svgContentIcons += `\t<use xlink:href="#${name}" x="${x}" y="${y}" width="${iconSize}" height="${iconSize}" />\n`
+    svgContentIcons += `\t<use xlink:href="#${name}" x="${x}" y="${y}" width="${iconSize}" height="${iconSize}" fill="currentColor" />\n`
 
     x += padding + iconSize
 
