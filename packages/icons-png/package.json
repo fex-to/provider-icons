@@ -1,5 +1,5 @@
 {
-  "name": "@fex.to/icons-png",
+  "name": "@fex.to/provider-icons-png",
   "version": "3.0.0",
   "description": "A set of sources icons-png.",
   "author": "dejurin",
@@ -28,6 +28,6 @@
     ]
   },
   "dependencies": {
-    "@fex.to/icons": "*"
+    "@fex.to/provider-icons": "*"
   }
 }

@@ -10,7 +10,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@fex.to/icons-react": "*",
+    "@fex.to/provider-icons-react": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
