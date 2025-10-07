@@ -15,7 +15,7 @@ describe('SVGIcon', () => {
   })
   
   test('renders the correct class and XML namespace', () => {
-    container.innerHTML = readFileSync(join('./icons', 'ua-nbu.svg'), 'utf-8')
+    container.innerHTML = readFileSync(join('./icons', 'uanb.svg'), 'utf-8')
     const svg = container.querySelector('svg')
 
     expect(svg.getAttribute('xmlns')).toBe('http://www.w3.org/2000/svg')

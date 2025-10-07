@@ -1,16 +1,16 @@
 import { render } from '@testing-library/react'
-import { IconUaNbu } from './src/icons.js'
+import { IconFex } from './src/icons.js'
 import React from 'react'
 import renderer from 'react-test-renderer'
 
 describe('React Icon component', () => {
   test('should render icon component', () => {
-    const { container } = render(<IconUaNbu />)
+    const { container } = render(<IconFex />)
     expect(container.getElementsByTagName('svg').length).toBeGreaterThan(0)
   })
 
   test('should update svg attributes when there are props passed to the component', () => {
-    const { container } = render(<IconUaNbu size={48} color="cyan" />)
+    const { container } = render(<IconFex size={48} color="cyan" />)
 
     const svg = container.getElementsByTagName('svg')[0]
 
@@ -20,7 +20,7 @@ describe('React Icon component', () => {
 
   // Jest creates separate file to store snapshots
   test('should match snapshot', () => {
-    const icon = renderer.create(<IconUaNbu />).toJSON()
+    const icon = renderer.create(<IconFex />).toJSON()
     expect(icon).toMatchSnapshot()
   })
 })

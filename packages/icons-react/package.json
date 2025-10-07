@@ -1,6 +1,6 @@
 {
   "name": "@fex.to/icons-react",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "A set of sources icons-react.",
   "author": "dejurin",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "build:bundles": "rollup -c ./rollup.config.mjs",
     "copy:license": "cp ../../LICENSE ./LICENSE",
     "clean": "rm -rf dist && rm -rf ./src/icons/*.js && rm -rf stats",
-    "test": "npm run clean && npm run build:icons && jest --env=jsdom"
+    "test": "cd ../.. && npm run build:copy && cd - && npm run clean && npm run build:icons && jest --env=jsdom"
   },
   "main": "dist/cjs/sources-icons-react.js",
   "main:umd": "dist/umd/sources-icons-react.js",
