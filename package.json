@@ -14,9 +14,10 @@
   "scripts": {
     "rename": "node ./utils/rename-icon.mjs",
     "delete": "node ./utils/delete-icon.mjs",
+    "generate:preview": "node ./.build/generate-preview.mjs",
     "test": "turbo run test",
     "clean": "turbo run clean",
-    "build": "npm run optimize && npm run update && npm run build:svgs && npm run build:icons && npm run build:packages && npm run preview && npm run changelog-image && npm run zip && npm run update:readme",
+    "build": "npm run optimize && npm run update && npm run build:svgs && npm run build:icons && npm run build:packages && npm run preview && npm run changelog-image && npm run zip && npm run update:readme && npm run generate:preview",
     "optimize": "node ./.build/optimize.mjs",
     "update": "npm run update:icons-version",
     "update:icons-version": "node ./.build/update-icons-version.mjs",

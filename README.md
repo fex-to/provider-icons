@@ -85,7 +85,9 @@ All <!--icons-count-->204<!--/icons-count--> icons are available in three format
 - **React Components** - `@cr.today/icons-react`
 - **PNG Images** - `@cr.today/icons-png`
 
-For a complete list of available icons, see the [preview](.github/icons@2x.png).
+📋 **[Browse all icons with IDs and React components →](PREVIEW.md)**
+
+For a visual preview of all icons, see the [icon grid](.github/icons@2x.png).
 
 ## Many thanks
 
