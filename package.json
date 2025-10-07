@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "author": "dejurin",
   "license": "MIT",
-  "description": "A set of sources icons.",
+  "description": "Financial provider icons: banks, exchanges, central banks. Available in SVG, React components, and PNG",
   "publishConfig": {
     "access": "restricted"
   },
