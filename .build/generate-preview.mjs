@@ -111,7 +111,7 @@ Total: **${icons.length} icons**
 ### JavaScript/Node.js
 
 \`\`\`javascript
-import { IconFex } from '@fex.to/provider-icons';
+import { IconFex } from '@fex-to/provider-icons';
 
 // Icon as SVG string
 console.log(IconFex);
@@ -120,7 +120,7 @@ console.log(IconFex);
 ### React
 
 \`\`\`jsx
-import { IconFex } from '@fex.to/provider-icons-react';
+import { IconFex } from '@fex-to/provider-icons-react';
 
 function App() {
   return (
@@ -171,9 +171,9 @@ npm install github:fex-to/provider-icons#main
 \`\`\`json
 {
   "dependencies": {
-    "@fex.to/provider-icons": "github:fex-to/provider-icons#v1.2.5",
-    "@fex.to/provider-icons-react": "github:fex-to/provider-icons#v1.2.5",
-    "@fex.to/provider-icons-png": "github:fex-to/provider-icons#v1.2.5"
+    "@fex-to/provider-icons": "github:fex-to/provider-icons#v1.2.5",
+    "@fex-to/provider-icons-react": "github:fex-to/provider-icons#v1.2.5",
+    "@fex-to/provider-icons-png": "github:fex-to/provider-icons#v1.2.5"
   }
 }
 \`\`\`
@@ -182,9 +182,9 @@ npm install github:fex-to/provider-icons#main
 
 ## Available Packages
 
-- **@fex.to/provider-icons** - SVG icons as JavaScript strings
-- **@fex.to/provider-icons-react** - React components
-- **@fex.to/provider-icons-png** - PNG images (96x96, 48x48)
+- **@fex-to/provider-icons** - SVG icons as JavaScript strings
+- **@fex-to/provider-icons-react** - React components
+- **@fex-to/provider-icons-png** - PNG images (96x96, 48x48)
 
 ---
 

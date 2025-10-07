@@ -35,9 +35,9 @@ Add to your `package.json`:
 ```json
 {
   "dependencies": {
-    "@fex.to/provider-icons": "github:fex-to/provider-icons#v3.0.2",
-    "@fex.to/provider-icons-react": "github:fex-to/provider-icons#v3.0.2",
-    "@fex.to/provider-icons-png": "github:fex-to/provider-icons#v3.0.2"
+    "@fex-to/provider-icons": "github:fex-to/provider-icons#v3.0.2",
+    "@fex-to/provider-icons-react": "github:fex-to/provider-icons#v3.0.2",
+    "@fex-to/provider-icons-png": "github:fex-to/provider-icons#v3.0.2"
   }
 }
 ```
@@ -49,7 +49,7 @@ Then run `npm install`.
 ### JavaScript/Node.js
 
 ```javascript
-import { IconFex } from '@fex.to/provider-icons';
+import { IconFex } from '@fex-to/provider-icons';
 
 // Icon as SVG string
 console.log(IconFex);
@@ -58,7 +58,7 @@ console.log(IconFex);
 ### React
 
 ```jsx
-import { IconFex } from '@fex.to/provider-icons-react';
+import { IconFex } from '@fex-to/provider-icons-react';
 
 function App() {
   return (
@@ -71,19 +71,19 @@ function App() {
 
 ### PNG Icons
 
-PNG icons are available in `@fex.to/provider-icons-png` package:
+PNG icons are available in `@fex-to/provider-icons-png` package:
 
 ```ini
-node_modules/@fex.to/provider-icons-png/icons/
+node_modules/@fex-to/provider-icons-png/icons/
 ```
 
 ## Available Icons
 
 All <!--icons-count-->204<!--/icons-count--> icons are available in three formats:
 
-- **SVG** (JavaScript/Node.js) - `@fex.to/provider-icons`
-- **React Components** - `@fex.to/provider-icons-react`
-- **PNG Images** - `@fex.to/provider-icons-png`
+- **SVG** (JavaScript/Node.js) - `@fex-to/provider-icons`
+- **React Components** - `@fex-to/provider-icons-react`
+- **PNG Images** - `@fex-to/provider-icons-png`
 
 📋 **[Browse all icons with IDs and React components →](PREVIEW.md)**
 

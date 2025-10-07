@@ -1,4 +1,4 @@
 
-> @fex.to/provider-icons@3.0.3 changelog
+> @fex-to/provider-icons@3.0.4 changelog
 > node ./.build/changelog.mjs
 

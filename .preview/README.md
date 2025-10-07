@@ -22,7 +22,7 @@ This directory contains PNG icons for local preview purposes.
 This ensures that `PREVIEW.md` only shows icons that:
 
 - ✅ Successfully passed the build process
-- ✅ Are available in the `@fex.to/icons-png` package
+- ✅ Are available in the `@fex-to/icons-png` package
 - ✅ Are ready for use
 
 ## Usage
