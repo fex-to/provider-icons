@@ -1,6 +1,6 @@
 {
   "name": "@fex.to/sources-icons",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "dejurin",
   "license": "MIT",
   "description": "Financial provider icons: banks, exchanges, central banks. Available in SVG, React components, and PNG",
@@ -79,6 +79,15 @@
   },
   "release-it": {
     "npm": false,
+    "plugins": {
+      "@release-it-plugins/workspaces": {
+        "workspaces": ["packages/*"],
+        "publish": false,
+        "additionalManifests": {
+          "versionUpdates": ["package.json", "packages/*/package.json"]
+        }
+      }
+    },
     "hooks": {
       "before:init": "npm run changelog > RELEASE_NOTES.md && npm run changelog-image",
       "after:bump": "npm run build --latest-version ${latestVersion} --new-version ${version} --verbose",
