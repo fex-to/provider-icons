@@ -2,25 +2,27 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import readline from 'readline';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const rootDir = path.resolve(__dirname, '..');
-
-// Console colors
-const colors = {
-  reset: '\x1b[0m',
-  bright: '\x1b[1m',
-  green: '\x1b[32m',
-  yellow: '\x1b[33m',
-  blue: '\x1b[34m',
-  red: '\x1b[31m',
-  cyan: '\x1b[36m',
-  gray: '\x1b[90m',
-  magenta: '\x1b[35m',
-};
+import {
+  colors,
+  log,
+  logStep,
+  logSuccess,
+  logError,
+  logWarning,
+  logInfo,
+  logDanger
+} from './logger.mjs';
+import { fileExists, normalizeName, readJsonFile, writeJsonFile } from './fs-helpers.mjs';
+import {
+  ROOT_DIR,
+  ICON_DIRECTORIES,
+  PROVIDER_NODES_PATH,
+  PROVIDER_SPRITE_PATH,
+  GITHUB_ICONS_SVG,
+  GITHUB_ICONS_DARK_SVG,
+  SYMBOL_ID_PREFIX
+} from './constants.mjs';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -31,57 +33,19 @@ function question(query) {
   return new Promise(resolve => rl.question(query, resolve));
 }
 
-function log(message, color = 'reset') {
-  console.log(`${colors[color]}${message}${colors.reset}`);
-}
-
-function logStep(step, message) {
-  console.log(`${colors.cyan}[${step}]${colors.reset} ${message}`);
-}
-
-function logSuccess(message) {
-  console.log(`${colors.green}✓${colors.reset} ${message}`);
-}
-
-function logError(message) {
-  console.log(`${colors.red}✗${colors.reset} ${message}`);
-}
-
-function logWarning(message) {
-  console.log(`${colors.yellow}⚠${colors.reset} ${message}`);
-}
-
-function logInfo(message) {
-  console.log(`${colors.gray}ℹ${colors.reset} ${message}`);
-}
-
-function logDanger(message) {
-  console.log(`${colors.red}🗑${colors.reset}  ${message}`);
-}
-
-// Normalize icon name to lowercase
-function normalizeName(name) {
-  return name.trim().toLowerCase();
-}
-
-// Check if file exists
-function fileExists(filePath) {
-  return fs.existsSync(filePath);
-}
-
 // Delete files from directories
 function deleteFiles(iconName) {
   // Only delete from src/_icons - the source directory used in build
   // icons/ and _draft/ are storage/drafts and not used in final build
   const directories = [
-    'src/_icons'
+    ICON_DIRECTORIES.SOURCE
   ];
 
   const results = [];
   let deletedCount = 0;
   
   for (const dir of directories) {
-    const filePath = path.join(rootDir, dir, `${iconName}.svg`);
+    const filePath = path.join(ROOT_DIR, dir, `${iconName}.svg`);
     
     if (fileExists(filePath)) {
       try {
@@ -100,9 +64,9 @@ function deleteFiles(iconName) {
   }
   
   // Check if icon exists in storage directories (info only, no deletion)
-  const storageDirectories = ['icons', '_draft'];
+  const storageDirectories = [ICON_DIRECTORIES.BUILD, ICON_DIRECTORIES.DRAFT];
   for (const dir of storageDirectories) {
-    const filePath = path.join(rootDir, dir, `${iconName}.svg`);
+    const filePath = path.join(ROOT_DIR, dir, `${iconName}.svg`);
     if (fileExists(filePath)) {
       logInfo(`Icon also exists in ${dir}/ (storage directory - not deleted)`);
     }
@@ -113,22 +77,19 @@ function deleteFiles(iconName) {
 
 // Remove from JSON configuration
 function removeFromJsonConfig(iconName) {
-  const jsonPath = path.join(rootDir, 'packages/icons/provider-nodes.json');
-  
-  if (!fileExists(jsonPath)) {
-    logError(`File not found: ${jsonPath}`);
+  if (!fileExists(PROVIDER_NODES_PATH)) {
+    logError(`File not found: ${PROVIDER_NODES_PATH}`);
     return false;
   }
   
   try {
-    const content = fs.readFileSync(jsonPath, 'utf8');
-    const jsonData = JSON.parse(content);
+    const jsonData = readJsonFile(PROVIDER_NODES_PATH);
     
-    if (jsonData[iconName]) {
+    if (jsonData && jsonData[iconName]) {
       delete jsonData[iconName];
       
-      fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2), 'utf8');
-      logSuccess(`Removed from packages/icons/provider-nodes.json`);
+      writeJsonFile(PROVIDER_NODES_PATH, jsonData);
+      logSuccess(`Removed from provider-nodes.json`);
       return true;
     } else {
       logWarning(`Key "${iconName}" not found in provider-nodes.json`);
@@ -143,23 +104,21 @@ function removeFromJsonConfig(iconName) {
 // Remove from generated files
 function removeFromGeneratedFiles(iconName) {
   const files = [
-    '.github/icons.svg',
-    '.github/icons-dark.svg',
-    'packages/icons/provider-sprite.svg'
+    GITHUB_ICONS_SVG,
+    GITHUB_ICONS_DARK_SVG,
+    PROVIDER_SPRITE_PATH
   ];
   
   let updatedCount = 0;
   
   for (const file of files) {
-    const filePath = path.join(rootDir, file);
-    
-    if (!fileExists(filePath)) {
-      logWarning(`File not found: ${file}`);
+    if (!fileExists(file)) {
+      logWarning(`File not found: ${path.relative(ROOT_DIR, file)}`);
       continue;
     }
     
     try {
-      let content = fs.readFileSync(filePath, 'utf8');
+      let content = fs.readFileSync(file, 'utf8');
       const oldContent = content;
       
       // Remove symbol definition
@@ -167,25 +126,25 @@ function removeFromGeneratedFiles(iconName) {
       content = content.replace(symbolRegex, '');
       
       // Remove provider- prefixed symbol
-      const sourcesSymbolRegex = new RegExp(`\\s*<symbol id="provider-${iconName}"[^>]*>.*?</symbol>`, 'gs');
-      content = content.replace(sourcesSymbolRegex, '');
+      const providerSymbolRegex = new RegExp(`\\s*<symbol id="${SYMBOL_ID_PREFIX}${iconName}"[^>]*>.*?</symbol>`, 'gs');
+      content = content.replace(providerSymbolRegex, '');
       
       // Remove use references
       const useRegex = new RegExp(`\\s*<use[^>]*xlink:href="#${iconName}"[^>]*/>`, 'g');
       content = content.replace(useRegex, '');
       
-      const sourcesUseRegex = new RegExp(`\\s*<use[^>]*xlink:href="#provider-${iconName}"[^>]*/>`, 'g');
-      content = content.replace(sourcesUseRegex, '');
+      const providerUseRegex = new RegExp(`\\s*<use[^>]*xlink:href="#${SYMBOL_ID_PREFIX}${iconName}"[^>]*/>`, 'g');
+      content = content.replace(providerUseRegex, '');
       
       if (content !== oldContent) {
-        fs.writeFileSync(filePath, content, 'utf8');
-        logSuccess(`Updated ${file}`);
+        fs.writeFileSync(file, content, 'utf8');
+        logSuccess(`Updated ${path.relative(ROOT_DIR, file)}`);
         updatedCount++;
       } else {
-        logWarning(`No references found in ${file}`);
+        logWarning(`No references found in ${path.relative(ROOT_DIR, file)}`);
       }
     } catch (error) {
-      logError(`Error updating ${file}: ${error.message}`);
+      logError(`Error updating ${path.relative(ROOT_DIR, file)}: ${error.message}`);
     }
   }
   
@@ -230,7 +189,7 @@ function findReferences(iconName) {
   }
   
   for (const dir of searchDirs) {
-    const fullDir = path.join(rootDir, dir);
+    const fullDir = path.join(ROOT_DIR, dir);
     if (fileExists(fullDir)) {
       searchInDirectory(fullDir);
     }
@@ -277,7 +236,7 @@ async function showDeletionSummary(iconName) {
   
   // Only check src/_icons for deletion
   const sourceDir = 'src/_icons';
-  const sourceFile = path.join(rootDir, sourceDir, `${iconName}.svg`);
+  const sourceFile = path.join(ROOT_DIR, sourceDir, `${iconName}.svg`);
   const foundInSource = fileExists(sourceFile);
   
   // Check storage directories (info only)
@@ -285,14 +244,14 @@ async function showDeletionSummary(iconName) {
   const foundInStorage = [];
   
   for (const dir of storageDirectories) {
-    const filePath = path.join(rootDir, dir, `${iconName}.svg`);
+    const filePath = path.join(ROOT_DIR, dir, `${iconName}.svg`);
     if (fileExists(filePath)) {
       foundInStorage.push(dir);
     }
   }
   
   // Check JSON
-  const jsonPath = path.join(rootDir, 'packages/icons/provider-nodes.json');
+  const jsonPath = path.join(ROOT_DIR, 'packages/icons/provider-nodes.json');
   let jsonExists = false;
   if (fileExists(jsonPath)) {
     const content = fs.readFileSync(jsonPath, 'utf8');

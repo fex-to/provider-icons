@@ -2,24 +2,26 @@
 
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import readline from 'readline';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const rootDir = path.resolve(__dirname, '..');
-
-// Console colors
-const colors = {
-  reset: '\x1b[0m',
-  bright: '\x1b[1m',
-  green: '\x1b[32m',
-  yellow: '\x1b[33m',
-  blue: '\x1b[34m',
-  red: '\x1b[31m',
-  cyan: '\x1b[36m',
-  gray: '\x1b[90m',
-};
+import {
+  colors,
+  log,
+  logStep,
+  logSuccess,
+  logError,
+  logWarning,
+  logInfo
+} from './logger.mjs';
+import { fileExists, normalizeName, readJsonFile, writeJsonFile } from './fs-helpers.mjs';
+import {
+  ROOT_DIR,
+  ICON_DIRECTORIES,
+  PROVIDER_NODES_PATH,
+  PROVIDER_SPRITE_PATH,
+  GITHUB_ICONS_SVG,
+  GITHUB_ICONS_DARK_SVG,
+  SYMBOL_ID_PREFIX
+} from './constants.mjs';
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -30,53 +32,19 @@ function question(query) {
   return new Promise(resolve => rl.question(query, resolve));
 }
 
-function log(message, color = 'reset') {
-  console.log(`${colors[color]}${message}${colors.reset}`);
-}
-
-function logStep(step, message) {
-  console.log(`${colors.cyan}[${step}]${colors.reset} ${message}`);
-}
-
-function logSuccess(message) {
-  console.log(`${colors.green}✓${colors.reset} ${message}`);
-}
-
-function logError(message) {
-  console.log(`${colors.red}✗${colors.reset} ${message}`);
-}
-
-function logWarning(message) {
-  console.log(`${colors.yellow}⚠${colors.reset} ${message}`);
-}
-
-function logInfo(message) {
-  console.log(`${colors.gray}ℹ${colors.reset} ${message}`);
-}
-
-// Normalize icon name to lowercase
-function normalizeName(name) {
-  return name.trim().toLowerCase();
-}
-
-// Check if file exists
-function fileExists(filePath) {
-  return fs.existsSync(filePath);
-}
-
 // Rename files in directories
 function renameFiles(oldName, newName) {
   const directories = [
-    'src/_icons',
-    'icons',
-    '_draft'
+    ICON_DIRECTORIES.SOURCE,
+    ICON_DIRECTORIES.BUILD,
+    ICON_DIRECTORIES.DRAFT
   ];
 
   const results = [];
   
   for (const dir of directories) {
-    const oldPath = path.join(rootDir, dir, `${oldName}.svg`);
-    const newPath = path.join(rootDir, dir, `${newName}.svg`);
+    const oldPath = path.join(ROOT_DIR, dir, `${oldName}.svg`);
+    const newPath = path.join(ROOT_DIR, dir, `${newName}.svg`);
     
     if (fileExists(oldPath)) {
       fs.renameSync(oldPath, newPath);
@@ -93,23 +61,24 @@ function renameFiles(oldName, newName) {
 
 // Update JSON configuration
 function updateJsonConfig(oldName, newName) {
-  const jsonPath = path.join(rootDir, 'packages/icons/provider-nodes.json');
-  
+  if (!fileExists(PROVIDER_NODES_PATH)) {
+    logError(`File not found: ${PROVIDER_NODES_PATH}`);
+    return false;
+  }
   if (!fileExists(jsonPath)) {
     logError(`File not found: ${jsonPath}`);
     return false;
   }
   
   try {
-    const content = fs.readFileSync(jsonPath, 'utf8');
-    const jsonData = JSON.parse(content);
+    const jsonData = readJsonFile(PROVIDER_NODES_PATH);
     
-    if (jsonData[oldName]) {
+    if (jsonData && jsonData[oldName]) {
       jsonData[newName] = jsonData[oldName];
       delete jsonData[oldName];
       
-      fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2), 'utf8');
-      logSuccess(`Updated packages/icons/provider-nodes.json`);
+      writeJsonFile(PROVIDER_NODES_PATH, jsonData);
+      logSuccess(`Updated provider-nodes.json`);
       return true;
     } else {
       logWarning(`Key "${oldName}" not found in provider-nodes.json`);
@@ -123,7 +92,7 @@ function updateJsonConfig(oldName, newName) {
 
 // Update SVG file content
 function updateSvgContent(oldName, newName) {
-  const filePath = path.join(rootDir, '_draft', `${newName}.svg`);
+  const filePath = path.join(ROOT_DIR, ICON_DIRECTORIES.DRAFT, `${newName}.svg`);
   
   if (!fileExists(filePath)) {
     logWarning(`File not found: _draft/${newName}.svg`);
@@ -157,13 +126,13 @@ function updateGeneratedFiles(oldName, newName) {
   const files = [
     '.github/icons.svg',
     '.github/icons-dark.svg',
-    'packages/icons/provider-sprite.svg'
+    PROVIDER_SPRITE_PATH
   ];
   
   let updatedCount = 0;
   
   for (const file of files) {
-    const filePath = path.join(rootDir, file);
+    const filePath = path.join(ROOT_DIR, file);
     
     if (!fileExists(filePath)) {
       logWarning(`File not found: ${file}`);
@@ -256,7 +225,7 @@ async function main() {
     }
     
     // Check if files exist
-    const oldPath = path.join(rootDir, 'src/_icons', `${oldName}.svg`);
+    const oldPath = path.join(ROOT_DIR, ICON_DIRECTORIES.SOURCE, `${oldName}.svg`);
     if (!fileExists(oldPath)) {
       logWarning(`Warning: file src/_icons/${oldName}.svg not found!`);
       const continueAnyway = await question(`${colors.yellow}Continue anyway? (y/n): ${colors.reset}`);
