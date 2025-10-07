@@ -3,7 +3,7 @@ import { getRollupPlugins } from '../../.build/build-icons.mjs'
 
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'))
 
-const packageName = '@cr.today/sources-icons';
+const packageName = '@fex.to/sources-icons';
 const outputFileName = 'sources-icons';
 const outputDir = 'dist';
 const inputs = ['./src/sources-icons.js'];

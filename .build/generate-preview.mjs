@@ -100,7 +100,7 @@ Total: **${icons.length} icons**
     // Используем относительный путь к PNG для GitHub
     const pngPath = `${PNG_RELATIVE_PATH}/${name}.png`;
     
-    markdown += `| <img src="${pngPath}" width="24" height="24" alt="${name}" /> | \`${name}\` | \`<${componentName} />\` |\n`;
+    markdown += `| <img src="${pngPath}" width="96" height="96" alt="${name}" /> | \`${name}\` | \`<${componentName} />\` |\n`;
   });
 
   // Добавляем примеры использования
@@ -111,7 +111,7 @@ Total: **${icons.length} icons**
 ### JavaScript/Node.js
 
 \`\`\`javascript
-import { IconFex } from '@cr.today/icons';
+import { IconFex } from '@fex.to/icons';
 
 // Icon as SVG string
 console.log(IconFex);
@@ -120,12 +120,12 @@ console.log(IconFex);
 ### React
 
 \`\`\`jsx
-import { IconFex } from '@cr.today/icons-react';
+import { IconFex } from '@fex.to/icons-react';
 
 function App() {
   return (
     <div>
-      <IconFex size={24} color="blue" />
+      <IconFex size={96} color="blue" />
     </div>
   );
 }
@@ -135,7 +135,7 @@ function App() {
 
 All React icon components accept the following props:
 
-- \`size\` - Icon size (number or string, default: 24)
+- \`size\` - Icon size (number or string, default: 96)
 - \`color\` - Icon color (any valid CSS color)
 - \`stroke\` - Stroke width (number, default: 2)
 - \`className\` - Additional CSS classes
@@ -171,9 +171,9 @@ npm install github:fex-to/provider-icons#main
 \`\`\`json
 {
   "dependencies": {
-    "@cr.today/icons": "github:fex-to/provider-icons#v1.2.5",
-    "@cr.today/icons-react": "github:fex-to/provider-icons#v1.2.5",
-    "@cr.today/icons-png": "github:fex-to/provider-icons#v1.2.5"
+    "@fex.to/icons": "github:fex-to/provider-icons#v1.2.5",
+    "@fex.to/icons-react": "github:fex-to/provider-icons#v1.2.5",
+    "@fex.to/icons-png": "github:fex-to/provider-icons#v1.2.5"
   }
 }
 \`\`\`
@@ -182,9 +182,9 @@ npm install github:fex-to/provider-icons#main
 
 ## Available Packages
 
-- **@cr.today/icons** - SVG icons as JavaScript strings
-- **@cr.today/icons-react** - React components
-- **@cr.today/icons-png** - PNG images (24x24, 48x48)
+- **@fex.to/icons** - SVG icons as JavaScript strings
+- **@fex.to/icons-react** - React components
+- **@fex.to/icons-png** - PNG images (96x96, 48x48)
 
 ---
 

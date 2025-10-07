@@ -1,5 +1,5 @@
 {
-  "name": "@cr.today/icons-react",
+  "name": "@fex.to/icons-react",
   "version": "1.2.2",
   "description": "A set of sources icons-react.",
   "author": "dejurin",
@@ -31,7 +31,7 @@
     "dist"
   ],
   "dependencies": {
-    "@cr.today/icons": "*",
+    "@fex.to/icons": "*",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
