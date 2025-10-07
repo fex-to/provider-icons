@@ -1,4 +1,6 @@
-
-> @fex-to/provider-icons@3.0.5 changelog-commit
-> git add . && node ./.build/changelog-commit.mjs
-
+Renamed icons: 
+- `gb-boe` renamed to `gbbe`
+- `gb-cog` renamed to `gbcog`
+- `gb-coventgardenfx` renamed to `gbcoventgardenfx`
+- `gb-nmmoney` renamed to `gbnmmoney`
+- `uaprivatbank` renamed to `uapb`
