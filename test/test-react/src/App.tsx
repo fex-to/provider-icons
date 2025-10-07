@@ -1,6 +1,6 @@
 import './App.css'
 import { useState } from 'react'
-import { IconUanb } from '@fex.to/provider-icons-react'
+import { IconUanb } from '@fex-to/provider-icons-react'
 
 function App() {
   const [active, setActive] = useState(false)

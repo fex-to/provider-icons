@@ -1,5 +1,5 @@
 {
-  "name": "@fex.to/provider-icons-react",
+  "name": "@fex-to/provider-icons-react",
   "version": "3.0.3",
   "description": "A set of sources icons-react.",
   "author": "dejurin",
@@ -31,7 +31,7 @@
     "dist"
   ],
   "dependencies": {
-    "@fex.to/provider-icons": "*",
+    "@fex-to/provider-icons": "*",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {

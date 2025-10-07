@@ -6,7 +6,7 @@ const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'))
 import sizes from '@atomico/rollup-plugin-sizes';
 import { createRequire } from 'module';
 
-const packageName = '@fex.to/provider-icons-react';
+const packageName = '@fex-to/provider-icons-react';
 
 const require = createRequire(import.meta.url);
 const outputFileName = 'provider-icons-react';

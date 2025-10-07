@@ -18,7 +18,7 @@ const indexItemTemplate = ({
 const typeDefinitionsTemplate = () => `/// <reference types="react" />
 import { SVGAttributes } from 'react'
 
-declare module '@fex.to/provider-icons-react'
+declare module '@fex-to/provider-icons-react'
 
 // Create interface extending SVGProps
 export interface ProviderIconsProps extends Partial<React.SVGProps<SVGSVGElement>> {
