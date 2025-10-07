@@ -88,10 +88,10 @@ Total: **201 icons**
 | <img src=".preview/icons/dzbna.png" width="96" height="96" alt="dzbna" /> | `dzbna` | `<IconDzbna />` |
 | <img src=".preview/icons/dzcpa.png" width="96" height="96" alt="dzcpa" /> | `dzcpa` | `<IconDzcpa />` |
 | <img src=".preview/icons/dzdevisesquare.png" width="96" height="96" alt="dzdevisesquare" /> | `dzdevisesquare` | `<IconDzdevisesquare />` |
-| <img src=".preview/icons/ecb.png" width="96" height="96" alt="ecb" /> | `ecb` | `<IconEcb />` |
 | <img src=".preview/icons/eccb.png" width="96" height="96" alt="eccb" /> | `eccb` | `<IconEccb />` |
 | <img src=".preview/icons/egcb.png" width="96" height="96" alt="egcb" /> | `egcb` | `<IconEgcb />` |
 | <img src=".preview/icons/etcb.png" width="96" height="96" alt="etcb" /> | `etcb` | `<IconEtcb />` |
+| <img src=".preview/icons/eucb.png" width="96" height="96" alt="eucb" /> | `eucb` | `<IconEucb />` |
 | <img src=".preview/icons/eutavex.png" width="96" height="96" alt="eutavex" /> | `eutavex` | `<IconEutavex />` |
 | <img src=".preview/icons/eximbank.png" width="96" height="96" alt="eximbank" /> | `eximbank` | `<IconEximbank />` |
 | <img src=".preview/icons/fairfx.png" width="96" height="96" alt="fairfx" /> | `fairfx` | `<IconFairfx />` |
