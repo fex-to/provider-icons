@@ -98,11 +98,11 @@ Total: **201 icons**
 | <img src=".preview/icons/fex.png" width="96" height="96" alt="fex" /> | `fex` | `<IconFex />` |
 | <img src=".preview/icons/firstbank.png" width="96" height="96" alt="firstbank" /> | `firstbank` | `<IconFirstbank />` |
 | <img src=".preview/icons/fjrb.png" width="96" height="96" alt="fjrb" /> | `fjrb` | `<IconFjrb />` |
-| <img src=".preview/icons/gb-boe.png" width="96" height="96" alt="gb-boe" /> | `gb-boe` | `<IconGbBoe />` |
-| <img src=".preview/icons/gb-cog.png" width="96" height="96" alt="gb-cog" /> | `gb-cog` | `<IconGbCog />` |
-| <img src=".preview/icons/gb-coventgardenfx.png" width="96" height="96" alt="gb-coventgardenfx" /> | `gb-coventgardenfx` | `<IconGbCoventgardenfx />` |
-| <img src=".preview/icons/gb-nmmoney.png" width="96" height="96" alt="gb-nmmoney" /> | `gb-nmmoney` | `<IconGbNmmoney />` |
+| <img src=".preview/icons/gbbe.png" width="96" height="96" alt="gbbe" /> | `gbbe` | `<IconGbbe />` |
 | <img src=".preview/icons/gbbestforeignexchange.png" width="96" height="96" alt="gbbestforeignexchange" /> | `gbbestforeignexchange` | `<IconGbbestforeignexchange />` |
+| <img src=".preview/icons/gbcog.png" width="96" height="96" alt="gbcog" /> | `gbcog` | `<IconGbcog />` |
+| <img src=".preview/icons/gbcoventgardenfx.png" width="96" height="96" alt="gbcoventgardenfx" /> | `gbcoventgardenfx` | `<IconGbcoventgardenfx />` |
+| <img src=".preview/icons/gbnmmoney.png" width="96" height="96" alt="gbnmmoney" /> | `gbnmmoney` | `<IconGbnmmoney />` |
 | <img src=".preview/icons/gbno1currency.png" width="96" height="96" alt="gbno1currency" /> | `gbno1currency` | `<IconGbno1currency />` |
 | <img src=".preview/icons/gbthecurrencyclub.png" width="96" height="96" alt="gbthecurrencyclub" /> | `gbthecurrencyclub` | `<IconGbthecurrencyclub />` |
 | <img src=".preview/icons/gbthomasexchange.png" width="96" height="96" alt="gbthomasexchange" /> | `gbthomasexchange` | `<IconGbthomasexchange />` |
