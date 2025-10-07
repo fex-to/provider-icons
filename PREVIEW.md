@@ -173,7 +173,6 @@ Total: **201 icons**
 | <img src=".preview/icons/plvelobank.png" width="96" height="96" alt="plvelobank" /> | `plvelobank` | `<IconPlvelobank />` |
 | <img src=".preview/icons/pmrcb.png" width="96" height="96" alt="pmrcb" /> | `pmrcb` | `<IconPmrcb />` |
 | <img src=".preview/icons/postoffice.png" width="96" height="96" alt="postoffice" /> | `postoffice` | `<IconPostoffice />` |
-| <img src=".preview/icons/privatbank.png" width="96" height="96" alt="privatbank" /> | `privatbank` | `<IconPrivatbank />` |
 | <img src=".preview/icons/procreditbank.png" width="96" height="96" alt="procreditbank" /> | `procreditbank` | `<IconProcreditbank />` |
 | <img src=".preview/icons/pycb.png" width="96" height="96" alt="pycb" /> | `pycb` | `<IconPycb />` |
 | <img src=".preview/icons/rbinternational.png" width="96" height="96" alt="rbinternational" /> | `rbinternational` | `<IconRbinternational />` |
@@ -211,6 +210,7 @@ Total: **201 icons**
 | <img src=".preview/icons/uamono.png" width="96" height="96" alt="uamono" /> | `uamono` | `<IconUamono />` |
 | <img src=".preview/icons/uanb.png" width="96" height="96" alt="uanb" /> | `uanb` | `<IconUanb />` |
 | <img src=".preview/icons/uaoschadbank.png" width="96" height="96" alt="uaoschadbank" /> | `uaoschadbank` | `<IconUaoschadbank />` |
+| <img src=".preview/icons/uaprivatbank.png" width="96" height="96" alt="uaprivatbank" /> | `uaprivatbank` | `<IconUaprivatbank />` |
 | <img src=".preview/icons/usasexchange.png" width="96" height="96" alt="usasexchange" /> | `usasexchange` | `<IconUsasexchange />` |
 | <img src=".preview/icons/usfederalreserve.png" width="96" height="96" alt="usfederalreserve" /> | `usfederalreserve` | `<IconUsfederalreserve />` |
 | <img src=".preview/icons/uzcb.png" width="96" height="96" alt="uzcb" /> | `uzcb` | `<IconUzcb />` |

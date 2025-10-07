@@ -4,7 +4,7 @@ This directory contains PNG icons for local preview purposes.
 
 ## Structure
 
-```
+```sh
 .preview/
 └── icons/       # PNG files copied from packages/icons-png/
 ```
@@ -20,6 +20,7 @@ This directory contains PNG icons for local preview purposes.
 **Important:** The script reads PNG icons from `packages/icons-png/icons/` to determine which icons successfully built. Only icons that exist in this directory will appear in `PREVIEW.md`.
 
 This ensures that `PREVIEW.md` only shows icons that:
+
 - ✅ Successfully passed the build process
 - ✅ Are available in the `@fex.to/icons-png` package
 - ✅ Are ready for use
@@ -27,11 +28,13 @@ This ensures that `PREVIEW.md` only shows icons that:
 ## Usage
 
 Run the preview generation:
+
 ```bash
 npm run generate:preview
 ```
 
 This will:
+
 1. Scan `packages/icons-png/icons/` for available PNG icons
 2. Copy PNG icons to `.preview/icons/`
 3. Generate `PREVIEW.md` with listings of successfully built icons
