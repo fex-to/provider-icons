@@ -7,26 +7,30 @@
   "publishConfig": {
     "access": "restricted"
   },
+  "workspaces": [
+    "packages/*",
+    "test/*"
+  ],
   "scripts": {
     "test": "turbo run test",
     "clean": "turbo run clean",
-    "build": "pnpm run optimize && pnpm run update && pnpm run build:svgs && pnpm run build:icons && pnpm run build:packages && pnpm run preview && pnpm run changelog-image && pnpm run zip && pnpm run update:readme",
+    "build": "npm run optimize && npm run update && npm run build:svgs && npm run build:icons && npm run build:packages && npm run preview && npm run changelog-image && npm run zip && npm run update:readme",
     "optimize": "node ./.build/optimize.mjs",
-    "update": "pnpm run update:icons-version",
+    "update": "npm run update:icons-version",
     "update:icons-version": "node ./.build/update-icons-version.mjs",
     "update:readme": "node ./.build/update-readme.mjs",
-    "import": "pnpm run build:clean && node ./.build/import.mjs && pnpm run optimize",
+    "import": "npm run build:clean && node ./.build/import.mjs && npm run optimize",
     "changelog": "node ./.build/changelog.mjs",
     "changelog-commit": "git add . && node ./.build/changelog-commit.mjs",
     "changelog-image": "node ./.build/changelog-image.mjs",
-    "build:packages": "pnpm run build:react && pnpm run build:png",
+    "build:packages": "npm run build:react && npm run build:png",
     "build:clean": "rm -rf ./icons/*.svg",
-    "build:icons": "pnpm --filter @cr.today/icons build",
-    "build:react": "pnpm --filter @cr.today/icons-react build",
-    "build:png": "pnpm --filter @cr.today/icons-png build",
-    "build:svgs": "pnpm run build:copy && node ./.build/build-svgs.mjs",
+    "build:icons": "npm run build --workspace=@cr.today/icons",
+    "build:react": "npm run build --workspace=@cr.today/icons-react",
+    "build:png": "npm run build --workspace=@cr.today/icons-png",
+    "build:svgs": "npm run build:copy && node ./.build/build-svgs.mjs",
     "build:copy": "rm -rf ./icons && mkdir ./icons && cp ./src/_icons/* ./icons/",
-    "preview": "pnpm run preview-icons",
+    "preview": "npm run preview-icons",
     "preview-icons": "node ./.build/preview-icons.mjs",
     "zip": "node ./.build/zip-files.mjs",
     "release": "git pull && release-it --verbose"
@@ -76,13 +80,13 @@
     },
     "npm": false,
     "hooks": {
-      "after:bump": "pnpm run build --latest-version ${latestVersion} --new-version ${version} --verbose",
+      "after:bump": "npm run build --latest-version ${latestVersion} --new-version ${version} --verbose",
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}.",
-      "before:git:init": "pnpm install"
+      "before:git:init": "npm install"
     },
     "git": {
       "addUntrackedFiles": true,
-      "changelog": "pnpm run changelog --silent --latest-version ${latestTag}",
+      "changelog": "npm run changelog --silent --latest-version ${latestTag}",
       "tagName": "v${version}",
       "_requireBranch": "master",
       "requireCommits": true,
@@ -92,7 +96,7 @@
       "release": true
     }
   },
-  "packageManager": "pnpm@10.18.1",
+  "packageManager": "npm@11.6.0",
   "devDependencies": {
     "@release-it-plugins/workspaces": "^5.0.3",
     "turbo": "^2.5.8"

@@ -28,11 +28,11 @@
     "sources-sprite.svg"
   ],
   "scripts": {
-    "build": "pnpm run clean && pnpm run copy && pnpm run build:icons && pnpm run build:es && pnpm run build:bundles",
+    "build": "npm run clean && npm run copy && npm run build:icons && npm run build:es && npm run build:bundles",
     "build:icons": "node build.mjs",
     "build:es": "babel src -d dist/esm",
     "build:bundles": "rollup -c ./rollup.config.mjs",
-    "copy": "pnpm run copy:license && pnpm run copy:icons",
+    "copy": "npm run copy:license && npm run copy:icons",
     "copy:icons": "mkdir -p ./icons && cp ../../icons/*.svg ./icons/",
     "copy:license": "cp ../../LICENSE ./LICENSE",
     "clean": "rm -rf dist && rm -rf src/icons/*.js && rm -rf icons && rm -rf stats",

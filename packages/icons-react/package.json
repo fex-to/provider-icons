@@ -11,12 +11,12 @@
     "directory": "packages/icons-react"
   },
   "scripts": {
-    "build": "pnpm run clean && pnpm run copy:license && pnpm run build:icons && pnpm run build:bundles",
+    "build": "npm run clean && npm run copy:license && npm run build:icons && npm run build:bundles",
     "build:icons": "node build.mjs",
     "build:bundles": "rollup -c ./rollup.config.mjs",
     "copy:license": "cp ../../LICENSE ./LICENSE",
     "clean": "rm -rf dist && rm -rf ./src/icons/*.js && rm -rf stats",
-    "test": "pnpm run clean && pnpm run build:icons && jest --env=jsdom"
+    "test": "npm run clean && npm run build:icons && jest --env=jsdom"
   },
   "main": "dist/cjs/sources-icons-react.js",
   "main:umd": "dist/umd/sources-icons-react.js",
@@ -28,7 +28,7 @@
     "dist"
   ],
   "dependencies": {
-    "@cr.today/icons": "workspace:*",
+    "@cr.today/icons": "*",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {

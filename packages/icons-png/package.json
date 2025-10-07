@@ -11,7 +11,7 @@
     "directory": "packages/icons-png"
   },
   "scripts": {
-    "build": "pnpm run clean && pnpm run copy:license && pnpm run build:icons",
+    "build": "npm run clean && npm run copy:license && npm run build:icons",
     "build:icons": "node build.mjs",
     "clean": "rm -rf icons && mkdir icons",
     "copy:license": "cp ../../LICENSE ./LICENSE"
@@ -25,6 +25,6 @@
     ]
   },
   "dependencies": {
-    "@cr.today/icons": "workspace:*"
+    "@cr.today/icons": "*"
   }
 }
