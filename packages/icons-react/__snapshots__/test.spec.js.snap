@@ -2,7 +2,7 @@
 
 exports[`React Icon component should match snapshot 1`] = `
 <svg
-  className="sources-icon sources-icon-fex"
+  className="provider-icon provider-icon-fex"
   fill="currentColor"
   height={48}
   viewBox="0 0 48 48"

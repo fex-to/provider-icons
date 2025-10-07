@@ -13,7 +13,7 @@ export default (iconName, iconNamePascal, iconNode) => {
                 width: size,
                 height: size,
                 fill: color,
-                className: `sources-icon sources-icon-${iconName}`,
+                className: `provider-icon provider-icon-${iconName}`,
                 ...rest,
               },
               [...iconNode.map(([tag, attrs]) => createElement(tag, attrs)), ...(children || [])],

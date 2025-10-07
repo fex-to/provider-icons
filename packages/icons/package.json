@@ -13,22 +13,22 @@
     "url": "git+https://github.com/fex-to/provider-icons.git",
     "directory": "packages/icons"
   },
-  "main": "dist/cjs/sources-icons.js",
-  "main:umd": "dist/umd/sources-icons.js",
+  "main": "dist/cjs/provider-icons.js",
+  "main:umd": "dist/umd/provider-icons.js",
   "exports": {
     "./*": [
       "./icons/*"
     ]
   },
-  "module": "dist/esm/sources-icons.js",
-  "unpkg": "dist/umd/sources-icons.min.js",
-  "typings": "dist/sources-icons.d.ts",
+  "module": "dist/esm/provider-icons.js",
+  "unpkg": "dist/umd/provider-icons.min.js",
+  "typings": "dist/provider-icons.d.ts",
   "sideEffects": false,
   "files": [
     "dist/*",
-    "sources-nodes.json",
+    "provider-nodes.json",
     "icons/*",
-    "sources-sprite.svg"
+    "provider-sprite.svg"
   ],
   "scripts": {
     "build": "npm run clean && npm run copy && npm run build:icons && npm run build:es && npm run build:bundles",

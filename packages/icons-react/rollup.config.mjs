@@ -9,9 +9,9 @@ import { createRequire } from 'module';
 const packageName = '@fex.to/provider-icons-react';
 
 const require = createRequire(import.meta.url);
-const outputFileName = 'sources-icons-react';
+const outputFileName = 'provider-icons-react';
 const outputDir = 'dist';
-const inputs = ['./src/sources-icons-react.js'];
+const inputs = ['./src/provider-icons-react.js'];
 const bundles = [
   {
     format: 'umd',

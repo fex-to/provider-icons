@@ -21,8 +21,8 @@ if (version) {
       }
     })
     if (newIcons.length > 0) {
-        generateIconsPreview(newIcons, `.github/sources-icons-${version}.svg`)
-        generateIconsPreview(newIcons, `.github/sources-icons-${version}-dark.svg`, {
+        generateIconsPreview(newIcons, `.github/provider-icons-${version}.svg`)
+        generateIconsPreview(newIcons, `.github/provider-icons-${version}-dark.svg`, {
         color: '#ffffff',
         background: '#354052'
       })
