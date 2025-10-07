@@ -113,7 +113,7 @@ function deleteFiles(iconName) {
 
 // Remove from JSON configuration
 function removeFromJsonConfig(iconName) {
-  const jsonPath = path.join(rootDir, 'packages/icons/sources-nodes.json');
+  const jsonPath = path.join(rootDir, 'packages/icons/provider-nodes.json');
   
   if (!fileExists(jsonPath)) {
     logError(`File not found: ${jsonPath}`);
@@ -128,10 +128,10 @@ function removeFromJsonConfig(iconName) {
       delete jsonData[iconName];
       
       fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2), 'utf8');
-      logSuccess(`Removed from packages/icons/sources-nodes.json`);
+      logSuccess(`Removed from packages/icons/provider-nodes.json`);
       return true;
     } else {
-      logWarning(`Key "${iconName}" not found in sources-nodes.json`);
+      logWarning(`Key "${iconName}" not found in provider-nodes.json`);
       return false;
     }
   } catch (error) {
@@ -145,7 +145,7 @@ function removeFromGeneratedFiles(iconName) {
   const files = [
     '.github/icons.svg',
     '.github/icons-dark.svg',
-    'packages/icons/sources-sprite.svg'
+    'packages/icons/provider-sprite.svg'
   ];
   
   let updatedCount = 0;
@@ -166,15 +166,15 @@ function removeFromGeneratedFiles(iconName) {
       const symbolRegex = new RegExp(`\\s*<symbol id="${iconName}"[^>]*>.*?</symbol>`, 'gs');
       content = content.replace(symbolRegex, '');
       
-      // Remove sources- prefixed symbol
-      const sourcesSymbolRegex = new RegExp(`\\s*<symbol id="sources-${iconName}"[^>]*>.*?</symbol>`, 'gs');
+      // Remove provider- prefixed symbol
+      const sourcesSymbolRegex = new RegExp(`\\s*<symbol id="provider-${iconName}"[^>]*>.*?</symbol>`, 'gs');
       content = content.replace(sourcesSymbolRegex, '');
       
       // Remove use references
       const useRegex = new RegExp(`\\s*<use[^>]*xlink:href="#${iconName}"[^>]*/>`, 'g');
       content = content.replace(useRegex, '');
       
-      const sourcesUseRegex = new RegExp(`\\s*<use[^>]*xlink:href="#sources-${iconName}"[^>]*/>`, 'g');
+      const sourcesUseRegex = new RegExp(`\\s*<use[^>]*xlink:href="#provider-${iconName}"[^>]*/>`, 'g');
       content = content.replace(sourcesUseRegex, '');
       
       if (content !== oldContent) {
@@ -255,7 +255,7 @@ async function confirmDeletion(iconName, originalInput) {
   
   log('The following actions will be performed:', 'bright');
   console.log('  1. Delete file from src/_icons/ (build source)');
-  console.log('  2. Remove key from packages/icons/sources-nodes.json');
+  console.log('  2. Remove key from packages/icons/provider-nodes.json');
   console.log('  3. Remove from generated files (.github/, packages/)');
   console.log('  4. Clean up all references');
   console.log('');
@@ -292,7 +292,7 @@ async function showDeletionSummary(iconName) {
   }
   
   // Check JSON
-  const jsonPath = path.join(rootDir, 'packages/icons/sources-nodes.json');
+  const jsonPath = path.join(rootDir, 'packages/icons/provider-nodes.json');
   let jsonExists = false;
   if (fileExists(jsonPath)) {
     const content = fs.readFileSync(jsonPath, 'utf8');
@@ -327,7 +327,7 @@ async function showDeletionSummary(iconName) {
   
   if (jsonExists) {
     console.log(`\n  ${colors.yellow}JSON Configuration:${colors.reset}`);
-    console.log(`    • packages/icons/sources-nodes.json`);
+    console.log(`    • packages/icons/provider-nodes.json`);
   }
   
   if (references.length > 0) {

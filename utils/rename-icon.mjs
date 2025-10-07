@@ -93,7 +93,7 @@ function renameFiles(oldName, newName) {
 
 // Update JSON configuration
 function updateJsonConfig(oldName, newName) {
-  const jsonPath = path.join(rootDir, 'packages/icons/sources-nodes.json');
+  const jsonPath = path.join(rootDir, 'packages/icons/provider-nodes.json');
   
   if (!fileExists(jsonPath)) {
     logError(`File not found: ${jsonPath}`);
@@ -109,10 +109,10 @@ function updateJsonConfig(oldName, newName) {
       delete jsonData[oldName];
       
       fs.writeFileSync(jsonPath, JSON.stringify(jsonData, null, 2), 'utf8');
-      logSuccess(`Updated packages/icons/sources-nodes.json`);
+      logSuccess(`Updated packages/icons/provider-nodes.json`);
       return true;
     } else {
-      logWarning(`Key "${oldName}" not found in sources-nodes.json`);
+      logWarning(`Key "${oldName}" not found in provider-nodes.json`);
       return false;
     }
   } catch (error) {
@@ -157,7 +157,7 @@ function updateGeneratedFiles(oldName, newName) {
   const files = [
     '.github/icons.svg',
     '.github/icons-dark.svg',
-    'packages/icons/sources-sprite.svg'
+    'packages/icons/provider-sprite.svg'
   ];
   
   let updatedCount = 0;
@@ -184,8 +184,8 @@ function updateGeneratedFiles(oldName, newName) {
         `xlink:href="#${newName}"`
       );
       content = content.replace(
-        new RegExp(`sources-${oldName}`, 'g'),
-        `sources-${newName}`
+        new RegExp(`provider-${oldName}`, 'g'),
+        `provider-${newName}`
       );
       
       if (content !== oldContent) {
@@ -221,7 +221,7 @@ async function confirmRename(oldName, newName, originalOld, originalNew) {
   
   log('The following actions will be performed:', 'bright');
   console.log('  1. Rename files in src/_icons/, icons/, _draft/');
-  console.log('  2. Update key in packages/icons/sources-nodes.json');
+  console.log('  2. Update key in packages/icons/provider-nodes.json');
   console.log('  3. Update id and title in SVG files');
   console.log('  4. Update references in generated files\n');
   
