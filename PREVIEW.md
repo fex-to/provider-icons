@@ -117,7 +117,7 @@ Total: **201 icons**
 | <img src=".preview/icons/hsbc.png" width="96" height="96" alt="hsbc" /> | `hsbc` | `<IconHsbc />` |
 | <img src=".preview/icons/hunb.png" width="96" height="96" alt="hunb" /> | `hunb` | `<IconHunb />` |
 | <img src=".preview/icons/icbc.png" width="96" height="96" alt="icbc" /> | `icbc` | `<IconIcbc />` |
-| <img src=".preview/icons/id-bar.png" width="96" height="96" alt="id-bar" /> | `id-bar` | `<IconIdBar />` |
+| <img src=".preview/icons/idbar.png" width="96" height="96" alt="idbar" /> | `idbar` | `<IconIdbar />` |
 | <img src=".preview/icons/idbi.png" width="96" height="96" alt="idbi" /> | `idbi` | `<IconIdbi />` |
 | <img src=".preview/icons/idbri.png" width="96" height="96" alt="idbri" /> | `idbri` | `<IconIdbri />` |
 | <img src=".preview/icons/ideabank.png" width="96" height="96" alt="ideabank" /> | `ideabank` | `<IconIdeabank />` |
@@ -151,7 +151,7 @@ Total: **201 icons**
 | <img src=".preview/icons/mabam.png" width="96" height="96" alt="mabam" /> | `mabam` | `<IconMabam />` |
 | <img src=".preview/icons/maybank2u.png" width="96" height="96" alt="maybank2u" /> | `maybank2u` | `<IconMaybank2u />` |
 | <img src=".preview/icons/mdnb.png" width="96" height="96" alt="mdnb" /> | `mdnb` | `<IconMdnb />` |
-| <img src=".preview/icons/mm-cbm.png" width="96" height="96" alt="mm-cbm" /> | `mm-cbm` | `<IconMmCbm />` |
+| <img src=".preview/icons/mmcb.png" width="96" height="96" alt="mmcb" /> | `mmcb` | `<IconMmcb />` |
 | <img src=".preview/icons/monex.png" width="96" height="96" alt="monex" /> | `monex` | `<IconMonex />` |
 | <img src=".preview/icons/muamalat.png" width="96" height="96" alt="muamalat" /> | `muamalat` | `<IconMuamalat />` |
 | <img src=".preview/icons/mvma.png" width="96" height="96" alt="mvma" /> | `mvma` | `<IconMvma />` |
@@ -181,7 +181,7 @@ Total: **201 icons**
 | <img src=".preview/icons/rovipexchange.png" width="96" height="96" alt="rovipexchange" /> | `rovipexchange` | `<IconRovipexchange />` |
 | <img src=".preview/icons/rsnb.png" width="96" height="96" alt="rsnb" /> | `rsnb` | `<IconRsnb />` |
 | <img src=".preview/icons/rucb.png" width="96" height="96" alt="rucb" /> | `rucb` | `<IconRucb />` |
-| <img src=".preview/icons/rw-bnr.png" width="96" height="96" alt="rw-bnr" /> | `rw-bnr` | `<IconRwBnr />` |
+| <img src=".preview/icons/rwbn.png" width="96" height="96" alt="rwbn" /> | `rwbn` | `<IconRwbn />` |
 | <img src=".preview/icons/sacb.png" width="96" height="96" alt="sacb" /> | `sacb` | `<IconSacb />` |
 | <img src=".preview/icons/sainsbury.png" width="96" height="96" alt="sainsbury" /> | `sainsbury` | `<IconSainsbury />` |
 | <img src=".preview/icons/santander.png" width="96" height="96" alt="santander" /> | `santander` | `<IconSantander />` |
