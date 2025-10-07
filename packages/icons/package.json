@@ -5,6 +5,9 @@
   "author": "dejurin",
   "license": "MIT",
   "homepage": "https://cr.today",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cr-today/sources-icons.git",
