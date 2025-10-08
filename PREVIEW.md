@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **234** available icons with their IDs and React components for easy copying.
+This page shows all **235** available icons with their IDs and React components for easy copying.
 
 > **📦 Provider:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **234** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **234 icons**
+Total: **235 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -243,6 +243,7 @@ Total: **234 icons**
 | <img src=".preview/icons/uaukrsibbank.png" width="96" height="96" alt="uaukrsibbank" /> | `uaukrsibbank` | `<IconUaukrsibbank />` |
 | <img src=".preview/icons/usasexchange.png" width="96" height="96" alt="usasexchange" /> | `usasexchange` | `<IconUsasexchange />` |
 | <img src=".preview/icons/usrs.png" width="96" height="96" alt="usrs" /> | `usrs` | `<IconUsrs />` |
+| <img src=".preview/icons/uycb.png" width="96" height="96" alt="uycb" /> | `uycb` | `<IconUycb />` |
 | <img src=".preview/icons/uzcb.png" width="96" height="96" alt="uzcb" /> | `uzcb` | `<IconUzcb />` |
 | <img src=".preview/icons/vecb.png" width="96" height="96" alt="vecb" /> | `vecb` | `<IconVecb />` |
 | <img src=".preview/icons/vncb.png" width="96" height="96" alt="vncb" /> | `vncb` | `<IconVncb />` |
