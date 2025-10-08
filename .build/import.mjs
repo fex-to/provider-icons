@@ -49,14 +49,18 @@ files.forEach(function (file, i) {
 
   fileData = optimizeSVG(fileData)
 
-  fileData = fileData.replace(/<svg>/g, '---\n---\n<svg>')
+  // Get current package version for new icons
+  const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'))
+  const currentVersion = packageJson.version
+
+  fileData = fileData.replace(/<svg>/g, `---\nversion: "${currentVersion}"\n---\n<svg>`)
 
   if (fs.existsSync(`./src/_icons/${filename}.svg`)) {
     const newFileData = fs.readFileSync(`./src/_icons/${filename}.svg`).toString()
     const m = newFileData.match(/(---.*---)/gms)
 
     if (m) {
-      fileData = fileData.replace('---\n---', m[0])
+      fileData = fileData.replace(/---\nversion: ".*?"\n---/, m[0])
     }
   }
 
