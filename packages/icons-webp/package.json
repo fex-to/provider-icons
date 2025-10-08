@@ -1,6 +1,6 @@
 {
   "name": "@fex-to/provider-icons-webp",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "description": "A set of provider icons in WebP format with multiple sizes (128x128, 256x256, 512x512).",
   "author": "dejurin",
   "license": "MIT",
