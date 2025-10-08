@@ -88,3 +88,33 @@ All <!--icons-count-->204<!--/icons-count--> icons are available in three format
 📋 **[Browse all icons with IDs and React components →](PREVIEW.md)**
 
 For a visual preview of all icons, see the [icon grid](.github/icons@2x.png).
+
+## Disclaimer
+
+⚠️ **Important Legal Notice**
+
+All logos, trademarks, and brand names displayed in this repository are the property of their respective owners. This repository:
+
+- Does not claim ownership of any intellectual property
+- Is provided for informational and educational purposes only
+- Is not affiliated with any of the companies whose logos appear here
+
+Users are responsible for:
+- Obtaining proper permissions before commercial use
+- Complying with applicable intellectual property laws
+- Respecting the rights of trademark holders
+
+For detailed information, see [**DISCLAIMER.md**](DISCLAIMER.md)
+
+## License
+
+MIT License - See [LICENSE](LICENSE) file for details.
+
+The license applies to the code and structure of this repository, not to the logos and trademarks contained within.
+
+## Acknowledgments
+
+Some of the provider code was inspired by:
+- **Author**: Paweł Kuna
+- **Repository**: [tabler/tabler-icons](https://github.com/tabler/tabler-icons)
+- **License**: [MIT](https://github.com/tabler/tabler-icons/blob/master/LICENSE)
