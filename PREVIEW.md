@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **201** available icons with their IDs and React components for easy copying.
+This page shows all **223** available icons with their IDs and React components for easy copying.
 
 > **📦 Source:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **201** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **201 icons**
+Total: **223 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -23,10 +23,10 @@ Total: **201 icons**
 | <img src=".preview/icons/afcb.png" width="96" height="96" alt="afcb" /> | `afcb` | `<IconAfcb />` |
 | <img src=".preview/icons/afirme.png" width="96" height="96" alt="afirme" /> | `afirme` | `<IconAfirme />` |
 | <img src=".preview/icons/alba.png" width="96" height="96" alt="alba" /> | `alba` | `<IconAlba />` |
-| <img src=".preview/icons/amao-wama.png" width="96" height="96" alt="amao-wama" /> | `amao-wama` | `<IconAmaoWama />` |
 | <img src=".preview/icons/amcb.png" width="96" height="96" alt="amcb" /> | `amcb` | `<IconAmcb />` |
 | <img src=".preview/icons/anz.png" width="96" height="96" alt="anz" /> | `anz` | `<IconAnz />` |
 | <img src=".preview/icons/arcb.png" width="96" height="96" alt="arcb" /> | `arcb` | `<IconArcb />` |
+| <img src=".preview/icons/atnb.png" width="96" height="96" alt="atnb" /> | `atnb` | `<IconAtnb />` |
 | <img src=".preview/icons/aubanksyd.png" width="96" height="96" alt="aubanksyd" /> | `aubanksyd` | `<IconAubanksyd />` |
 | <img src=".preview/icons/aubankwest.png" width="96" height="96" alt="aubankwest" /> | `aubankwest` | `<IconAubankwest />` |
 | <img src=".preview/icons/aubendigobank.png" width="96" height="96" alt="aubendigobank" /> | `aubendigobank` | `<IconAubendigobank />` |
@@ -53,12 +53,13 @@ Total: **201 icons**
 | <img src=".preview/icons/boq.png" width="96" height="96" alt="boq" /> | `boq` | `<IconBoq />` |
 | <img src=".preview/icons/brcb.png" width="96" height="96" alt="brcb" /> | `brcb` | `<IconBrcb />` |
 | <img src=".preview/icons/brci.png" width="96" height="96" alt="brci" /> | `brci` | `<IconBrci />` |
-| <img src=".preview/icons/btrma.png" width="96" height="96" alt="btrma" /> | `btrma` | `<IconBtrma />` |
+| <img src=".preview/icons/bscb.png" width="96" height="96" alt="bscb" /> | `bscb` | `<IconBscb />` |
 | <img src=".preview/icons/bulbank.png" width="96" height="96" alt="bulbank" /> | `bulbank` | `<IconBulbank />` |
 | <img src=".preview/icons/bwcb.png" width="96" height="96" alt="bwcb" /> | `bwcb` | `<IconBwcb />` |
 | <img src=".preview/icons/bynb.png" width="96" height="96" alt="bynb" /> | `bynb` | `<IconBynb />` |
 | <img src=".preview/icons/cabc.png" width="96" height="96" alt="cabc" /> | `cabc` | `<IconCabc />` |
 | <img src=".preview/icons/cascotiabank.png" width="96" height="96" alt="cascotiabank" /> | `cascotiabank` | `<IconCascotiabank />` |
+| <img src=".preview/icons/cdcb.png" width="96" height="96" alt="cdcb" /> | `cdcb` | `<IconCdcb />` |
 | <img src=".preview/icons/cec.png" width="96" height="96" alt="cec" /> | `cec` | `<IconCec />` |
 | <img src=".preview/icons/chcb.png" width="96" height="96" alt="chcb" /> | `chcb` | `<IconChcb />` |
 | <img src=".preview/icons/cibanco.png" width="96" height="96" alt="cibanco" /> | `cibanco` | `<IconCibanco />` |
@@ -109,6 +110,7 @@ Total: **201 icons**
 | <img src=".preview/icons/gbtravelfx.png" width="96" height="96" alt="gbtravelfx" /> | `gbtravelfx` | `<IconGbtravelfx />` |
 | <img src=".preview/icons/genb.png" width="96" height="96" alt="genb" /> | `genb` | `<IconGenb />` |
 | <img src=".preview/icons/ghbg.png" width="96" height="96" alt="ghbg" /> | `ghbg` | `<IconGhbg />` |
+| <img src=".preview/icons/gmcb.png" width="96" height="96" alt="gmcb" /> | `gmcb` | `<IconGmcb />` |
 | <img src=".preview/icons/gncb.png" width="96" height="96" alt="gncb" /> | `gncb` | `<IconGncb />` |
 | <img src=".preview/icons/gtbg.png" width="96" height="96" alt="gtbg" /> | `gtbg` | `<IconGtbg />` |
 | <img src=".preview/icons/gycb.png" width="96" height="96" alt="gycb" /> | `gycb` | `<IconGycb />` |
@@ -136,24 +138,31 @@ Total: **201 icons**
 | <img src=".preview/icons/jocb.png" width="96" height="96" alt="jocb" /> | `jocb` | `<IconJocb />` |
 | <img src=".preview/icons/jpgpa.png" width="96" height="96" alt="jpgpa" /> | `jpgpa` | `<IconJpgpa />` |
 | <img src=".preview/icons/kecb.png" width="96" height="96" alt="kecb" /> | `kecb` | `<IconKecb />` |
-| <img src=".preview/icons/kgcb.png" width="96" height="96" alt="kgcb" /> | `kgcb` | `<IconKgcb />` |
+| <img src=".preview/icons/kgnb.png" width="96" height="96" alt="kgnb" /> | `kgnb` | `<IconKgnb />` |
 | <img src=".preview/icons/khnb.png" width="96" height="96" alt="khnb" /> | `khnb` | `<IconKhnb />` |
 | <img src=".preview/icons/kobp.png" width="96" height="96" alt="kobp" /> | `kobp` | `<IconKobp />` |
 | <img src=".preview/icons/krbk.png" width="96" height="96" alt="krbk" /> | `krbk` | `<IconKrbk />` |
 | <img src=".preview/icons/krsmbs.png" width="96" height="96" alt="krsmbs" /> | `krsmbs` | `<IconKrsmbs />` |
 | <img src=".preview/icons/kwcb.png" width="96" height="96" alt="kwcb" /> | `kwcb` | `<IconKwcb />` |
 | <img src=".preview/icons/kznb.png" width="96" height="96" alt="kznb" /> | `kznb` | `<IconKznb />` |
+| <img src=".preview/icons/labl.png" width="96" height="96" alt="labl" /> | `labl` | `<IconLabl />` |
 | <img src=".preview/icons/lbcb.png" width="96" height="96" alt="lbcb" /> | `lbcb` | `<IconLbcb />` |
 | <img src=".preview/icons/lbsayrafa.png" width="96" height="96" alt="lbsayrafa" /> | `lbsayrafa` | `<IconLbsayrafa />` |
 | <img src=".preview/icons/librabank.png" width="96" height="96" alt="librabank" /> | `librabank` | `<IconLibrabank />` |
+| <img src=".preview/icons/lkcb.png" width="96" height="96" alt="lkcb" /> | `lkcb` | `<IconLkcb />` |
 | <img src=".preview/icons/lrcb.png" width="96" height="96" alt="lrcb" /> | `lrcb` | `<IconLrcb />` |
+| <img src=".preview/icons/lscb.png" width="96" height="96" alt="lscb" /> | `lscb` | `<IconLscb />` |
 | <img src=".preview/icons/lycb.png" width="96" height="96" alt="lycb" /> | `lycb` | `<IconLycb />` |
 | <img src=".preview/icons/mabam.png" width="96" height="96" alt="mabam" /> | `mabam` | `<IconMabam />` |
 | <img src=".preview/icons/maybank2u.png" width="96" height="96" alt="maybank2u" /> | `maybank2u` | `<IconMaybank2u />` |
 | <img src=".preview/icons/mdnb.png" width="96" height="96" alt="mdnb" /> | `mdnb` | `<IconMdnb />` |
+| <img src=".preview/icons/mgbf.png" width="96" height="96" alt="mgbf" /> | `mgbf` | `<IconMgbf />` |
 | <img src=".preview/icons/mmcb.png" width="96" height="96" alt="mmcb" /> | `mmcb` | `<IconMmcb />` |
+| <img src=".preview/icons/mncb.png" width="96" height="96" alt="mncb" /> | `mncb` | `<IconMncb />` |
+| <img src=".preview/icons/moamcm.png" width="96" height="96" alt="moamcm" /> | `moamcm` | `<IconMoamcm />` |
 | <img src=".preview/icons/monex.png" width="96" height="96" alt="monex" /> | `monex` | `<IconMonex />` |
 | <img src=".preview/icons/muamalat.png" width="96" height="96" alt="muamalat" /> | `muamalat` | `<IconMuamalat />` |
+| <img src=".preview/icons/mumb.png" width="96" height="96" alt="mumb" /> | `mumb` | `<IconMumb />` |
 | <img src=".preview/icons/mvma.png" width="96" height="96" alt="mvma" /> | `mvma` | `<IconMvma />` |
 | <img src=".preview/icons/mwrb.png" width="96" height="96" alt="mwrb" /> | `mwrb` | `<IconMwrb />` |
 | <img src=".preview/icons/mxbm.png" width="96" height="96" alt="mxbm" /> | `mxbm` | `<IconMxbm />` |
@@ -161,12 +170,17 @@ Total: **201 icons**
 | <img src=".preview/icons/mybn.png" width="96" height="96" alt="mybn" /> | `mybn` | `<IconMybn />` |
 | <img src=".preview/icons/mycimb.png" width="96" height="96" alt="mycimb" /> | `mycimb` | `<IconMycimb />` |
 | <img src=".preview/icons/mzbc.png" width="96" height="96" alt="mzbc" /> | `mzbc` | `<IconMzbc />` |
+| <img src=".preview/icons/nabn.png" width="96" height="96" alt="nabn" /> | `nabn` | `<IconNabn />` |
 | <img src=".preview/icons/nbc.png" width="96" height="96" alt="nbc" /> | `nbc` | `<IconNbc />` |
 | <img src=".preview/icons/ngcb.png" width="96" height="96" alt="ngcb" /> | `ngcb` | `<IconNgcb />` |
 | <img src=".preview/icons/ngnrates.png" width="96" height="96" alt="ngnrates" /> | `ngnrates` | `<IconNgnrates />` |
+| <img src=".preview/icons/nonb.png" width="96" height="96" alt="nonb" /> | `nonb` | `<IconNonb />` |
 | <img src=".preview/icons/nprb.png" width="96" height="96" alt="nprb" /> | `nprb` | `<IconNprb />` |
+| <img src=".preview/icons/omcb.png" width="96" height="96" alt="omcb" /> | `omcb` | `<IconOmcb />` |
 | <img src=".preview/icons/otpbank.png" width="96" height="96" alt="otpbank" /> | `otpbank` | `<IconOtpbank />` |
 | <img src=".preview/icons/patriabank.png" width="96" height="96" alt="patriabank" /> | `patriabank` | `<IconPatriabank />` |
+| <img src=".preview/icons/peyanki.png" width="96" height="96" alt="peyanki" /> | `peyanki` | `<IconPeyanki />` |
+| <img src=".preview/icons/pgcb.png" width="96" height="96" alt="pgcb" /> | `pgcb` | `<IconPgcb />` |
 | <img src=".preview/icons/phbs.png" width="96" height="96" alt="phbs" /> | `phbs` | `<IconPhbs />` |
 | <img src=".preview/icons/pksb.png" width="96" height="96" alt="pksb" /> | `pksb` | `<IconPksb />` |
 | <img src=".preview/icons/plnb.png" width="96" height="96" alt="plnb" /> | `plnb` | `<IconPlnb />` |
@@ -174,7 +188,9 @@ Total: **201 icons**
 | <img src=".preview/icons/pmrcb.png" width="96" height="96" alt="pmrcb" /> | `pmrcb` | `<IconPmrcb />` |
 | <img src=".preview/icons/postoffice.png" width="96" height="96" alt="postoffice" /> | `postoffice` | `<IconPostoffice />` |
 | <img src=".preview/icons/procreditbank.png" width="96" height="96" alt="procreditbank" /> | `procreditbank` | `<IconProcreditbank />` |
+| <img src=".preview/icons/psma.png" width="96" height="96" alt="psma" /> | `psma` | `<IconPsma />` |
 | <img src=".preview/icons/pycb.png" width="96" height="96" alt="pycb" /> | `pycb` | `<IconPycb />` |
+| <img src=".preview/icons/qacb.png" width="96" height="96" alt="qacb" /> | `qacb` | `<IconQacb />` |
 | <img src=".preview/icons/rbinternational.png" width="96" height="96" alt="rbinternational" /> | `rbinternational` | `<IconRbinternational />` |
 | <img src=".preview/icons/robn.png" width="96" height="96" alt="robn" /> | `robn` | `<IconRobn />` |
 | <img src=".preview/icons/romaneasca.png" width="96" height="96" alt="romaneasca" /> | `romaneasca` | `<IconRomaneasca />` |
@@ -205,21 +221,27 @@ Total: **201 icons**
 | <img src=".preview/icons/tncb.png" width="96" height="96" alt="tncb" /> | `tncb` | `<IconTncb />` |
 | <img src=".preview/icons/torb.png" width="96" height="96" alt="torb" /> | `torb` | `<IconTorb />` |
 | <img src=".preview/icons/trcb.png" width="96" height="96" alt="trcb" /> | `trcb` | `<IconTrcb />` |
+| <img src=".preview/icons/ttcb.png" width="96" height="96" alt="ttcb" /> | `ttcb` | `<IconTtcb />` |
 | <img src=".preview/icons/twcb.png" width="96" height="96" alt="twcb" /> | `twcb` | `<IconTwcb />` |
 | <img src=".preview/icons/tzcb.png" width="96" height="96" alt="tzcb" /> | `tzcb` | `<IconTzcb />` |
+| <img src=".preview/icons/uablackmarket.png" width="96" height="96" alt="uablackmarket" /> | `uablackmarket` | `<IconUablackmarket />` |
+| <img src=".preview/icons/uaexchanger.png" width="96" height="96" alt="uaexchanger" /> | `uaexchanger` | `<IconUaexchanger />` |
 | <img src=".preview/icons/uamono.png" width="96" height="96" alt="uamono" /> | `uamono` | `<IconUamono />` |
 | <img src=".preview/icons/uanb.png" width="96" height="96" alt="uanb" /> | `uanb` | `<IconUanb />` |
 | <img src=".preview/icons/uaoschadbank.png" width="96" height="96" alt="uaoschadbank" /> | `uaoschadbank` | `<IconUaoschadbank />` |
 | <img src=".preview/icons/uapb.png" width="96" height="96" alt="uapb" /> | `uapb` | `<IconUapb />` |
+| <img src=".preview/icons/uaukrsibbank.png" width="96" height="96" alt="uaukrsibbank" /> | `uaukrsibbank` | `<IconUaukrsibbank />` |
 | <img src=".preview/icons/usasexchange.png" width="96" height="96" alt="usasexchange" /> | `usasexchange` | `<IconUsasexchange />` |
-| <img src=".preview/icons/usfederalreserve.png" width="96" height="96" alt="usfederalreserve" /> | `usfederalreserve` | `<IconUsfederalreserve />` |
+| <img src=".preview/icons/usrs.png" width="96" height="96" alt="usrs" /> | `usrs` | `<IconUsrs />` |
 | <img src=".preview/icons/uzcb.png" width="96" height="96" alt="uzcb" /> | `uzcb` | `<IconUzcb />` |
 | <img src=".preview/icons/vecb.png" width="96" height="96" alt="vecb" /> | `vecb` | `<IconVecb />` |
 | <img src=".preview/icons/vncb.png" width="96" height="96" alt="vncb" /> | `vncb` | `<IconVncb />` |
 | <img src=".preview/icons/vnvietcombank.png" width="96" height="96" alt="vnvietcombank" /> | `vnvietcombank` | `<IconVnvietcombank />` |
 | <img src=".preview/icons/vurb.png" width="96" height="96" alt="vurb" /> | `vurb` | `<IconVurb />` |
+| <img src=".preview/icons/wama.png" width="96" height="96" alt="wama" /> | `wama` | `<IconWama />` |
 | <img src=".preview/icons/yecb.png" width="96" height="96" alt="yecb" /> | `yecb` | `<IconYecb />` |
 | <img src=".preview/icons/zarb.png" width="96" height="96" alt="zarb" /> | `zarb` | `<IconZarb />` |
+| <img src=".preview/icons/zmbz.png" width="96" height="96" alt="zmbz" /> | `zmbz` | `<IconZmbz />` |
 
 ---
 
