@@ -88,11 +88,3 @@ All <!--icons-count-->204<!--/icons-count--> icons are available in three format
 📋 **[Browse all icons with IDs and React components →](PREVIEW.md)**
 
 For a visual preview of all icons, see the [icon grid](.github/icons@2x.png).
-
-## Many thanks
-
-Some of the provider code was borrowed from another repository. I reserve the right to point to the provider:
-
-- **Author**: Paweł Kuna
-- **Repository**: https://github.com/tabler/tabler-icons
-- **License**: https://github.com/tabler/tabler-icons/blob/master/LICENSE
