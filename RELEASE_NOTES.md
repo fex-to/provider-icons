@@ -1,2 +1,2 @@
-Fixed icons: `afcb`, `nprb`
+Fixed icons: `afcb`, `bhcb`, `bluelytics`, `nprb`
 
