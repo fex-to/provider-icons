@@ -37,13 +37,13 @@ async function generatePreview() {
   let skippedCount = 0;
   
   for (const file of iconFiles) {
-    const sourcePath = path.join(ICONS_PNG_DIR, file);
+    const providerPath = path.join(ICONS_PNG_DIR, file);
     const targetPath = path.join(PREVIEW_ICONS_DIR, file);
     
     // Копируем только если файл не существует или отличается
     if (!fs.existsSync(targetPath) || 
-        fs.readFileSync(sourcePath).toString() !== fs.readFileSync(targetPath).toString()) {
-      fs.copyFileSync(sourcePath, targetPath);
+        fs.readFileSync(providerPath).toString() !== fs.readFileSync(targetPath).toString()) {
+      fs.copyFileSync(providerPath, targetPath);
       copiedCount++;
     } else {
       skippedCount++;
@@ -77,7 +77,7 @@ async function generatePreview() {
 
 This page shows all **${icons.length}** available icons with their IDs and React components for easy copying.
 
-> **📦 Source:** Icons are built from \`packages/icons-png/icons/\`  
+> **📦 Provider:** Icons are built from \`packages/icons-png/icons/\`  
 > **🔄 Update:** Run \`npm run build\` to rebuild icons
 
 ## Quick Navigation

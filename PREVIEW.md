@@ -2,7 +2,7 @@
 
 This page shows all **233** available icons with their IDs and React components for easy copying.
 
-> **📦 Source:** Icons are built from `packages/icons-png/icons/`  
+> **📦 Provider:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
 
 ## Quick Navigation

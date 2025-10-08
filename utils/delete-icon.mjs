@@ -35,7 +35,7 @@ function question(query) {
 
 // Delete files from directories
 function deleteFiles(iconName) {
-  // Only delete from src/_icons - the source directory used in build
+  // Only delete from src/_icons - the provider directory used in build
   // icons/ and _draft/ are storage/drafts and not used in final build
   const directories = [
     ICON_DIRECTORIES.SOURCE
@@ -213,7 +213,7 @@ async function confirmDeletion(iconName, originalInput) {
   console.log('='.repeat(60) + '\n');
   
   log('The following actions will be performed:', 'bright');
-  console.log('  1. Delete file from src/_icons/ (build source)');
+  console.log('  1. Delete file from src/_icons/ (build provider)');
   console.log('  2. Remove key from packages/icons/provider-nodes.json');
   console.log('  3. Remove from generated files (.github/, packages/)');
   console.log('  4. Clean up all references');
@@ -235,9 +235,9 @@ async function showDeletionSummary(iconName) {
   console.log('='.repeat(60) + '\n');
   
   // Only check src/_icons for deletion
-  const sourceDir = 'src/_icons';
-  const sourceFile = path.join(ROOT_DIR, sourceDir, `${iconName}.svg`);
-  const foundInSource = fileExists(sourceFile);
+  const providerDir = 'src/_icons';
+  const providerFile = path.join(ROOT_DIR, providerDir, `${iconName}.svg`);
+  const foundInProvider = fileExists(providerFile);
   
   // Check storage directories (info only)
   const storageDirectories = ['icons', '_draft'];
@@ -265,18 +265,18 @@ async function showDeletionSummary(iconName) {
   
   console.log('');
   
-  if (!foundInSource && !jsonExists && references.length === 0) {
+  if (!foundInProvider && !jsonExists && references.length === 0) {
     logWarning(`Icon "${iconName}" not found in project!`);
     return false;
   }
   
   log('FOUND:', 'bright');
   
-  if (foundInSource) {
-    console.log(`\n  ${colors.yellow}Source file (will be deleted):${colors.reset}`);
-    console.log(`    • ${sourceDir}/${iconName}.svg`);
+  if (foundInProvider) {
+    console.log(`\n  ${colors.yellow}Provider file (will be deleted):${colors.reset}`);
+    console.log(`    • ${providerDir}/${iconName}.svg`);
   } else {
-    console.log(`\n  ${colors.gray}Source file: Not found in ${sourceDir}/${colors.reset}`);
+    console.log(`\n  ${colors.gray}Provider file: Not found in ${providerDir}/${colors.reset}`);
   }
   
   if (foundInStorage.length > 0) {

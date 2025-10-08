@@ -15,7 +15,7 @@ This directory contains PNG icons for local preview purposes.
 - Used by `PREVIEW.md` to display icons on GitHub
 - Not committed to the repository (see `.gitignore`)
 
-## Source of Truth
+## Provider of Truth
 
 **Important:** The script reads PNG icons from `packages/icons-png/icons/` to determine which icons successfully built. Only icons that exist in this directory will appear in `PREVIEW.md`.
 

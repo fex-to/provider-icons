@@ -1,16 +1,16 @@
-# Sources Icons
+# Provider Icons
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/fex-to/provider-icons/blob/main/.github/icons-dark@2x.png?raw=true">
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/fex-to/provider-icons/blob/main/.github/icons@2x.png?raw=true">
-    <img src="https://github.com/fex-to/provider-icons/blob/main/.github/icons@2x.png?raw=true" alt="Sources Icons preview" width="840">
+    <provider media="(prefers-color-scheme: dark)" srcset="https://github.com/fex-to/provider-icons/blob/main/.github/icons-dark@2x.png?raw=true">
+    <provider media="(prefers-color-scheme: light)" srcset="https://github.com/fex-to/provider-icons/blob/main/.github/icons@2x.png?raw=true">
+    <img src="https://github.com/fex-to/provider-icons/blob/main/.github/icons@2x.png?raw=true" alt="Provider Icons preview" width="840">
   </picture>
 </p>
 
 ## Icons
 
-A set of <!--icons-count-->233<!--/icons-count--> sources icons.
+A set of <!--icons-count-->233<!--/icons-count--> provider icons.
 
 ## Installation
 
@@ -91,7 +91,7 @@ For a visual preview of all icons, see the [icon grid](.github/icons@2x.png).
 
 ## Many thanks
 
-Some of the source code was borrowed from another repository. I reserve the right to point to the source:
+Some of the provider code was borrowed from another repository. I reserve the right to point to the provider:
 
 - **Author**: Paweł Kuna
 - **Repository**: https://github.com/tabler/tabler-icons
