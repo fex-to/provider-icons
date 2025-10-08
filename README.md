@@ -100,6 +100,7 @@ All logos, trademarks, and brand names displayed in this repository are the prop
 - Is not affiliated with any of the companies whose logos appear here
 
 Users are responsible for:
+
 - Obtaining proper permissions before commercial use
 - Complying with applicable intellectual property laws
 - Respecting the rights of trademark holders
@@ -111,10 +112,3 @@ For detailed information, see [**DISCLAIMER.md**](DISCLAIMER.md)
 MIT License - See [LICENSE](LICENSE) file for details.
 
 The license applies to the code and structure of this repository, not to the logos and trademarks contained within.
-
-## Acknowledgments
-
-Some of the provider code was inspired by:
-- **Author**: Paweł Kuna
-- **Repository**: [tabler/tabler-icons](https://github.com/tabler/tabler-icons)
-- **License**: [MIT](https://github.com/tabler/tabler-icons/blob/master/LICENSE)
