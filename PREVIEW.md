@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **224** available icons with their IDs and React components for easy copying.
+This page shows all **233** available icons with their IDs and React components for easy copying.
 
 > **📦 Source:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **224** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **224 icons**
+Total: **233 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -37,7 +37,9 @@ Total: **224 icons**
 | <img src=".preview/icons/bancatransilvania.png" width="96" height="96" alt="bancatransilvania" /> | `bancatransilvania` | `<IconBancatransilvania />` |
 | <img src=".preview/icons/bancoazteca.png" width="96" height="96" alt="bancoazteca" /> | `bancoazteca` | `<IconBancoazteca />` |
 | <img src=".preview/icons/bankmillennium.png" width="96" height="96" alt="bankmillennium" /> | `bankmillennium` | `<IconBankmillennium />` |
+| <img src=".preview/icons/bbcb.png" width="96" height="96" alt="bbcb" /> | `bbcb` | `<IconBbcb />` |
 | <img src=".preview/icons/bbva.png" width="96" height="96" alt="bbva" /> | `bbva` | `<IconBbva />` |
+| <img src=".preview/icons/bceaocb.png" width="96" height="96" alt="bceaocb" /> | `bceaocb` | `<IconBceaocb />` |
 | <img src=".preview/icons/bcr.png" width="96" height="96" alt="bcr" /> | `bcr` | `<IconBcr />` |
 | <img src=".preview/icons/bdcb.png" width="96" height="96" alt="bdcb" /> | `bdcb` | `<IconBdcb />` |
 | <img src=".preview/icons/beaccb.png" width="96" height="96" alt="beaccb" /> | `beaccb` | `<IconBeaccb />` |
@@ -58,6 +60,7 @@ Total: **224 icons**
 | <img src=".preview/icons/bulbank.png" width="96" height="96" alt="bulbank" /> | `bulbank` | `<IconBulbank />` |
 | <img src=".preview/icons/bwcb.png" width="96" height="96" alt="bwcb" /> | `bwcb` | `<IconBwcb />` |
 | <img src=".preview/icons/bynb.png" width="96" height="96" alt="bynb" /> | `bynb` | `<IconBynb />` |
+| <img src=".preview/icons/bzcb.png" width="96" height="96" alt="bzcb" /> | `bzcb` | `<IconBzcb />` |
 | <img src=".preview/icons/cabc.png" width="96" height="96" alt="cabc" /> | `cabc` | `<IconCabc />` |
 | <img src=".preview/icons/cascotiabank.png" width="96" height="96" alt="cascotiabank" /> | `cascotiabank` | `<IconCascotiabank />` |
 | <img src=".preview/icons/cdcb.png" width="96" height="96" alt="cdcb" /> | `cdcb` | `<IconCdcb />` |
@@ -85,12 +88,14 @@ Total: **224 icons**
 | <img src=".preview/icons/czcb.png" width="96" height="96" alt="czcb" /> | `czcb` | `<IconCzcb />` |
 | <img src=".preview/icons/deexchangeag.png" width="96" height="96" alt="deexchangeag" /> | `deexchangeag` | `<IconDeexchangeag />` |
 | <img src=".preview/icons/dknb.png" width="96" height="96" alt="dknb" /> | `dknb` | `<IconDknb />` |
+| <img src=".preview/icons/docb.png" width="96" height="96" alt="docb" /> | `docb` | `<IconDocb />` |
 | <img src=".preview/icons/dristorexchange.png" width="96" height="96" alt="dristorexchange" /> | `dristorexchange` | `<IconDristorexchange />` |
 | <img src=".preview/icons/dzba.png" width="96" height="96" alt="dzba" /> | `dzba` | `<IconDzba />` |
 | <img src=".preview/icons/dzbna.png" width="96" height="96" alt="dzbna" /> | `dzbna` | `<IconDzbna />` |
 | <img src=".preview/icons/dzcpa.png" width="96" height="96" alt="dzcpa" /> | `dzcpa` | `<IconDzcpa />` |
 | <img src=".preview/icons/dzdevisesquare.png" width="96" height="96" alt="dzdevisesquare" /> | `dzdevisesquare` | `<IconDzdevisesquare />` |
 | <img src=".preview/icons/eccb.png" width="96" height="96" alt="eccb" /> | `eccb` | `<IconEccb />` |
+| <img src=".preview/icons/egblackmarket.png" width="96" height="96" alt="egblackmarket" /> | `egblackmarket` | `<IconEgblackmarket />` |
 | <img src=".preview/icons/egcb.png" width="96" height="96" alt="egcb" /> | `egcb` | `<IconEgcb />` |
 | <img src=".preview/icons/etcb.png" width="96" height="96" alt="etcb" /> | `etcb` | `<IconEtcb />` |
 | <img src=".preview/icons/eucb.png" width="96" height="96" alt="eucb" /> | `eucb` | `<IconEucb />` |
@@ -116,6 +121,7 @@ Total: **224 icons**
 | <img src=".preview/icons/gtbg.png" width="96" height="96" alt="gtbg" /> | `gtbg` | `<IconGtbg />` |
 | <img src=".preview/icons/gycb.png" width="96" height="96" alt="gycb" /> | `gycb` | `<IconGycb />` |
 | <img src=".preview/icons/hkab.png" width="96" height="96" alt="hkab" /> | `hkab` | `<IconHkab />` |
+| <img src=".preview/icons/hnbc.png" width="96" height="96" alt="hnbc" /> | `hnbc` | `<IconHnbc />` |
 | <img src=".preview/icons/hrnb.png" width="96" height="96" alt="hrnb" /> | `hrnb` | `<IconHrnb />` |
 | <img src=".preview/icons/hsbc.png" width="96" height="96" alt="hsbc" /> | `hsbc` | `<IconHsbc />` |
 | <img src=".preview/icons/hunb.png" width="96" height="96" alt="hunb" /> | `hunb` | `<IconHunb />` |
@@ -163,7 +169,7 @@ Total: **224 icons**
 | <img src=".preview/icons/moamcm.png" width="96" height="96" alt="moamcm" /> | `moamcm` | `<IconMoamcm />` |
 | <img src=".preview/icons/monex.png" width="96" height="96" alt="monex" /> | `monex` | `<IconMonex />` |
 | <img src=".preview/icons/muamalat.png" width="96" height="96" alt="muamalat" /> | `muamalat` | `<IconMuamalat />` |
-| <img src=".preview/icons/mumb.png" width="96" height="96" alt="mumb" /> | `mumb` | `<IconMumb />` |
+| <img src=".preview/icons/mubm.png" width="96" height="96" alt="mubm" /> | `mubm` | `<IconMubm />` |
 | <img src=".preview/icons/mvma.png" width="96" height="96" alt="mvma" /> | `mvma` | `<IconMvma />` |
 | <img src=".preview/icons/mwrb.png" width="96" height="96" alt="mwrb" /> | `mwrb` | `<IconMwrb />` |
 | <img src=".preview/icons/mxbm.png" width="96" height="96" alt="mxbm" /> | `mxbm` | `<IconMxbm />` |
@@ -180,6 +186,7 @@ Total: **224 icons**
 | <img src=".preview/icons/omcb.png" width="96" height="96" alt="omcb" /> | `omcb` | `<IconOmcb />` |
 | <img src=".preview/icons/otpbank.png" width="96" height="96" alt="otpbank" /> | `otpbank` | `<IconOtpbank />` |
 | <img src=".preview/icons/patriabank.png" width="96" height="96" alt="patriabank" /> | `patriabank` | `<IconPatriabank />` |
+| <img src=".preview/icons/pehirpower.png" width="96" height="96" alt="pehirpower" /> | `pehirpower` | `<IconPehirpower />` |
 | <img src=".preview/icons/peyanki.png" width="96" height="96" alt="peyanki" /> | `peyanki` | `<IconPeyanki />` |
 | <img src=".preview/icons/pgcb.png" width="96" height="96" alt="pgcb" /> | `pgcb` | `<IconPgcb />` |
 | <img src=".preview/icons/phbs.png" width="96" height="96" alt="phbs" /> | `phbs` | `<IconPhbs />` |
@@ -207,6 +214,7 @@ Total: **224 icons**
 | <img src=".preview/icons/secondlife.png" width="96" height="96" alt="secondlife" /> | `secondlife` | `<IconSecondlife />` |
 | <img src=".preview/icons/serb.png" width="96" height="96" alt="serb" /> | `serb` | `<IconSerb />` |
 | <img src=".preview/icons/sgmas.png" width="96" height="96" alt="sgmas" /> | `sgmas` | `<IconSgmas />` |
+| <img src=".preview/icons/slcb.png" width="96" height="96" alt="slcb" /> | `slcb` | `<IconSlcb />` |
 | <img src=".preview/icons/socb.png" width="96" height="96" alt="socb" /> | `socb` | `<IconSocb />` |
 | <img src=".preview/icons/srcb.png" width="96" height="96" alt="srcb" /> | `srcb` | `<IconSrcb />` |
 | <img src=".preview/icons/ssbs.png" width="96" height="96" alt="ssbs" /> | `ssbs` | `<IconSsbs />` |
@@ -240,6 +248,7 @@ Total: **224 icons**
 | <img src=".preview/icons/vnvietcombank.png" width="96" height="96" alt="vnvietcombank" /> | `vnvietcombank` | `<IconVnvietcombank />` |
 | <img src=".preview/icons/vurb.png" width="96" height="96" alt="vurb" /> | `vurb` | `<IconVurb />` |
 | <img src=".preview/icons/wama.png" width="96" height="96" alt="wama" /> | `wama` | `<IconWama />` |
+| <img src=".preview/icons/wscb.png" width="96" height="96" alt="wscb" /> | `wscb` | `<IconWscb />` |
 | <img src=".preview/icons/yecb.png" width="96" height="96" alt="yecb" /> | `yecb` | `<IconYecb />` |
 | <img src=".preview/icons/zarb.png" width="96" height="96" alt="zarb" /> | `zarb` | `<IconZarb />` |
 | <img src=".preview/icons/zmbz.png" width="96" height="96" alt="zmbz" /> | `zmbz` | `<IconZmbz />` |

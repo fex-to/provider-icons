@@ -10,7 +10,7 @@
 
 ## Icons
 
-A set of <!--icons-count-->224<!--/icons-count--> sources icons.
+A set of <!--icons-count-->233<!--/icons-count--> sources icons.
 
 ## Installation
 
