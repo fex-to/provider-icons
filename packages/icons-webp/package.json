@@ -1,0 +1,39 @@
+{
+  "name": "@fex-to/provider-icons-webp",
+  "version": "3.0.10",
+  "description": "A set of provider icons in WebP format with multiple sizes (128x128, 256x256, 512x512).",
+  "author": "dejurin",
+  "license": "MIT",
+  "homepage": "https://fex.to",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fex-to/provider-icons.git",
+    "directory": "packages/icons-webp"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run copy:license && npm run build:icons",
+    "build:icons": "node build.mjs",
+    "clean": "rm -rf icons && mkdir -p icons/128 && mkdir -p icons/256 && mkdir -p icons/512",
+    "copy:license": "cp ../../LICENSE ./LICENSE"
+  },
+  "files": [
+    "icons/**/*.webp"
+  ],
+  "exports": {
+    "./128/*": [
+      "./icons/128/*"
+    ],
+    "./256/*": [
+      "./icons/256/*"
+    ],
+    "./512/*": [
+      "./icons/512/*"
+    ]
+  },
+  "dependencies": {
+    "@fex-to/provider-icons": "*"
+  }
+}
