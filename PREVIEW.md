@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **235** available icons with their IDs and React components for easy copying.
+This page shows all **237** available icons with their IDs and React components for easy copying.
 
 > **📦 Provider:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **235** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **235 icons**
+Total: **237 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -25,6 +25,7 @@ Total: **235 icons**
 | <img src=".preview/icons/alba.png" width="96" height="96" alt="alba" /> | `alba` | `<IconAlba />` |
 | <img src=".preview/icons/amcb.png" width="96" height="96" alt="amcb" /> | `amcb` | `<IconAmcb />` |
 | <img src=".preview/icons/anz.png" width="96" height="96" alt="anz" /> | `anz` | `<IconAnz />` |
+| <img src=".preview/icons/aocb.png" width="96" height="96" alt="aocb" /> | `aocb` | `<IconAocb />` |
 | <img src=".preview/icons/arcb.png" width="96" height="96" alt="arcb" /> | `arcb` | `<IconArcb />` |
 | <img src=".preview/icons/atnb.png" width="96" height="96" alt="atnb" /> | `atnb` | `<IconAtnb />` |
 | <img src=".preview/icons/aubanksyd.png" width="96" height="96" alt="aubanksyd" /> | `aubanksyd` | `<IconAubanksyd />` |
@@ -254,6 +255,7 @@ Total: **235 icons**
 | <img src=".preview/icons/yecb.png" width="96" height="96" alt="yecb" /> | `yecb` | `<IconYecb />` |
 | <img src=".preview/icons/zarb.png" width="96" height="96" alt="zarb" /> | `zarb` | `<IconZarb />` |
 | <img src=".preview/icons/zmbz.png" width="96" height="96" alt="zmbz" /> | `zmbz` | `<IconZmbz />` |
+| <img src=".preview/icons/zwrb.png" width="96" height="96" alt="zwrb" /> | `zwrb` | `<IconZwrb />` |
 
 ---
 
