@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **233** available icons with their IDs and React components for easy copying.
+This page shows all **234** available icons with their IDs and React components for easy copying.
 
 > **📦 Provider:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **233** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **233 icons**
+Total: **234 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -124,6 +124,7 @@ Total: **233 icons**
 | <img src=".preview/icons/hnbc.png" width="96" height="96" alt="hnbc" /> | `hnbc` | `<IconHnbc />` |
 | <img src=".preview/icons/hrnb.png" width="96" height="96" alt="hrnb" /> | `hrnb` | `<IconHrnb />` |
 | <img src=".preview/icons/hsbc.png" width="96" height="96" alt="hsbc" /> | `hsbc` | `<IconHsbc />` |
+| <img src=".preview/icons/htbr.png" width="96" height="96" alt="htbr" /> | `htbr` | `<IconHtbr />` |
 | <img src=".preview/icons/hunb.png" width="96" height="96" alt="hunb" /> | `hunb` | `<IconHunb />` |
 | <img src=".preview/icons/icbc.png" width="96" height="96" alt="icbc" /> | `icbc` | `<IconIcbc />` |
 | <img src=".preview/icons/idbar.png" width="96" height="96" alt="idbar" /> | `idbar` | `<IconIdbar />` |
