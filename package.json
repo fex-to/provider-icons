@@ -114,7 +114,7 @@
       "releaseNotes": "cat RELEASE_NOTES.md"
     }
   },
-  "packageManager": "npm@11.6.1",
+  "packageManager": "npm@11.6.2",
   "devDependencies": {
     "@release-it-plugins/workspaces": "^5.0.3",
     "turbo": "^2.5.8"

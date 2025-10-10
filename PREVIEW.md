@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **237** available icons with their IDs and React components for easy copying.
+This page shows all **238** available icons with their IDs and React components for easy copying.
 
 > **📦 Provider:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **237** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **237 icons**
+Total: **238 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -58,6 +58,7 @@ Total: **237 icons**
 | <img src=".preview/icons/brcb.png" width="96" height="96" alt="brcb" /> | `brcb` | `<IconBrcb />` |
 | <img src=".preview/icons/brci.png" width="96" height="96" alt="brci" /> | `brci` | `<IconBrci />` |
 | <img src=".preview/icons/bscb.png" width="96" height="96" alt="bscb" /> | `bscb` | `<IconBscb />` |
+| <img src=".preview/icons/btrma.png" width="96" height="96" alt="btrma" /> | `btrma` | `<IconBtrma />` |
 | <img src=".preview/icons/bulbank.png" width="96" height="96" alt="bulbank" /> | `bulbank` | `<IconBulbank />` |
 | <img src=".preview/icons/bwcb.png" width="96" height="96" alt="bwcb" /> | `bwcb` | `<IconBwcb />` |
 | <img src=".preview/icons/bynb.png" width="96" height="96" alt="bynb" /> | `bynb` | `<IconBynb />` |
