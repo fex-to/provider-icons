@@ -132,8 +132,8 @@ Total: **240 icons**
 | <img src=".preview/icons/idbar.png" width="96" height="96" alt="idbar" /> | `idbar` | `<IconIdbar />` |
 | <img src=".preview/icons/idbca.png" width="96" height="96" alt="idbca" /> | `idbca` | `<IconIdbca />` |
 | <img src=".preview/icons/idbi.png" width="96" height="96" alt="idbi" /> | `idbi` | `<IconIdbi />` |
-| <img src=".preview/icons/idbms.png" width="96" height="96" alt="idbms" /> | `idbms` | `<IconIdbms />` |
 | <img src=".preview/icons/idbri.png" width="96" height="96" alt="idbri" /> | `idbri` | `<IconIdbri />` |
+| <img src=".preview/icons/idbws.png" width="96" height="96" alt="idbws" /> | `idbws` | `<IconIdbws />` |
 | <img src=".preview/icons/ideabank.png" width="96" height="96" alt="ideabank" /> | `ideabank` | `<IconIdeabank />` |
 | <img src=".preview/icons/idgmc.png" width="96" height="96" alt="idgmc" /> | `idgmc` | `<IconIdgmc />` |
 | <img src=".preview/icons/idmmc.png" width="96" height="96" alt="idmmc" /> | `idmmc` | `<IconIdmmc />` |

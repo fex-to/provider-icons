@@ -1,1 +1,4 @@
-2 new icons: `idbca`, `idbms`
+```sh
+Renamed icons: 
+- `idbms` renamed to `idbws`
+```
