@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **238** available icons with their IDs and React components for easy copying.
+This page shows all **240** available icons with their IDs and React components for easy copying.
 
 > **📦 Provider:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **238** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **238 icons**
+Total: **240 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -130,7 +130,9 @@ Total: **238 icons**
 | <img src=".preview/icons/hunb.png" width="96" height="96" alt="hunb" /> | `hunb` | `<IconHunb />` |
 | <img src=".preview/icons/icbc.png" width="96" height="96" alt="icbc" /> | `icbc` | `<IconIcbc />` |
 | <img src=".preview/icons/idbar.png" width="96" height="96" alt="idbar" /> | `idbar` | `<IconIdbar />` |
+| <img src=".preview/icons/idbca.png" width="96" height="96" alt="idbca" /> | `idbca` | `<IconIdbca />` |
 | <img src=".preview/icons/idbi.png" width="96" height="96" alt="idbi" /> | `idbi` | `<IconIdbi />` |
+| <img src=".preview/icons/idbms.png" width="96" height="96" alt="idbms" /> | `idbms` | `<IconIdbms />` |
 | <img src=".preview/icons/idbri.png" width="96" height="96" alt="idbri" /> | `idbri` | `<IconIdbri />` |
 | <img src=".preview/icons/ideabank.png" width="96" height="96" alt="ideabank" /> | `ideabank` | `<IconIdeabank />` |
 | <img src=".preview/icons/idgmc.png" width="96" height="96" alt="idgmc" /> | `idgmc` | `<IconIdgmc />` |

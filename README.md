@@ -10,7 +10,7 @@
 
 ## Icons
 
-A set of <!--icons-count-->238<!--/icons-count--> provider icons.
+A set of <!--icons-count-->240<!--/icons-count--> provider icons.
 
 ## Installation
 
