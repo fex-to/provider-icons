@@ -1,6 +1,6 @@
 {
   "name": "@fex-to/provider-icons",
-  "version": "3.1.12",
+  "version": "3.1.13",
   "author": "dejurin",
   "license": "MIT",
   "description": "Financial provider icons: banks, exchanges, central banks. Available in SVG, React components, and PNG",
@@ -17,7 +17,7 @@
     "generate:preview": "node ./.build/generate-preview.mjs",
     "test": "turbo run test",
     "clean": "turbo run clean",
-    "build": "npm run optimize && npm run update && npm run build:svgs && npm run build:icons && npm run build:packages && npm run preview && npm run changelog-image && npm run zip && npm run update:readme && npm run generate:preview && changelog-commit",
+    "build": "npm run optimize && npm run update && npm run build:svgs && npm run build:icons && npm run build:packages && npm run preview && npm run changelog-image && npm run zip && npm run update:readme && npm run generate:preview && npm run changelog-commit",
     "optimize": "node ./.build/optimize.mjs",
     "update": "npm run update:icons-version",
     "update:icons-version": "node ./.build/update-icons-version.mjs",
