@@ -8,7 +8,7 @@ const files = globSync(resolve(HOME_DIR, './new/*.svg'))
 
 files.forEach(function (file, i) {
   let fileData = fs.readFileSync(file).toString(),
-    filename = basename(file, '.svg')
+    filename = basename(file, '.svg').toLowerCase()
 
   console.log(filename)
 

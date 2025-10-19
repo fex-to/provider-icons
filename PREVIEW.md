@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **240** available icons with their IDs and React components for easy copying.
+This page shows all **248** available icons with their IDs and React components for easy copying.
 
 > **📦 Provider:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **240** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **240 icons**
+Total: **248 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -191,6 +191,7 @@ Total: **240 icons**
 | <img src=".preview/icons/omcb.png" width="96" height="96" alt="omcb" /> | `omcb` | `<IconOmcb />` |
 | <img src=".preview/icons/otpbank.png" width="96" height="96" alt="otpbank" /> | `otpbank` | `<IconOtpbank />` |
 | <img src=".preview/icons/patriabank.png" width="96" height="96" alt="patriabank" /> | `patriabank` | `<IconPatriabank />` |
+| <img src=".preview/icons/pecambix.png" width="96" height="96" alt="pecambix" /> | `pecambix` | `<IconPecambix />` |
 | <img src=".preview/icons/pehirpower.png" width="96" height="96" alt="pehirpower" /> | `pehirpower` | `<IconPehirpower />` |
 | <img src=".preview/icons/peyanki.png" width="96" height="96" alt="peyanki" /> | `peyanki` | `<IconPeyanki />` |
 | <img src=".preview/icons/pgcb.png" width="96" height="96" alt="pgcb" /> | `pgcb` | `<IconPgcb />` |
@@ -206,7 +207,14 @@ Total: **240 icons**
 | <img src=".preview/icons/qacb.png" width="96" height="96" alt="qacb" /> | `qacb` | `<IconQacb />` |
 | <img src=".preview/icons/rbinternational.png" width="96" height="96" alt="rbinternational" /> | `rbinternational` | `<IconRbinternational />` |
 | <img src=".preview/icons/robn.png" width="96" height="96" alt="robn" /> | `robn` | `<IconRobn />` |
+| <img src=".preview/icons/robt.png" width="96" height="96" alt="robt" /> | `robt` | `<IconRobt />` |
+| <img src=".preview/icons/roeb.png" width="96" height="96" alt="roeb" /> | `roeb` | `<IconRoeb />` |
+| <img src=".preview/icons/roing.png" width="96" height="96" alt="roing" /> | `roing` | `<IconRoing />` |
+| <img src=".preview/icons/rolib.png" width="96" height="96" alt="rolib" /> | `rolib` | `<IconRolib />` |
 | <img src=".preview/icons/romaneasca.png" width="96" height="96" alt="romaneasca" /> | `romaneasca` | `<IconRomaneasca />` |
+| <img src=".preview/icons/ronexent.png" width="96" height="96" alt="ronexent" /> | `ronexent` | `<IconRonexent />` |
+| <img src=".preview/icons/roraiffeisen.png" width="96" height="96" alt="roraiffeisen" /> | `roraiffeisen` | `<IconRoraiffeisen />` |
+| <img src=".preview/icons/rounicredit.png" width="96" height="96" alt="rounicredit" /> | `rounicredit` | `<IconRounicredit />` |
 | <img src=".preview/icons/rovipexchange.png" width="96" height="96" alt="rovipexchange" /> | `rovipexchange` | `<IconRovipexchange />` |
 | <img src=".preview/icons/rsnb.png" width="96" height="96" alt="rsnb" /> | `rsnb` | `<IconRsnb />` |
 | <img src=".preview/icons/rucb.png" width="96" height="96" alt="rucb" /> | `rucb` | `<IconRucb />` |
