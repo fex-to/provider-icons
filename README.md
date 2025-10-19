@@ -2,15 +2,15 @@
 
 <p align="center">
   <picture>
-    <provider media="(prefers-color-scheme: dark)" srcset="https://github.com/fex-to/provider-icons/blob/main/.github/icons-dark@2x.png?raw=true">
-    <provider media="(prefers-color-scheme: light)" srcset="https://github.com/fex-to/provider-icons/blob/main/.github/icons@2x.png?raw=true">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/fex-to/provider-icons/blob/main/.github/icons-dark@2x.png?raw=true">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/fex-to/provider-icons/blob/main/.github/icons@2x.png?raw=true">
     <img src="https://github.com/fex-to/provider-icons/blob/main/.github/icons@2x.png?raw=true" alt="Provider Icons preview" width="840">
   </picture>
 </p>
 
 ## Icons
 
-A set of <!--icons-count-->248<!--/icons-count--> provider icons.
+A set of <!--icons-count-->251<!--/icons-count--> provider icons.
 
 ## Installation
 

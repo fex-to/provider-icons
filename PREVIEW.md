@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **248** available icons with their IDs and React components for easy copying.
+This page shows all **251** available icons with their IDs and React components for easy copying.
 
 > **📦 Provider:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **248** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **248 icons**
+Total: **251 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -177,7 +177,10 @@ Total: **248 icons**
 | <img src=".preview/icons/mubm.png" width="96" height="96" alt="mubm" /> | `mubm` | `<IconMubm />` |
 | <img src=".preview/icons/mvma.png" width="96" height="96" alt="mvma" /> | `mvma` | `<IconMvma />` |
 | <img src=".preview/icons/mwrb.png" width="96" height="96" alt="mwrb" /> | `mwrb` | `<IconMwrb />` |
+| <img src=".preview/icons/mxafm.png" width="96" height="96" alt="mxafm" /> | `mxafm` | `<IconMxafm />` |
+| <img src=".preview/icons/mxba.png" width="96" height="96" alt="mxba" /> | `mxba` | `<IconMxba />` |
 | <img src=".preview/icons/mxbm.png" width="96" height="96" alt="mxbm" /> | `mxbm` | `<IconMxbm />` |
+| <img src=".preview/icons/mxbnmx.png" width="96" height="96" alt="mxbnmx" /> | `mxbnmx` | `<IconMxbnmx />` |
 | <img src=".preview/icons/mybankislam.png" width="96" height="96" alt="mybankislam" /> | `mybankislam` | `<IconMybankislam />` |
 | <img src=".preview/icons/mybn.png" width="96" height="96" alt="mybn" /> | `mybn` | `<IconMybn />` |
 | <img src=".preview/icons/mycimb.png" width="96" height="96" alt="mycimb" /> | `mycimb` | `<IconMycimb />` |
