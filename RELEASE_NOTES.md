@@ -1,1 +1,1 @@
-8 new icons: `pecambix`, `robt`, `roeb`, `roing`, `rolib`, `ronexent`, `roraiffeisen`, `rounicredit`
+3 new icons: `mxafm`, `mxba`, `mxbnmx`
