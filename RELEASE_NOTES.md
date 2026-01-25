@@ -1,1 +1,1 @@
-3 new icons: `mxafm`, `mxba`, `mxbnmx`
+1 new icons: `forexpk`

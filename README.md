@@ -2,15 +2,15 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/fex-to/provider-icons/blob/main/.github/icons-dark@2x.png?raw=true">
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/fex-to/provider-icons/blob/main/.github/icons@2x.png?raw=true">
-    <img src="https://github.com/fex-to/provider-icons/blob/main/.github/icons@2x.png?raw=true" alt="Provider Icons preview" width="840">
+    <source media="(prefers-color-scheme: dark)" srcset=".github/icons-dark@2x.png">
+    <source media="(prefers-color-scheme: light)" srcset=".github/icons@2x.png">
+    <img src=".github/icons@2x.png" alt="Provider Icons preview" width="840">
   </picture>
 </p>
 
 ## Icons
 
-A set of <!--icons-count-->251<!--/icons-count--> provider icons.
+A set of <!--icons-count-->252<!--/icons-count--> provider icons.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Since these packages are not published to npm registry, install them directly fr
 
 ```bash
 # Install with specific version tag
-npm install github:fex-to/provider-icons#v3.0.2
+npm install github:fex-to/provider-icons#v3.1.15
 
 # Or install the latest from main branch
 npm install github:fex-to/provider-icons#main
@@ -35,9 +35,9 @@ Add to your `package.json`:
 ```json
 {
   "dependencies": {
-    "@fex-to/provider-icons": "github:fex-to/provider-icons#v3.0.2",
-    "@fex-to/provider-icons-react": "github:fex-to/provider-icons#v3.0.2",
-    "@fex-to/provider-icons-png": "github:fex-to/provider-icons#v3.0.2"
+    "@fex-to/provider-icons": "github:fex-to/provider-icons#v3.1.15",
+    "@fex-to/provider-icons-react": "github:fex-to/provider-icons#v3.1.15",
+    "@fex-to/provider-icons-png": "github:fex-to/provider-icons#v3.1.15"
   }
 }
 ```

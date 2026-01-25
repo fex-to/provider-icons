@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **251** available icons with their IDs and React components for easy copying.
+This page shows all **252** available icons with their IDs and React components for easy copying.
 
 > **📦 Provider:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **251** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **251 icons**
+Total: **252 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -107,6 +107,7 @@ Total: **251 icons**
 | <img src=".preview/icons/fex.png" width="96" height="96" alt="fex" /> | `fex` | `<IconFex />` |
 | <img src=".preview/icons/firstbank.png" width="96" height="96" alt="firstbank" /> | `firstbank` | `<IconFirstbank />` |
 | <img src=".preview/icons/fjrb.png" width="96" height="96" alt="fjrb" /> | `fjrb` | `<IconFjrb />` |
+| <img src=".preview/icons/forexpk.png" width="96" height="96" alt="forexpk" /> | `forexpk` | `<IconForexpk />` |
 | <img src=".preview/icons/gbbe.png" width="96" height="96" alt="gbbe" /> | `gbbe` | `<IconGbbe />` |
 | <img src=".preview/icons/gbbestforeignexchange.png" width="96" height="96" alt="gbbestforeignexchange" /> | `gbbestforeignexchange` | `<IconGbbestforeignexchange />` |
 | <img src=".preview/icons/gbcog.png" width="96" height="96" alt="gbcog" /> | `gbcog` | `<IconGbcog />` |

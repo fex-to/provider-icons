@@ -1,6 +1,6 @@
 {
   "name": "@fex-to/provider-icons",
-  "version": "3.1.14",
+  "version": "3.1.15",
   "author": "dejurin",
   "license": "MIT",
   "description": "Financial provider icons: banks, exchanges, central banks. Available in SVG, React components, and PNG",
@@ -22,6 +22,7 @@
     "update": "npm run update:icons-version",
     "update:icons-version": "node ./.build/update-icons-version.mjs",
     "update:readme": "node ./.build/update-readme.mjs",
+    "update:readme-version": "node ./.build/update-readme-version.mjs",
     "import": "npm run build:clean && node ./.build/import.mjs && npm run optimize",
     "changelog": "node ./.build/changelog.mjs",
     "changelog-commit": "git add . && node ./.build/changelog-commit.mjs",
@@ -42,24 +43,24 @@
   },
   "dependencies": {
     "@atomico/rollup-plugin-sizes": "^1.1.4",
-    "@babel/cli": "^7.28.3",
-    "@babel/core": "7.28.4",
-    "@babel/plugin-transform-runtime": "^7.28.3",
-    "@babel/preset-env": "7.28.3",
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "7.28.6",
+    "@babel/plugin-transform-runtime": "^7.28.5",
+    "@babel/preset-env": "7.28.6",
     "@release-it-plugins/workspaces": "^5.0.3",
     "@rollup/plugin-babel": "6.1.0",
-    "@rollup/plugin-commonjs": "28.0.8",
+    "@rollup/plugin-commonjs": "29.0.0",
     "@rollup/plugin-node-resolve": "16.0.3",
     "adm-zip": "^0.5.16",
-    "cheerio": "^1.1.2",
-    "esbuild": "^0.25.11",
-    "fs-extra": "^11.3.2",
-    "glob": "11.1.0",
+    "cheerio": "^1.2.0",
+    "esbuild": "^0.27.2",
+    "fs-extra": "^11.3.3",
+    "glob": "13.0.0",
     "minimist": "1.2.8",
     "parse-svg-path": "^0.1.2",
-    "prettier": "^3.6.2",
-    "release-it": "19.0.5",
-    "rollup": "4.52.5",
+    "prettier": "^3.8.1",
+    "release-it": "19.2.4",
+    "rollup": "4.56.0",
     "rollup-plugin-esbuild": "^6.2.1",
     "rollup-plugin-license": "^3.6.0",
     "rollup-plugin-visualizer": "^6.0.5",
@@ -85,7 +86,7 @@
     },
     "hooks": {
       "before:init": "git add src/_icons && node ./.build/changelog-release.mjs > RELEASE_NOTES.md && npm run changelog-image",
-      "after:bump": "npm run build --latest-version ${latestVersion} --new-version ${version} --verbose",
+      "after:bump": "npm run build --latest-version ${latestVersion} --new-version ${version} --verbose && npm run update:readme-version",
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}.",
       "before:git:init": "npm install"
     },
@@ -98,13 +99,12 @@
       "requireCleanWorkingDir": false
     },
     "github": {
-      "release": true,
-      "releaseNotes": "cat RELEASE_NOTES.md"
+      "release": false
     }
   },
-  "packageManager": "npm@11.6.2",
+  "packageManager": "npm@11.8.0",
   "devDependencies": {
     "@release-it-plugins/workspaces": "^5.0.3",
-    "turbo": "^2.5.8"
+    "turbo": "^2.7.6"
   }
 }
