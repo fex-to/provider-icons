@@ -5,7 +5,7 @@
   "license": "MIT",
   "description": "Financial provider icons: banks, exchanges, central banks. Available in SVG, React components, and PNG",
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "workspaces": [
     "packages/*",
