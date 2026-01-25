@@ -10,7 +10,7 @@
 
 ## Icons
 
-A set of <!--icons-count-->252<!--/icons-count--> provider icons.
+A set of <!--icons-count-->253<!--/icons-count--> provider icons.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Since these packages are not published to npm registry, install them directly fr
 
 ```bash
 # Install with specific version tag
-npm install github:fex-to/provider-icons#v3.1.15
+npm install github:fex-to/provider-icons#v3.1.16
 
 # Or install the latest from main branch
 npm install github:fex-to/provider-icons#main
@@ -35,9 +35,9 @@ Add to your `package.json`:
 ```json
 {
   "dependencies": {
-    "@fex-to/provider-icons": "github:fex-to/provider-icons#v3.1.15",
-    "@fex-to/provider-icons-react": "github:fex-to/provider-icons#v3.1.15",
-    "@fex-to/provider-icons-png": "github:fex-to/provider-icons#v3.1.15"
+    "@fex-to/provider-icons": "github:fex-to/provider-icons#v3.1.16",
+    "@fex-to/provider-icons-react": "github:fex-to/provider-icons#v3.1.16",
+    "@fex-to/provider-icons-png": "github:fex-to/provider-icons#v3.1.16"
   }
 }
 ```

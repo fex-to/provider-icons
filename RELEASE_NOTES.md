@@ -1,1 +1,1 @@
-1 new icons: `forexpk`
+1 new icons: `coindesk`

@@ -1,6 +1,6 @@
 # Icons Preview
 
-This page shows all **252** available icons with their IDs and React components for easy copying.
+This page shows all **253** available icons with their IDs and React components for easy copying.
 
 > **📦 Provider:** Icons are built from `packages/icons-png/icons/`  
 > **🔄 Update:** Run `npm run build` to rebuild icons
@@ -15,7 +15,7 @@ This page shows all **252** available icons with their IDs and React components 
 
 ## All Icons
 
-Total: **252 icons**
+Total: **253 icons**
 
 | Preview | ID | React Component |
 |---------|----|-----------------|
@@ -75,6 +75,7 @@ Total: **252 icons**
 | <img src=".preview/icons/cncfets.png" width="96" height="96" alt="cncfets" /> | `cncfets` | `<IconCncfets />` |
 | <img src=".preview/icons/cocambiosvancouver.png" width="96" height="96" alt="cocambiosvancouver" /> | `cocambiosvancouver` | `<IconCocambiosvancouver />` |
 | <img src=".preview/icons/cocb.png" width="96" height="96" alt="cocb" /> | `cocb` | `<IconCocb />` |
+| <img src=".preview/icons/coindesk.png" width="96" height="96" alt="coindesk" /> | `coindesk` | `<IconCoindesk />` |
 | <img src=".preview/icons/comoneymax.png" width="96" height="96" alt="comoneymax" /> | `comoneymax` | `<IconComoneymax />` |
 | <img src=".preview/icons/coundolar.png" width="96" height="96" alt="coundolar" /> | `coundolar` | `<IconCoundolar />` |
 | <img src=".preview/icons/counicambios.png" width="96" height="96" alt="counicambios" /> | `counicambios` | `<IconCounicambios />` |
