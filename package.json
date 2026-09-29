@@ -85,7 +85,7 @@
     },
     "hooks": {
       "before:init": "git add src/_icons && node ./.build/changelog-release.mjs > RELEASE_NOTES.md && npm run changelog-image",
-      "after:bump": "npm run build --latest-version ${latestVersion} --new-version ${version} --verbose && npm run update:readme-version",
+      "after:bump": "npm run build --latest-version ${latestVersion} --new-version ${version} && npm run update:readme-version",
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}.",
       "before:git:init": "npm install"
     },
