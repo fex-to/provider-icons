@@ -1,4 +1,4 @@
-import { exec } from 'child_process'
+import sharp from 'sharp'
 import { asyncForEach, readSvgs } from '../../.build/helpers.mjs'
 
 let svgFiles = readSvgs()
@@ -8,14 +8,5 @@ await asyncForEach(svgFiles, async function(file, i) {
 
   process.stdout.write(`Building ${i}/${svgFiles.length}: ${file.name.padEnd(42)}\r`)
 
-  await new Promise((resolve, reject) => {
-    exec(`rsvg-convert -h 480 ${file.path} > ${distPath}`, (error, stdout, stderr) => {
-      if (error) {
-        console.error(`\nError converting ${file.name}:`, error.message)
-        reject(error)
-      } else {
-        resolve()
-      }
-    })
-  })
+  await sharp(file.path).resize({ height: 480 }).png().toFile(distPath)
 })

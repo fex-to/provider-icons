@@ -1,16 +1,16 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`React Icon component should match snapshot 1`] = `
 <svg
-  className="provider-icon provider-icon-fex"
+  class="provider-icon provider-icon-fex"
   fill="currentColor"
-  height={48}
+  height="48"
   viewBox="0 0 48 48"
-  width={48}
+  width="48"
   xmlns="http://www.w3.org/2000/svg"
 >
   <path
-    d="M40 1.199H7v45h10.358V28.317h11.319l3.33-4.618 2.804-3.908H17.358v-9.592H40z"
+    d="M40 1.199h-33v45h10.358v-17.882h11.319l3.33 -4.618l2.804 -3.908h-17.453v-9.592h22.642z"
   />
 </svg>
 `;

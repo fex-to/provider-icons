@@ -29,10 +29,9 @@ const buildNodes = () => {
 }
 
 const componentTemplate = ({
-  namePascal,
   svg
 }) => `\
-export default ${namePascal} => \`${svg.contents}\`;`;
+export default \`${svg.contents}\`;`;
 
 const indexItemTemplate = ({
   name,

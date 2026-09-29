@@ -1,9 +1,18 @@
 {
     "$schema": "https://turbo.build/schema.json",
+    "globalDependencies": [
+        "icons/**",
+        "src/_icons/**"
+    ],
     "tasks": {
         "build": {
             "outputs": [
-                "dist/**"
+                "dist/**",
+                "icons/**",
+                "provider-nodes.json",
+                "provider-sprite.svg",
+                "sources-nodes.json",
+                "sources-sprite.svg"
             ],
             "dependsOn": ["^build"]
         },
@@ -16,7 +25,7 @@
             "cache": false
         },
         "test": {
-            "dependsOn": []
+            "dependsOn": ["^test"]
         }
     }
 }

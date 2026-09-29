@@ -1,4 +1,4 @@
-import { exec } from 'child_process'
+import sharp from 'sharp'
 import { asyncForEach, readSvgs } from '../../.build/helpers.mjs'
 
 const sizes = [128, 256, 512]
@@ -13,19 +13,7 @@ await asyncForEach(svgFiles, async function(file, i) {
   for (const size of sizes) {
     const distPath = `./icons/${size}/${file.name}.webp`
 
-    await new Promise((resolve, reject) => {
-      // Convert SVG to PNG first, then to WebP
-      const convertCmd = `rsvg-convert -h ${size} ${file.path} | cwebp -q 90 -o ${distPath} -- -`
-      
-      exec(convertCmd, (error, stdout, stderr) => {
-        if (error) {
-          console.error(`\nError converting ${file.name} to ${size}x${size}:`, error.message)
-          reject(error)
-        } else {
-          resolve()
-        }
-      })
-    })
+    await sharp(file.path).resize({ height: size }).webp({ quality: 90 }).toFile(distPath)
   }
 })
 

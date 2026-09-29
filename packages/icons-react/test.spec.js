@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react'
 import { IconFex } from './src/icons.js'
 import React from 'react'
-import renderer from 'react-test-renderer'
 
 describe('React Icon component', () => {
   test('should render icon component', () => {
@@ -20,7 +19,7 @@ describe('React Icon component', () => {
 
   // Jest creates separate file to store snapshots
   test('should match snapshot', () => {
-    const icon = renderer.create(<IconFex />).toJSON()
-    expect(icon).toMatchSnapshot()
+    const { container } = render(<IconFex />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 })

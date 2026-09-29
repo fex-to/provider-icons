@@ -22,7 +22,7 @@ files.forEach(function (file, i) {
     throw new Error(`File ${file} has space in name!!`)
   }
 
-  fileData = fileData.replace(/---/g, '')
+  fileData = fileData.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '')
     .replace(/fill="none"/g, '')
     .replace(/fill="(.*?)"/gi, '')
     .replace(/fill-rule="evenodd"/g, '')
@@ -53,7 +53,7 @@ files.forEach(function (file, i) {
   const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'))
   const currentVersion = packageJson.version
 
-  fileData = fileData.replace(/<svg>/g, `---\nversion: "${currentVersion}"\n---\n<svg>`)
+  fileData = `---\nversion: "${currentVersion}"\n---\n${fileData}`
 
   if (fs.existsSync(`./src/_icons/${filename}.svg`)) {
     const newFileData = fs.readFileSync(`./src/_icons/${filename}.svg`).toString()

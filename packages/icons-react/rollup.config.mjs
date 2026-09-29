@@ -3,12 +3,8 @@ import { getRollupPlugins } from '../../.build/build-icons.mjs'
 
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'))
 
-import sizes from '@atomico/rollup-plugin-sizes';
-import { createRequire } from 'module';
-
 const packageName = '@fex-to/provider-icons-react';
 
-const require = createRequire(import.meta.url);
 const outputFileName = 'provider-icons-react';
 const outputDir = 'dist';
 const inputs = ['./src/provider-icons-react.js'];
@@ -61,7 +57,7 @@ const configs = bundles
             sourcemap: true,
             preserveModules,
             globals: {
-              react: 'react',
+              react: 'React',
               'prop-types': 'PropTypes'
             },
           },

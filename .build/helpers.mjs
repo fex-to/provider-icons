@@ -3,10 +3,9 @@ import path, { resolve, basename } from 'path'
 import { fileURLToPath } from 'url'
 import svgParse from 'parse-svg-path'
 import svgpath from 'svgpath'
-import * as cheerio from 'cheerio'
 import { parseSync } from 'svgson'
 import { optimize } from 'svgo'
-import cp from 'child_process'
+import sharp from 'sharp'
 import minimist from 'minimist'
 
 export const getCurrentDirPath = () => {
@@ -21,10 +20,6 @@ export const PACKAGES_DIR = resolve(HOME_DIR, 'packages')
 
 export const getArgvs = () => {
   return minimist(process.argv.slice(2))
-}
-
-export const getPackageDir = (packageName) => {
-  return `${PACKAGES_DIR}/${packageName}`
 }
 
 /**
@@ -56,7 +51,7 @@ export const readSvgs = () => {
         // Match only if there's content or empty lines between the --- markers
         contents = rawContents.replace(/^---\n(?:.*\n)?---\n/, '').trim(),
         path = resolve(ICONS_DIR, svgFile);
-    
+
     let obj;
     try {
       obj = parseSync(contents.replace('<path stroke="none" d="M0 0h48v48H0z" fill="none"/>', ''));
@@ -88,25 +83,6 @@ export const readSvg = (fileName, directory) => {
 }
 
 /**
- * Create directory if not exists
- * @param dir
- */
-export const createDirectory = (dir) => {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir);
-  }
-};
-
-/**
- * Get SVG name
- * @param fileName
- * @returns {string}
- */
-export const getSvgName = (fileName) => {
-  return path.basename(fileName, '.svg')
-}
-
-/**
  * Convert string to CamelCase
  * @param string
  * @returns {*}
@@ -119,10 +95,6 @@ export const toPascalCase = (string) => {
   const camelCase = toCamelCase(string);
 
   return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
-}
-
-export const addFloats = function(n1, n2) {
-  return Math.round((parseFloat(n1) + parseFloat(n2)) * 1000) / 1000
 }
 
 export const optimizePath = function(path) {
@@ -151,25 +123,6 @@ export const optimizeSVG = (data) => {
   }).data
 }
 
-export function buildIconsObject(svgFiles, getSvg) {
-  return svgFiles
-      .map(svgFile => {
-        const name = path.basename(svgFile, '.svg');
-        const svg = getSvg(svgFile);
-        const contents = getSvgContents(svg);
-        return { name, contents };
-      })
-      .reduce((icons, icon) => {
-        icons[icon.name] = icon.contents;
-        return icons;
-      }, {});
-}
-
-function getSvgContents(svg) {
-  const $ = cheerio.load(svg);
-  return $('svg').html().replace(/\s+/g, ' ').trim();
-}
-
 export const asyncForEach = async (array, callback) => {
   for (let index = 0; index < array.length; index++) {
     await callback(array[index], index, array)
@@ -177,8 +130,12 @@ export const asyncForEach = async (array, callback) => {
 }
 
 export const createScreenshot = async (filePath) => {
-  await cp.exec(`rsvg-convert -x 2 -y 2 ${filePath} > ${filePath.replace('.svg', '.png')}`)
-  await cp.exec(`rsvg-convert -x 4 -y 4 ${filePath} > ${filePath.replace('.svg', '@2x.png')}`)
+  const [png, png2x] = await Promise.all([
+    sharp(filePath, { density: 144 }).png().toBuffer(),
+    sharp(filePath, { density: 288 }).png().toBuffer(),
+  ])
+  fs.writeFileSync(filePath.replace('.svg', '.png'), png)
+  fs.writeFileSync(filePath.replace('.svg', '@2x.png'), png2x)
 }
 
 export const generateIconsPreview = async function(files, destFile, {
@@ -262,7 +219,7 @@ export const printChangelog = function(newIcons, modifiedIcons, renamedIcons, pr
     modifiedIcons.forEach(function(icon, i) {
       str += `\`${icon}\``
 
-      if ((i + 1) <= modifiedIcons.length - 1) {
+      if ((i + 1) <= newIcons.length - 1) {
         str += ', '
       }
     })
@@ -278,83 +235,4 @@ export const printChangelog = function(newIcons, modifiedIcons, renamedIcons, pr
       console.log(`- \`${icon[0]}\` renamed to \`${icon[1]}\``)
     })
   }
-}
-
-
-export const getCompileOptions = () => {
-  const compileOptions = {
-    includeIcons: [],
-    strokeWidth: null,
-    fontForge: 'fontforge'
-  }
-
-  if (fs.existsSync('../compile-options.json')) {
-    try {
-      const tempOptions = require('../compile-options.json')
-
-      if (typeof tempOptions !== 'object') {
-        throw 'Compile options file does not contain an json object'
-      }
-
-      if (typeof tempOptions.includeIcons !== 'undefined') {
-        if (!Array.isArray(tempOptions.includeIcons)) {
-          throw 'property inludeIcons is not an array'
-        }
-        compileOptions.includeIcons = tempOptions.includeIcons
-      }
-
-      if (typeof tempOptions.includeCategories !== 'undefined') {
-        if (typeof tempOptions.includeCategories === 'string') {
-          tempOptions.includeCategories = tempOptions.includeCategories.split(' ')
-        }
-        if (!Array.isArray(tempOptions.includeCategories)) {
-          throw 'property includeCategories is not an array or string'
-        }
-        const tags = Object.entries(require('./tags.json'))
-        tempOptions.includeCategories.forEach(function(category) {
-          category = category.charAt(0).toUpperCase() + category.slice(1)
-          for (const [icon, data] of tags) {
-            if (data.category === category && compileOptions.includeIcons.indexOf(icon) === -1) {
-              compileOptions.includeIcons.push(icon)
-            }
-          }
-        })
-      }
-
-      if (typeof tempOptions.excludeIcons !== 'undefined') {
-        if (!Array.isArray(tempOptions.excludeIcons)) {
-          throw 'property excludeIcons is not an array'
-        }
-        compileOptions.includeIcons = compileOptions.includeIcons.filter(function(icon) {
-          return tempOptions.excludeIcons.indexOf(icon) === -1
-        })
-      }
-
-      if (typeof tempOptions.excludeOffIcons !== 'undefined' && tempOptions.excludeOffIcons) {
-        // Exclude `*-off` icons
-        compileOptions.includeIcons = compileOptions.includeIcons.filter(function(icon) {
-          return !icon.endsWith('-off')
-        })
-      }
-
-      if (typeof tempOptions.strokeWidth !== 'undefined') {
-        if (typeof tempOptions.strokeWidth !== 'string' && typeof tempOptions.strokeWidth !== 'number') {
-          throw 'property strokeWidth is not a string or number'
-        }
-        compileOptions.strokeWidth = tempOptions.strokeWidth.toString()
-      }
-
-      if (typeof tempOptions.fontForge !== 'undefined') {
-        if (typeof tempOptions.fontForge !== 'string') {
-          throw 'property fontForge is not a string'
-        }
-        compileOptions.fontForge = tempOptions.fontForge
-      }
-
-    } catch (error) {
-      throw `Error reading compile-options.json: ${error}`
-    }
-  }
-
-  return compileOptions
 }

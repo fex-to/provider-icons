@@ -15,10 +15,12 @@ files.forEach(function(file, i) {
 
   const obj = parseSync(svgFileContent);
   const JSONObject = { ...obj, ...{
-    attributes: {xmlns: "http://www.w3.org/2000/svg",
+    attributes: {
+    ...obj.attributes,
+    xmlns: "http://www.w3.org/2000/svg",
     width: 48,
     height: 48,
-    viewBox: "0 0 48 48",
+    viewBox: (obj.attributes && obj.attributes.viewBox) || "0 0 48 48",
     fill: 'currentColor',
   }}}
   svgFileContent = stringify(JSONObject)

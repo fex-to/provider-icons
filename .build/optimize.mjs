@@ -1,12 +1,12 @@
-import { glob, globSync } from 'glob'
+import { globSync } from 'glob'
 import { readFileSync, writeFileSync } from 'fs'
 import { join, basename } from 'path'
 import { optimizePath, ICONS_SRC_DIR } from './helpers.mjs'
 
 
-glob(join(ICONS_SRC_DIR, '*.svg'), {}, function(er, files) {
+const files = globSync(join(ICONS_SRC_DIR, '*.svg'))
 
-  files.forEach(function(file, i) {
+files.forEach(function(file, i) {
     console.log(`Optimize ${basename(file)}`);
 
     let svgFile = readFileSync(file),
@@ -31,10 +31,10 @@ glob(join(ICONS_SRC_DIR, '*.svg'), {}, function(er, files) {
           return `<path d="M${cx} ${cy}m -${rx} 0a${rx} ${ry} 0 1 0 ${rx * 2} 0a ${rx} ${ry} 0 1 0 -${rx * 2} 0" />`
         })
         .replace(/<rect width="([^"]+)" height="([^"]+)" x="([^"]+)" y="([^"]+)" rx="([^"]+)"\s+\/>/g, function(f, width, height, x, y, rx) {
-          return `<rect x="${x}" y="${y}" width="${height}" height="${height}" rx="${rx}" />`
+          return `<rect x="${x}" y="${y}" width="${width}" height="${height}" rx="${rx}" />`
         })
         .replace(/<rect x="([^"]+)" y="([^"]+)" rx="([^"]+)" width="([^"]+)" height="([^"]+)"\s+\/>/g, function(f, x, y, rx, width, height) {
-          return `<rect x="${x}" y="${y}" width="${height}" height="${height}" rx="${rx}" />`
+          return `<rect x="${x}" y="${y}" width="${width}" height="${height}" rx="${rx}" />`
         })
         .replace(/<rect x="([^"]+)" y="([^"]+)" width="([^"]+)" height="([^"]+)" rx="([^"]+)"\s+\/>/g, function(f, x, y, width, height, rx) {
           return `<path d="M ${x} ${y}m 0 ${rx}a${rx} ${rx} 0 0 1 ${rx} ${-rx}h${width - rx * 2}a${rx} ${rx} 0 0 1 ${rx} ${rx}v${height - rx * 2}a${rx} ${rx} 0 0 1 ${-rx} ${rx}h${-width + rx * 2}a${rx} ${rx} 0 0 1 ${-rx} ${-rx}Z" />`
@@ -72,5 +72,4 @@ glob(join(ICONS_SRC_DIR, '*.svg'), {}, function(er, files) {
     if (svgFile.toString() !== svgFileContent) {
       writeFileSync(file, svgFileContent)
     }
-  })
 })

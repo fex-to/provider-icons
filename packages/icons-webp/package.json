@@ -31,7 +31,8 @@
     ],
     "./512/*": [
       "./icons/512/*"
-    ]
+    ],
+    "./package.json": "./package.json"
   },
   "dependencies": {
     "@fex-to/provider-icons": "*"

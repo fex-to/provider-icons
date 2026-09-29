@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Prepare icons
+        run: npm run optimize && npm run build:svgs
+
+      - name: Build all packages
+        run: npx turbo run build
+
+      - name: Guard against broken publishes
+        run: |
+          set -e
+          node -e "if (!require('./package.json').private) { console.error('::error::Root package must stay private!'); process.exit(1) }"
+          echo "Root package is private: OK"
+          for pkg in icons icons-react icons-png icons-webp; do
+            cd "packages/$pkg"
+            tgz=$(npm pack --silent 2>/dev/null | tail -1)
+            if tar tzf "$tgz" | grep -E '\.env$|\.turbo|node_modules'; then
+              echo "::error::Forbidden content in $pkg tarball!"
+              exit 1
+            fi
+            size=$(du -m "$tgz" | cut -f1)
+            echo "$pkg: ${size} MB, clean"
+            if [ "$size" -gt 30 ]; then
+              echo "::error::$pkg tarball suspiciously large (${size} MB)"
+              exit 1
+            fi
+            rm "$tgz"
+            cd ../..
+          done
+
+      - name: Run tests
+        run: npm test

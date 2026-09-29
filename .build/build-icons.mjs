@@ -33,8 +33,6 @@ export const buildIcons = async ({
 }) => {
   const DIST_DIR = path.resolve(PACKAGES_DIR, name),
       svgFiles = readSvgs()
-  
-      console.log(PACKAGES_DIR, name, 'PACKAGES_DIR')
 
   // Ensure the src/icons directory exists
   fs.ensureDirSync(path.resolve(DIST_DIR, 'src/icons'))
@@ -43,7 +41,6 @@ export const buildIcons = async ({
   let typings = []
 
   for (const svgFile of svgFiles) {
-    const i = svgFiles.indexOf(svgFile)
     const children = svgFile.obj.children
         .map(({
           name,

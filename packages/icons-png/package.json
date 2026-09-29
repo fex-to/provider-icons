@@ -25,7 +25,8 @@
   "exports": {
     "./*": [
       "./icons/*"
-    ]
+    ],
+    "./package.json": "./package.json"
   },
   "dependencies": {
     "@fex-to/provider-icons": "*"
