@@ -1,1 +1,2 @@
-1 new icons: `coindesk`
+Fixed icons: `aecb``afcb``aocb``atnb``bbcb``bceaocb``bhcb``bluelytics``bocb``bscb``btrma``bzcb``cdcb``coindesk``docb``dzba``egblackmarket``fex``forexpk``gmcb``hnbc``htbr``idbca``idbws``kgnb``labl``lkcb``lrcb``lscb``mgbf``mncb``moamcm``mubm``mwrb``mxafm``mxba``mxbnmx``nabn``ngcb``nonb``nprb``omcb``pecambix``pehirpower``peyanki``pgcb``psma``qacb``robt``roeb``roing``rolib``ronexent``roraiffeisen``rounicredit``slcb``socb``tncb``ttcb``uablackmarket``uaexchanger``uaukrsibbank``uycb``wama``wscb``zmbz``zwrb`
+
